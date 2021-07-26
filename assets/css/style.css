@@ -1,1 +1,14 @@
 /* Style sheet  */
+
+header {
+    background: rgb(105, 107, 211);
+    position:sticky;
+    top: 0;
+  
+    z-index: 9999;
+    height: 70px;
+    
+    text-align: center;
+    font-size: 25px;
+    color:rgb(253, 253, 253);
+  }
