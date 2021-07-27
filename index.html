@@ -1,52 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="./assets/css/style.css" />
-    <title>NATIONAL PARK TRIP PLANNAR</title>
+    <title>NATIONAL PARK TRIP PLANNER</title>
 </head>
 
 <body>
-    <header><h1>National Park Trip Plannar</h1></header>
-    
-
-    <div id="mainBody" class="flex-row">   
-
-        <div class="col-one-quarter">
-            
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod laudantium aperiam eos ipsum sint, praesentium culpa cumque maxime illum recusandae itaque quas quae soluta incidunt esse eius eum veniam hic.</p>
-        
-        </div>
-
-        <div class="col-three-quarter">
-            <div class="parkData">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores esse similique architecto, repellat unde et harum, alias accusantium quas animi aspernatur. Nobis laboriosam possimus excepturi, provident repellendus ipsum quo dicta.           </p>
-            
-            <p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorum enim asperiores est excepturi saepe ipsa fuga nemo, sint optio suscipit. Quisquam voluptatum earum pariatur perferendis nobis, modi odit sed doloremque? </p> 
+    <header>    
+        <h1>National Park Trip Planner</h1>
+    </header>
+    <main class="container">
+        <div class="row">
+            <div class="col s4 pull-s2">
+                <form class="row">
+                    <select id="select1">
+                        <option value="0">State</option>
+                        <option value="NJ">NJ</option>
+                        <option value="AL">AL</option>
+                        <option value="WA">WA</option>
+                    </select>
+                    <select id="myselect">
+                        <option value="">Choose One</option>
+                    </select>
+                    <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                        <i class="material-icons right"></i>
+                      </button>
+                </form>
             </div>
         </div>
-              
-    </div>
-      
+    </main>
 
 
+   
 
-
-
-  <br>
-  <br>
-  <br>
-    
- <img src="./assets/images/Cali.JPG" alt="California">
-
-
-
-
- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
- <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
- <script src="./assets/js/script.js"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="./assets/js/script.js"></script>
 </body>
 
 
