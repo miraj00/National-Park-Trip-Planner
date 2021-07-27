@@ -11,31 +11,29 @@
 </head>
 
 <body>
-    <header>
+    <header>    
         <h1>National Park Trip Planner</h1>
     </header>
-    <main>
+    <main class="container">
         <div class="row">
-            <select id="select1">
-                <option value="0">State</option>
-                <option value="NJ">NJ</option>
-                <option value="AL">AL</option>
-                <option value="WA">WA</option>
-            </select>
-            <select id="myselect">
-                <option value="">Choose One</option>
-            </select>
-            <!-- <select id="myselect">
-                <option value="0">Choose a Park</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-            </select> -->
+            <div class="col s4 pull-s2 flex-column">
+                <form class="row flex-column">
+                    <select id="select1">
+                        <option value="0">State</option>
+                        <option value="NJ">NJ</option>
+                        <option value="AL">AL</option>
+                        <option value="WA">WA</option>
+                    </select>
+                    <select id="myselect">
+                        <option value="">Choose One</option>
+                    </select>
+                </form>
+            </div>
         </div>
-       
-
-
     </main>
+
+
+   
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
