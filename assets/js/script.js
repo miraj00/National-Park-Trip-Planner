@@ -1,3 +1,16 @@
+$(document).ready(function () {
+    $('select').formSelect();
+});
+var njIndex= 0;
+var njValues = [
+    {
+        choices: ["NJ Park 1", "NJ Park 2"]
+    }
+];
+
+var njChoices =  njValues[njIndex].choices;
+
+
 $("#select1").change(function(){
     var val = $(this).val();        
     if (val == "NJ"){
@@ -14,12 +27,4 @@ $("#select1").change(function(){
 
 
 
-// $(function() {
-//     $("#select1").on('change', function() {
-//         $('#myselect').val("1");
-
-//         // re-initialize material-select
-//         $('#myselect').formSelect();
-//     });
-// });
 
