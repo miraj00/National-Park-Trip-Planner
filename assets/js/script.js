@@ -1,14 +1,12 @@
 $(document).ready(function () {
     $('select').formSelect();
 });
-var njIndex= 0;
-var njValues = [
-    {
-        choices: ["NJ Park 1", "NJ Park 2"]
-    }
-];
 
-var njChoices =  njValues[njIndex].choices;
+// var njValues = [
+//     "NJ-Park-1", "NJ-Park-2", "NJ-Park-3"
+// ];
+
+
 
 
 $("#select1").change(function(){
