@@ -1,5 +1,6 @@
-$(document).ready(function () {
+ $(document).ready(function () {
     $('select').formSelect();
+<<<<<<< HEAD
 });
 
 // var njValues = [
@@ -23,13 +24,23 @@ $(document).ready(function () {
 //     $('#myselect').formSelect()
 // });
 
+=======
+ });
+>>>>>>> develop
 
-
-
-// Code List for National Parks :
 
 
 /*
+// Code List for National Parks :
+
+//var Nevada = [ {Death Valley National Park, deva}, {Great Basin National Park,   }];
+  var Montana = [ {Glacier National Park, glac}, {Yellowstone National Park, yell}];
+  var Hawaii = [ {Haleakala National Park, hale}, {Hawai’i Volcanoes National Park, havo}];
+  var New_Mexico = [ {Carlsbad Caverns National Park, cave}, {White Sands National Park, whsa}];
+  var Arizona = [ {Grand Canyon National Park, grca}, {Petrified Forest National Park, pefo}, {Saguaro National Park, sagu}];
+  var Utah = [ {Arches National Park, arch}, {Bryce Canyon National Park, brca}, {Canyonlands National Park, cany}, {Capitol Reef National Park, care},
+             {Zion National Park, zion}];   
+
 var Alaska = [{park : "Denali National Park", code: "dena"}, {park: "Gates of the Arctic National Park", code: "gaar"}, 
               {park: "Glacier Bay National Park", code: "glba"}, {park: "Katmai National Park", code: "katm"}, 
             {park: "Kenai Fjords National Park", code: "kefj"}, {park: "Kobuk Valley National Park", code: "kova"}, 
@@ -39,23 +50,131 @@ var California = [{Channel Islands National Park, chis}, {Death Valley National 
              {Lassen Volcanic National Park, lavo}, {Pinnacles National Park, pinn}, {Redwood National Park, redw}, 
              {Sequoia and Kings Canyon National Park, seki}, {Yosemite National Park, yose}];             
 
-var Arizona = [ {Grand Canyon National Park, grca}, {Petrified Forest National Park, pefo}, {Saguaro National Park, sagu}]
-
-var Hawaii = [ {Haleakala National Park, hale}, {Hawai’i Volcanoes National Park, havo}]
-
-var Montana = [ {Glacier National Park, glac}, {Yellowstone National Park, yell}]
- 
-var Nevada = [ {Death Valley National Park, deva}, {Great Basin National Park,   }]
-
-var New_Mexico = [ {Carlsbad Caverns National Park, cave}, {White Sands National Park, whsa}]
-
-var Utah = [ {Arches National Park, arch}, {Bryce Canyon National Park, brca}, {Canyonlands National Park, cany}, {Capitol Reef National Park, care},
-             {Zion National Park, zion}]
-
 */
+  
+
+var optionsList = document.querySelector("#mySelection");
+
+var Nevada = [ "Death Valley National Park", "Great Basin National Park" ];
+var Montana = [ "Glacier National Park", "Yellowstone National Park"];
+var Hawaii = [ "Haleakala National Park", "Hawai’i Volcanoes National Park"];
+var New_Mexico = ["Carlsbad Caverns National Park", "White Sands National Park"];
+var Arizona = [ "Grand Canyon National Park", "Petrified Forest National Park, pefo", "Saguaro National Park, sagu"];
+var Utah = [ "Arches National Park", "Bryce Canyon National Park", "Canyonlands National Park", "Capitol Reef National Park", "Zion National Park"];
+var Alaska = ["Denali National Park","Gates of the Arctic National Park", "Glacier Bay National Park", "Katmai National Park", "Kenai Fjords National Park", "Kobuk Valley National Park", "Lake Clark National Park", "Wrangell St Elias National Park"];
+var California = ["Channel Islands National Park", "Death Valley National Park", "Joshua Tree National Park", "Lassen Volcanic National Park", "Pinnacles National Park", "Redwood National Park", "Sequoia and Kings Canyon National Park", "Yosemite National Park"];  
+
+function myFunction(event) {
+      event.preventDefault();
+
+      
+
+      const element = document.getElementById("stateS");
+
+      const checkValue = element.options[element.selectedIndex].value;
+      console.log(checkValue);
+      const checkText = element.options[element.selectedIndex].text;
+      console.log(checkText);
+
+      // storing selected state in local storage  ------------------------------------
+      localStorage.setItem ("state", checkText);
+
+//---------------- Query to present list of National Park upon State Selection ------------------------------------------------------------
+if ( checkValue === "NEVADA") { 
+
+    for (let i = 0; i < 2; i++) {
+    
+    var Nevada = [ "Death Valley National Park", "Great Basin National Park" ];    
+    var parklistEl = document.createElement("li");
+    parklistEl.className = "parksList";
+    parklistEl.innerHTML = Nevada[i];
+    optionsList.appendChild(parklistEl);
+    }
+}
+if ( checkValue === "HAWAII") { 
+
+        for (let i = 0; i < 2; i++) {
+        
+        var Hawaii = [ "Haleakala National Park", "Hawai’i Volcanoes National Park"];  
+        var parklistEl = document.createElement("li");
+        parklistEl.className = "parksList";
+        parklistEl.innerHTML = Hawaii[i];
+        optionsList.appendChild(parklistEl);
+        }
+}
+if ( checkValue === "NEW-MEXICO") { 
+
+    for (let i = 0; i < 2; i++) {
+    
+    var New_Mexico = ["Carlsbad Caverns National Park", "White Sands National Park"];
+    var parklistEl = document.createElement("li");
+    parklistEl.className = "parksList";
+    parklistEl.innerHTML = New_Mexico[i];
+    optionsList.appendChild(parklistEl);
+    }
+}
+if ( checkValue === "MONTANA") { 
+
+    for (let i = 0; i < 2; i++) {
+    
+    var Montana = [ "Glacier National Park", "Yellowstone National Park"];  
+    var parklistEl = document.createElement("li");
+    parklistEl.className = "parksList";
+    parklistEl.innerHTML = Montana[i];
+    optionsList.appendChild(parklistEl);
+    }
+}
+if ( checkValue === "ARIZONA") { 
+
+    for (let i = 0; i < 3; i++) {
+
+    var Arizona = [ "Grand Canyon National Park", "Petrified Forest National Park, pefo", "Saguaro National Park, sagu"];
+    var parklistEl = document.createElement("li");
+    parklistEl.className = "parksList";
+    parklistEl.innerHTML = Arizona[i];
+    optionsList.appendChild(parklistEl);
+    }
+}
+if ( checkValue === "UTAH") { 
+
+    for (let i = 0; i < 5; i++) {
+
+    var Utah = [ "Arches National Park", "Bryce Canyon National Park", "Canyonlands National Park", "Capitol Reef National Park", "Zion National Park"];
+    var parklistEl = document.createElement("li");
+    parklistEl.className = "parksList";
+    parklistEl.innerHTML = Utah[i];
+    optionsList.appendChild(parklistEl);
+    }
+}
+ 
+if ( checkValue === "ALASKA") { 
+
+    for (let i = 0; i < 8; i++) {
+
+    var Alaska = ["Denali National Park","Gates of the Arctic National Park", "Glacier Bay National Park", "Katmai National Park", "Kenai Fjords National Park", "Kobuk Valley National Park", "Lake Clark National Park", "Wrangell St Elias National Park"];
+    var parklistEl = document.createElement("li");
+    parklistEl.className = "parksList";
+    parklistEl.innerHTML = Alaska[i];
+    optionsList.appendChild(parklistEl);
+    }
+}
+
+if ( checkValue === "CALIFORNIA") { 
+
+    for (let i = 0; i < 8; i++) {
+    
+    var California = ["Channel Islands National Park", "Death Valley National Park", "Joshua Tree National Park", "Lassen Volcanic National Park", "Pinnacles National Park", "Redwood National Park", "Sequoia and Kings Canyon National Park", "Yosemite National Park"];  
+    var parklistEl = document.createElement("li");
+    parklistEl.className = "parksList";
+    parklistEl.innerHTML = California[i];
+    optionsList.appendChild(parklistEl);
+    }
+}
 
 
 
+
+// upon selecting national park name, it updates that park's info and weather 
 
 var y = document.querySelector('#parkCode').innerHTML;
 console.log(y);
@@ -67,11 +186,8 @@ console.log(y);
 
     fetch(apiUrl1).then(function(response1) {
     response1.json().then(function(data1) {
-    console.log(data1);
-
-
+  
     document.getElementById("parkInfo").innerHTML = data1.data[0].fullName ; 
-
 
      document.getElementById("address").innerHTML = "Address :  [ "  + data1.data[0].addresses[0].line2 + " ] " + data1.data[0].addresses[0].line1 + ", " + data1.data[0].addresses[0].city + ", " + data1.data[0].addresses[0].stateCode + " - " + data1.data[0].addresses[0].postalCode ; 
      document.getElementById("phNo").innerHTML = "Phone No :  " + data1.data[0].contacts.phoneNumbers[0].phoneNumber ; 
@@ -90,7 +206,6 @@ console.log(y);
 
 //-----------------:: -------------  API  to pull weather info for every 3 hours for hikers / campers ----------------::-------------------
 
-
  var zip = data1.data[0].addresses[0].postalCode
  
  var apiUrl2 = "https://api.openweathermap.org/data/2.5/forecast?zip=" + zip + ",us&appid=9d0a91c9414180869a1b366b5eca06bd";
@@ -102,14 +217,11 @@ console.log(y);
  console.log(data2);
 
 
-
-
 // --------------------------------- At 3 hours ---------------------------------------------------------------------
 
  const milliseconds = data2.list[0].dt * 1000;             // <------------------converting Unix date into readable format        
  const dateObject = new Date(milliseconds);
  const humanDateFormat = dateObject.toLocaleString("en-US", {timeZoneName: "short"}) 
- console.log(humanDateFormat);
  document.getElementById("time0").innerHTML = humanDateFormat;  //<---------------------adding date via innerHTML 
 
  var iconTime0El = document.querySelector('#icon0');
@@ -124,7 +236,6 @@ console.log(y);
 
  var v0 = (data2.list[0].main.temp) * 9/5;
  var t0 = v0 - 459.67;
- console.log(t0);
  let t0fixed = t0.toFixed(2) 
  document.getElementById("temp0").innerHTML = "Temp :  " + t0fixed + " *F" ;
 
@@ -137,7 +248,6 @@ console.log(y);
 const milliseconds1 = data2.list[1].dt * 1000;             // <------------------converting Unix date into readable format        
 const dateObject1 = new Date(milliseconds1);
 const humanDateFormat1 = dateObject1.toLocaleString("en-US", {timeZoneName: "short"}) 
-console.log(humanDateFormat1);
 document.getElementById("time1").innerHTML = humanDateFormat1;  //<---------------------adding date via innerHTML 
 
 var iconTime1El = document.querySelector('#icon1');
@@ -152,7 +262,6 @@ document.getElementById("iconText1").innerHTML = data2.list[1].weather[0].descri
 
 var v1 = (data2.list[1].main.temp) * 9/5;
 var t1 = v1 - 459.67;
-console.log(t1);
 let t1fixed = t1.toFixed(2) 
 document.getElementById("temp1").innerHTML = "Temp :  " + t1fixed + " *F" ;
 
@@ -164,7 +273,6 @@ document.getElementById("windDegree1").innerHTML = "Wind Direction :  " + data2.
 const milliseconds2 = data2.list[2].dt * 1000;             // <------------------converting Unix date into readable format        
 const dateObject2 = new Date(milliseconds2);
 const humanDateFormat2 = dateObject2.toLocaleString("en-US", {timeZoneName: "short"}) 
-console.log(humanDateFormat2);
 document.getElementById("time2").innerHTML = humanDateFormat2;  //<---------------------adding date via innerHTML 
 
 var iconTime2El = document.querySelector('#icon2');
@@ -179,7 +287,6 @@ document.getElementById("iconText2").innerHTML = data2.list[2].weather[0].descri
 
 var v2 = (data2.list[2].main.temp) * 9/5;
 var t2 = v2 - 459.67;
-console.log(t2);
 let t2fixed = t2.toFixed(2) 
 document.getElementById("temp2").innerHTML = "Temp :  " + t2fixed + " *F" ;
 
@@ -191,7 +298,6 @@ document.getElementById("windDegree2").innerHTML = "Wind Direction :  " + data2.
 const milliseconds3 = data2.list[3].dt * 1000;             // <------------------converting Unix date into readable format        
 const dateObject3 = new Date(milliseconds3);
 const humanDateFormat3 = dateObject3.toLocaleString("en-US", {timeZoneName: "short"}) 
-console.log(humanDateFormat3);
 document.getElementById("time3").innerHTML = humanDateFormat3;  //<---------------------adding date via innerHTML 
 
 var iconTime3El = document.querySelector('#icon3');
@@ -206,7 +312,6 @@ document.getElementById("iconText3").innerHTML = data2.list[3].weather[0].descri
 
 var v3 = (data2.list[3].main.temp) * 9/5;
 var t3 = v3 - 459.67;
-console.log(t3);
 let t3fixed = t3.toFixed(2) 
 document.getElementById("temp3").innerHTML = "Temp :  " + t3fixed + " *F" ;
 
@@ -218,7 +323,6 @@ document.getElementById("windDegree3").innerHTML = "Wind Direction :  " + data2.
 const milliseconds4 = data2.list[4].dt * 1000;             // <------------------converting Unix date into readable format        
 const dateObject4 = new Date(milliseconds4);
 const humanDateFormat4 = dateObject4.toLocaleString("en-US", {timeZoneName: "short"}) 
-console.log(humanDateFormat4);
 document.getElementById("time4").innerHTML = humanDateFormat4;  //<---------------------adding date via innerHTML 
 
 var iconTime4El = document.querySelector('#icon4');
@@ -233,7 +337,6 @@ document.getElementById("iconText4").innerHTML = data2.list[4].weather[0].descri
 
 var v4 = (data2.list[4].main.temp) * 9/5;
 var t4 = v4 - 459.67;
-console.log(t4);
 let t4fixed = t4.toFixed(2) 
 document.getElementById("temp4").innerHTML = "Temp :  " + t4fixed + " *F" ;
 
@@ -245,7 +348,6 @@ document.getElementById("windDegree4").innerHTML = "Wind Direction :  " + data2.
 const milliseconds5 = data2.list[5].dt * 1000;             // <------------------converting Unix date into readable format        
 const dateObject5 = new Date(milliseconds5);
 const humanDateFormat5 = dateObject5.toLocaleString("en-US", {timeZoneName: "short"}) 
-console.log(humanDateFormat5);
 document.getElementById("time5").innerHTML = humanDateFormat5;  //<---------------------adding date via innerHTML 
 
 var iconTime5El = document.querySelector('#icon5');
@@ -260,7 +362,6 @@ document.getElementById("iconText5").innerHTML = data2.list[5].weather[0].descri
 
 var v5 = (data2.list[5].main.temp) * 9/5;
 var t5 = v5 - 459.67;
-console.log(t5);
 let t5fixed = t5.toFixed(2) 
 document.getElementById("temp5").innerHTML = "Temp :  " + t5fixed + " *F" ;
 
@@ -272,7 +373,6 @@ document.getElementById("windDegree5").innerHTML = "Wind Direction :  " + data2.
 const milliseconds6 = data2.list[6].dt * 1000;             // <------------------converting Unix date into readable format        
 const dateObject6 = new Date(milliseconds6);
 const humanDateFormat6 = dateObject6.toLocaleString("en-US", {timeZoneName: "short"}) 
-console.log(humanDateFormat6);
 document.getElementById("time6").innerHTML = humanDateFormat6;  //<---------------------adding date via innerHTML 
 
 var iconTime6El = document.querySelector('#icon6');
@@ -287,7 +387,6 @@ document.getElementById("iconText6").innerHTML = data2.list[6].weather[0].descri
 
 var v6 = (data2.list[6].main.temp) * 9/5;
 var t6 = v6 - 459.67;
-console.log(t6);
 let t6fixed = t6.toFixed(2) 
 document.getElementById("temp6").innerHTML = "Temp :  " + t6fixed + " *F" ;
 
@@ -299,7 +398,6 @@ document.getElementById("windDegree6").innerHTML = "Wind Direction :  " + data2.
 const milliseconds7 = data2.list[7].dt * 1000;             // <------------------converting Unix date into readable format        
 const dateObject7 = new Date(milliseconds7);
 const humanDateFormat7 = dateObject7.toLocaleString("en-US", {timeZoneName: "short"}) 
-console.log(humanDateFormat7);
 document.getElementById("time7").innerHTML = humanDateFormat7;  //<---------------------adding date via innerHTML 
 
 var iconTime7El = document.querySelector('#icon7');
@@ -314,7 +412,6 @@ document.getElementById("iconText7").innerHTML = data2.list[7].weather[0].descri
 
 var v7 = (data2.list[7].main.temp) * 9/5;
 var t7 = v7 - 459.67;
-console.log(t7);
 let t7fixed = t7.toFixed(2) 
 document.getElementById("temp7").innerHTML = "Temp :  " + t7fixed + " *F" ;
 
@@ -327,7 +424,6 @@ document.getElementById("windDegree7").innerHTML = "Wind Direction :  " + data2.
 const milliseconds8 = data2.list[8].dt * 1000;             // <------------------converting Unix date into readable format        
 const dateObject8 = new Date(milliseconds8);
 const humanDateFormat8 = dateObject8.toLocaleString("en-US", {timeZoneName: "short"}) 
-console.log(humanDateFormat8);
 document.getElementById("time8").innerHTML = humanDateFormat8;  //<---------------------adding date via innerHTML 
 
 var iconTime8El = document.querySelector('#icon8');
@@ -342,7 +438,6 @@ document.getElementById("iconText8").innerHTML = data2.list[8].weather[0].descri
 
 var v8 = (data2.list[8].main.temp) * 9/5;
 var t8 = v8 - 459.67;
-console.log(t8);
 let t8fixed = t8.toFixed(2) 
 document.getElementById("temp8").innerHTML = "Temp :  " + t8fixed + " *F" ;
 
@@ -354,7 +449,6 @@ document.getElementById("windDegree8").innerHTML = "Wind Direction :  " + data2.
 const milliseconds9 = data2.list[9].dt * 1000;             // <------------------converting Unix date into readable format        
 const dateObject9 = new Date(milliseconds9);
 const humanDateFormat9 = dateObject9.toLocaleString("en-US", {timeZoneName: "short"}) 
-console.log(humanDateFormat9);
 document.getElementById("time9").innerHTML = humanDateFormat9;  //<---------------------adding date via innerHTML 
 
 var iconTime9El = document.querySelector('#icon9');
@@ -369,7 +463,6 @@ document.getElementById("iconText9").innerHTML = data2.list[9].weather[0].descri
 
 var v9 = (data2.list[9].main.temp) * 9/5;
 var t9 = v9 - 459.67;
-console.log(t9);
 let t9fixed = t9.toFixed(2) 
 document.getElementById("temp9").innerHTML = "Temp :  " + t9fixed + " *F" ;
 
@@ -381,7 +474,6 @@ document.getElementById("windDegree9").innerHTML = "Wind Direction :  " + data2.
 const milliseconds10 = data2.list[10].dt * 1000;             // <------------------converting Unix date into readable format        
 const dateObject10 = new Date(milliseconds10);
 const humanDateFormat10 = dateObject10.toLocaleString("en-US", {timeZoneName: "short"}) 
-console.log(humanDateFormat10);
 document.getElementById("time10").innerHTML = humanDateFormat10;  //<---------------------adding date via innerHTML 
 
 var iconTime10El = document.querySelector('#icon10');
@@ -396,7 +488,6 @@ document.getElementById("iconText10").innerHTML = data2.list[10].weather[0].desc
 
 var v10 = (data2.list[10].main.temp) * 9/5;
 var t10 = v10 - 459.67;
-console.log(t10);
 let t10fixed = t10.toFixed(2) 
 document.getElementById("temp10").innerHTML = "Temp :  " + t10fixed + " *F" ;
 
@@ -408,7 +499,6 @@ document.getElementById("windDegree10").innerHTML = "Wind Direction :  " + data2
 const milliseconds11 = data2.list[11].dt * 1000;             // <------------------converting Unix date into readable format        
 const dateObject11 = new Date(milliseconds11);
 const humanDateFormat11 = dateObject11.toLocaleString("en-US", {timeZoneName: "short"}) 
-console.log(humanDateFormat11);
 document.getElementById("time11").innerHTML = humanDateFormat11;  //<---------------------adding date via innerHTML 
 
 var iconTime11El = document.querySelector('#icon11');
@@ -423,7 +513,6 @@ document.getElementById("iconText11").innerHTML = data2.list[11].weather[0].desc
 
 var v11 = (data2.list[11].main.temp) * 9/5;
 var t11 = v11 - 459.67;
-console.log(t11);
 let t11fixed = t11.toFixed(2) 
 document.getElementById("temp11").innerHTML = "Temp :  " + t11fixed + " *F" ;
 
@@ -435,7 +524,6 @@ document.getElementById("windDegree11").innerHTML = "Wind Direction :  " + data2
 const milliseconds12 = data2.list[12].dt * 1000;             // <------------------converting Unix date into readable format        
 const dateObject12 = new Date(milliseconds12);
 const humanDateFormat12 = dateObject12.toLocaleString("en-US", {timeZoneName: "short"}) 
-console.log(humanDateFormat12);
 document.getElementById("time12").innerHTML = humanDateFormat12;  //<---------------------adding date via innerHTML 
 
 var iconTime12El = document.querySelector('#icon12');
@@ -450,7 +538,6 @@ document.getElementById("iconText12").innerHTML = data2.list[12].weather[0].desc
 
 var v12 = (data2.list[12].main.temp) * 9/5;
 var t12 = v12 - 459.67;
-console.log(t12);
 let t12fixed = t12.toFixed(2) 
 document.getElementById("temp12").innerHTML = "Temp :  " + t12fixed + " *F" ;
 
@@ -462,7 +549,6 @@ document.getElementById("windDegree12").innerHTML = "Wind Direction :  " + data2
 const milliseconds13 = data2.list[13].dt * 1000;             // <------------------converting Unix date into readable format        
 const dateObject13 = new Date(milliseconds13);
 const humanDateFormat13 = dateObject13.toLocaleString("en-US", {timeZoneName: "short"}) 
-console.log(humanDateFormat13);
 document.getElementById("time13").innerHTML = humanDateFormat13;  //<---------------------adding date via innerHTML 
 
 var iconTime13El = document.querySelector('#icon13');
@@ -477,7 +563,6 @@ document.getElementById("iconText13").innerHTML = data2.list[13].weather[0].desc
 
 var v13 = (data2.list[13].main.temp) * 9/5;
 var t13 = v13 - 459.67;
-console.log(t13);
 let t13fixed = t13.toFixed(2) 
 document.getElementById("temp13").innerHTML = "Temp :  " + t13fixed + " *F" ;
 
@@ -489,7 +574,6 @@ document.getElementById("windDegree13").innerHTML = "Wind Direction :  " + data2
 const milliseconds14 = data2.list[14].dt * 1000;             // <------------------converting Unix date into readable format        
 const dateObject14 = new Date(milliseconds14);
 const humanDateFormat14 = dateObject14.toLocaleString("en-US", {timeZoneName: "short"}) 
-console.log(humanDateFormat14);
 document.getElementById("time14").innerHTML = humanDateFormat14;  //<---------------------adding date via innerHTML 
 
 var iconTime14El = document.querySelector('#icon14');
@@ -504,7 +588,6 @@ document.getElementById("iconText14").innerHTML = data2.list[14].weather[0].desc
 
 var v14 = (data2.list[14].main.temp) * 9/5;
 var t14 = v14 - 459.67;
-console.log(t14);
 let t14fixed = t14.toFixed(2) 
 document.getElementById("temp14").innerHTML = "Temp :  " + t14fixed + " *F" ;
 
@@ -516,7 +599,6 @@ document.getElementById("windDegree14").innerHTML = "Wind Direction :  " + data2
 const milliseconds15 = data2.list[15].dt * 1000;             // <------------------converting Unix date into readable format        
 const dateObject15 = new Date(milliseconds15);
 const humanDateFormat15 = dateObject15.toLocaleString("en-US", {timeZoneName: "short"}) 
-console.log(humanDateFormat15);
 document.getElementById("time15").innerHTML = humanDateFormat15;  //<---------------------adding date via innerHTML 
 
 var iconTime15El = document.querySelector('#icon15');
@@ -531,30 +613,16 @@ document.getElementById("iconText15").innerHTML = data2.list[15].weather[0].desc
 
 var v15 = (data2.list[15].main.temp) * 9/5;
 var t15 = v15 - 459.67;
-console.log(t15);
 let t15fixed = t15.toFixed(2) 
 document.getElementById("temp15").innerHTML = "Temp :  " + t15fixed + " *F" ;
 
 document.getElementById("wind15").innerHTML = "Wind :  " + data2.list[15].wind.speed + " MPH";
 document.getElementById("windDegree15").innerHTML = "Wind Direction :  " + data2.list[15].wind.deg + " degree ";
 
-
-})
-})
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+              })
+          })
     })
 })
+
+}
+
