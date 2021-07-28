@@ -26,17 +26,10 @@ $("#select1").change(function(){
 
 
 
-var questions = [
-    {
-      question: "Commonly used data types DO NOT include:",
-      choices: ["strings", "booleans", "alerts", "numbers"],
-      answer: "alerts",
-    },
-
 // Code List for National Parks :
 
 
-
+/*
 var Alaska = [{park : "Denali National Park", code: "dena"}, {park: "Gates of the Arctic National Park", code: "gaar"}, 
               {park: "Glacier Bay National Park", code: "glba"}, {park: "Katmai National Park", code: "katm"}, 
             {park: "Kenai Fjords National Park", code: "kefj"}, {park: "Kobuk Valley National Park", code: "kova"}, 
@@ -59,7 +52,7 @@ var New_Mexico = [ {Carlsbad Caverns National Park, cave}, {White Sands National
 var Utah = [ {Arches National Park, arch}, {Bryce Canyon National Park, brca}, {Canyonlands National Park, cany}, {Capitol Reef National Park, care},
              {Zion National Park, zion}]
 
-
+*/
 
 
 
