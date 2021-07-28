@@ -26,11 +26,38 @@ $("#select1").change(function(){
 
 
 
+var questions = [
+    {
+      question: "Commonly used data types DO NOT include:",
+      choices: ["strings", "booleans", "alerts", "numbers"],
+      answer: "alerts",
+    },
+
 // Code List for National Parks :
 
-// var codes = [ {Acadia National Park, acad }, {Yellow Stone National Park, yell}, {Death Valley, deva} ]
- 
 
+
+var Alaska = [{park : "Denali National Park", code: "dena"}, {park: "Gates of the Arctic National Park", code: "gaar"}, 
+              {park: "Glacier Bay National Park", code: "glba"}, {park: "Katmai National Park", code: "katm"}, 
+            {park: "Kenai Fjords National Park", code: "kefj"}, {park: "Kobuk Valley National Park", code: "kova"}, 
+            {park: "Lake Clark National Park", code: "lacl"}, {park: "Wrangell St Elias National Park", code: "wrst"} ];
+
+var California = [{Channel Islands National Park, chis}, {Death Valley National Park, deva}, {Joshua Tree National Park, jotr}, 
+             {Lassen Volcanic National Park, lavo}, {Pinnacles National Park, pinn}, {Redwood National Park, redw}, 
+             {Sequoia and Kings Canyon National Park, seki}, {Yosemite National Park, yose}];             
+
+var Arizona = [ {Grand Canyon National Park, grca}, {Petrified Forest National Park, pefo}, {Saguaro National Park, sagu}]
+
+var Hawaii = [ {Haleakala National Park, hale}, {Hawai’i Volcanoes National Park, havo}]
+
+var Montana = [ {Glacier National Park, glac}, {Yellowstone National Park, yell}]
+ 
+var Nevada = [ {Death Valley National Park, deva}, {Great Basin National Park,   }]
+
+var New_Mexico = [ {Carlsbad Caverns National Park, cave}, {White Sands National Park, whsa}]
+
+var Utah = [ {Arches National Park, arch}, {Bryce Canyon National Park, brca}, {Canyonlands National Park, cany}, {Capitol Reef National Park, care},
+             {Zion National Park, zion}]
 
 
 
