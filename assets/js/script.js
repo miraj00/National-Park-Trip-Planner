@@ -41,6 +41,8 @@ var California = ["Channel Islands National Park", "Death Valley National Park",
 function myFunction(event) {
       event.preventDefault();
 
+      
+
       const element = document.getElementById("stateS");
 
       const checkValue = element.options[element.selectedIndex].value;
@@ -48,8 +50,10 @@ function myFunction(event) {
       const checkText = element.options[element.selectedIndex].text;
       console.log(checkText);
 
+      // storing selected state in local storage  ------------------------------------
+      localStorage.setItem ("state", checkText);
 
-
+//---------------- Query to present list of National Park upon State Selection ------------------------------------------------------------
 if ( checkValue === "NEVADA") { 
 
     for (let i = 0; i < 2; i++) {
