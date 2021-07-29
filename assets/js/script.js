@@ -38,7 +38,8 @@ var Utah = [ "Arches National Park", "Bryce Canyon National Park", "Canyonlands 
 var Alaska = ["Denali National Park","Gates of the Arctic National Park", "Glacier Bay National Park", "Katmai National Park", "Kenai Fjords National Park", "Kobuk Valley National Park", "Lake Clark National Park", "Wrangell St Elias National Park"];
 var California = ["Channel Islands National Park", "Death Valley National Park", "Joshua Tree National Park", "Lassen Volcanic National Park", "Pinnacles National Park", "Redwood National Park", "Sequoia and Kings Canyon National Park", "Yosemite National Park"];  
 //added API Key variable
-var APIKey= "9d0a91c9414180869a1b366b5eca06bd";
+var APIKeyOpen= "9d0a91c9414180869a1b366b5eca06bd";
+var APIKeyNPS= ""
 
 function myFunction(event) {
       event.preventDefault();
@@ -156,12 +157,25 @@ var y = document.querySelector('#parkCode').innerHTML;
 console.log(y);
 
 //----------------------------------------API  to pull Park Information -----------------------------------------------------------------
+function getParkInfo(){
+    var apiUrl1= fetch("https://developer.nps.gov/api/v1/parks?parkCode=" 
 
-    var apiUrl1= "https://developer.nps.gov/api/v1/parks?parkCode=" + y + "&api_key=KFp4bdWCgYMu7u8w5g1O3dmwGFoJEp9PQcpINgdf";
-    console.log(apiUrl1);
+    + y 
+    + "&api_id"
+    +APIKeyNPS)
 
-    fetch(apiUrl1).then(function(response1) {
-    response1.json().then(function(data1) {
+
+    //console.log(apiUrl1);
+
+    .then(function(response) {
+        return response.json();
+    })
+    .then(function(respnse) {
+        displayParkInfo(response);
+
+    }
+
+}
   
     document.getElementById("parkInfo").innerHTML = data1.data[0].fullName ; 
 
@@ -189,7 +203,7 @@ console.log(y);
     fetch("https://api.openweathermap.org/data/2.5/forecast?zip="
     + zip
     +"&appid="
-    +APIKey
+    +APIKeyOpen
     + "&units=imperial"
     )
     

@@ -123,5 +123,24 @@ if ( checkValue === "CALIFORNIA") {
   optionsList.appendChild(parklistEl);
   }
 }
- }
+ };
+
+ function getParkInfo(parkCode){
+    fetch("https://developer.nps.gov/api/v1/parks?parkCode=" 
+
+    + parkCode
+    + "&api_id="
+    +APIKeyNPS
+    )
+
+    .then(function(response) {
+        return response.json();
+    })
+    .then(function(respnse) {
+        displayParkInfo(response);
+
+    }
+
+};
+
 
