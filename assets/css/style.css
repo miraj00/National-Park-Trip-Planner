@@ -11,11 +11,13 @@ header {
     color:rgb(253, 253, 253);
   }
 
-  .titleName {
+  /* .titleName {
 background-color: yellow;
-  }
+  } */
 
-  #parkCode {
+
+
+#parkCode {
   display: none;
 }
 
