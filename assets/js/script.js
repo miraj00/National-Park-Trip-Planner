@@ -37,6 +37,8 @@ var Arizona = [ "Grand Canyon National Park", "Petrified Forest National Park, p
 var Utah = [ "Arches National Park", "Bryce Canyon National Park", "Canyonlands National Park", "Capitol Reef National Park", "Zion National Park"];
 var Alaska = ["Denali National Park","Gates of the Arctic National Park", "Glacier Bay National Park", "Katmai National Park", "Kenai Fjords National Park", "Kobuk Valley National Park", "Lake Clark National Park", "Wrangell St Elias National Park"];
 var California = ["Channel Islands National Park", "Death Valley National Park", "Joshua Tree National Park", "Lassen Volcanic National Park", "Pinnacles National Park", "Redwood National Park", "Sequoia and Kings Canyon National Park", "Yosemite National Park"];  
+//added API Key variable
+var APIKey= "9d0a91c9414180869a1b366b5eca06bd";
 
 function myFunction(event) {
       event.preventDefault();
@@ -181,19 +183,55 @@ console.log(y);
 //-----------------:: -------------  API  to pull weather info for every 3 hours for hikers / campers ----------------::-------------------
 
  var zip = data1.data[0].addresses[0].postalCode
+
+
+ function forecast(){
+    fetch("https://api.openweathermap.org/data/2.5/forecast?zip="
+    + zip
+    +"&appid="
+    +APIKey
+    + "&units=imperial"
+    )
+    
+    .then(function(response){
+        return response.json();
+    })
+    .then(function(response){
+        weatherForecast(response);
+
+        }
+    });
+    
+
  
- var apiUrl2 = "https://api.openweathermap.org/data/2.5/forecast?zip=" + zip + ",us&appid=9d0a91c9414180869a1b366b5eca06bd";
- console.log(apiUrl2);
+ //Takeout
+ //var apiUrl2 = "https://api.openweathermap.org/data/2.5/forecast?zip=" + zip + ",us&appid=9d0a91c9414180869a1b366b5eca06bd";
+ //console.log(apiUrl2);
 
- fetch(apiUrl2).then(function(response2) {
+//  fetch(apiUrl2).then(function(response2) {
+     
 
- response2.json().then(function(data2) {
- console.log(data2);
-
+//  response2.json().then(function(data2) {
+//  //console.log(data2);
+//until here
 
 // --------------------------------- At 3 hours ---------------------------------------------------------------------
+//Refactoring code 
+//  function weatherForecast(){
 
- const milliseconds = data2.list[0].dt * 1000;             // <------------------converting Unix date into readable format        
+//  }
+
+
+
+
+
+
+
+
+
+
+
+const milliseconds = data2.list[0].dt * 1000;             // <------------------converting Unix date into readable format        
  const dateObject = new Date(milliseconds);
  const humanDateFormat = dateObject.toLocaleString("en-US", {timeZoneName: "short"}) 
  document.getElementById("time0").innerHTML = humanDateFormat;  //<---------------------adding date via innerHTML 
@@ -594,9 +632,9 @@ document.getElementById("wind15").innerHTML = "Wind :  " + data2.list[15].wind.s
 document.getElementById("windDegree15").innerHTML = "Wind Direction :  " + data2.list[15].wind.deg + " degree ";
 
               })
-          })
-    })
-})
+          });
+        
 
-}
+
+
 
