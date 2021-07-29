@@ -147,7 +147,7 @@ if ( checkValue === "CALIFORNIA") {
     }
 }
 
-
+//moved to new file
 
 
 // upon selecting national park name, it updates that park's info and weather 
@@ -200,7 +200,7 @@ console.log(y);
         weatherForecast(response);
 
         }
-    });
+    );
     
 
  
@@ -631,8 +631,8 @@ document.getElementById("temp15").innerHTML = "Temp :  " + t15fixed + " *F" ;
 document.getElementById("wind15").innerHTML = "Wind :  " + data2.list[15].wind.speed + " MPH";
 document.getElementById("windDegree15").innerHTML = "Wind Direction :  " + data2.list[15].wind.deg + " degree ";
 
-              })
-          });
+              }
+          })
         
 
 
