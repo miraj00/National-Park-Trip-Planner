@@ -131,7 +131,7 @@ var California = [{Channel Islands National Park, chis}, {Death Valley National 
 // var California = ["Channel Islands National Park", "Death Valley National Park", "Joshua Tree National Park", "Lassen Volcanic National Park", "Pinnacles National Park", "Redwood National Park", "Sequoia and Kings Canyon National Park", "Yosemite National Park"];  
 
 //Global Variables
-var parkCode = document.querySelector('#parkCode').innerHTML;
+
 //console.log(parkCode);
 
 
@@ -144,6 +144,7 @@ function myFunction(event) {
     console.log(checkValue);
     const checkText = element.options[element.selectedIndex].text;
     console.log(checkText);
+    var parkCode = document.querySelector('#parkCode').innerHTML;
 
 }
 
@@ -169,9 +170,7 @@ function myFunction(event) {
         })
     }
 
-    function getParkInfo(){
-        
-
+    function getParkInfo(data1){
             document.getElementById("parkInfo").innerHTML = data1.data[0].fullName;
 
             document.getElementById("address").innerHTML = "Address :  [ " + data1.data[0].addresses[0].line2 + " ] " + data1.data[0].addresses[0].line1 + ", " + data1.data[0].addresses[0].city + ", " + data1.data[0].addresses[0].stateCode + " - " + data1.data[0].addresses[0].postalCode;
@@ -181,11 +180,7 @@ function myFunction(event) {
             document.getElementById("allotherfees").innerHTML = " -        $ " + data1.data[0].entranceFees[0].cost + " for non-commercial vehicle (15 passenger capacity or less) and all occupants ";
             document.getElementById("motorcyclefees").innerHTML = " -        $ " + data1.data[0].entranceFees[1].cost + " for non-commercial motorcycle ";
             document.getElementById("pedfees").innerHTML = " -       $ " + data1.data[0].entranceFees[2].cost + " for  bicyclist, hiker, pedestrian ";
-
-
-
             document.getElementById("parkLink").innerHTML = data1.data[0].url;
-
 
     }
 
