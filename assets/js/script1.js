@@ -39,20 +39,32 @@ $(document).ready(function () {
 function init(parkCode){ 
     if(parkCode=='0' || parkCode==undefined){	
         return;	
+
+        function getParkAPI (parkCode){
+            //fetch code to get Park codes
+            fetch("https://developer.nps.gov/api/v1/parks?parkCode=" 
+           + parkCode 
+           + "&api_key="
+           + "KFp4bdWCgYMu7u8w5g1O3dmwGFoJEp9PQcpINgdf")
+        
+            
+        then(function (response) {
+            return response.json();
+        })
+        .then(function (getParkInfo) {
+            getParkInfo(response);
+            console.log(getParkAPI);
+        
+        })
+        };
  }
 
 
  $('#parkInfo').text('FULL NAME OF PARK : '+parkCode);
-}
-    
-var currentDate= new Date();
-var month= currentDate.getMonth()+ 1;
-var day = currentDate.getDate();
-var year = currentDate.getFullYear();
 
 
-//API  to pull Park Information 
-function getParkAPI (parkCode){
+//API  to pull Park Information and to display on the page
+
     //fetch code to get Park codes
     fetch("https://developer.nps.gov/api/v1/parks?parkCode=" 
    + parkCode 
@@ -68,10 +80,6 @@ then(function (response) {
     console.log(getParkAPI);
 
 })
-};
-
-function getParkInfo(event, data1){
-    event.preventDefault();
     const element = document.getElementById("stateS");
     const checkValue = element.options[element.selectedIndex].value;
     console.log(checkValue);
@@ -90,11 +98,14 @@ function getParkInfo(event, data1){
     document.getElementById("motorcyclefees").innerHTML = " -        $ " + data1.data[0].entranceFees[1].cost + " for non-commercial motorcycle ";
     document.getElementById("pedfees").innerHTML = " -       $ " + data1.data[0].entranceFees[2].cost + " for  bicyclist, hiker, pedestrian ";
     document.getElementById("parkLink").innerHTML = data1.data[0].url;
-
 }
 
 
 // //API to pull 
+// var currentDate= new Date();
+// var month= currentDate.getMonth()+ 1;
+// var day = currentDate.getDate();
+// var year = currentDate.getFullYear();
 
 //    // storing selected state in local storage  ------------------------------------
 //    //localStorage.setItem("state", checkText);
