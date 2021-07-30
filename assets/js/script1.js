@@ -43,6 +43,7 @@ function init(parkCode){
 
 
  $('#parkInfo').text('FULL NAME OF PARK : '+parkCode);
+}
     
 var currentDate= new Date();
 var month= currentDate.getMonth()+ 1;
@@ -93,7 +94,7 @@ function getParkInfo(event, data1){
 }
 
 
-//API to pull 
+// //API to pull 
 
-   // storing selected state in local storage  ------------------------------------
-   //localStorage.setItem("state", checkText);
+//    // storing selected state in local storage  ------------------------------------
+//    //localStorage.setItem("state", checkText);
