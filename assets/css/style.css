@@ -26,9 +26,7 @@ background-color: yellow;
   height: 400px;
   
 }
-ul {
-  width: 1300px;
-}
+
 
 #parkInfo {
   width: 1300px;
@@ -45,10 +43,17 @@ ul {
   display: none;
 }
 
+
+
+.col s1 {
+  width: 300px;
+}
+
 .color0 {
 background-color: rgb(103, 185, 103);
-
 }
+
+
 .color2 {
   background-color: rgb(226, 219, 123);
   
