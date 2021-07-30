@@ -1,6 +1,7 @@
+
 $(document).ready(function () {
     $('select').formSelect();
-
+    
     $("#stateS").change(function () {
         var val = $(this).val();
         if (val == "ak") {
@@ -25,82 +26,29 @@ $(document).ready(function () {
         $('#mySelect').formSelect()
     });
     $("#mySelect").change(function () {
-        var val = $(this).val();
-        if (val == "dena") {
-            $("#parkCode").text("dena")
-        } else if (val == "gaar") {
-            $("#parkCode").text("gaar")
-        } else if (val == "glba") {
-            $("#parkCode").text("glba")
-        } else if (val == "katm") {
-            $("#parkCode").text("katm")
-        } else if (val == "kefj") {
-            $("#parkCode").text("kefj")
-        } else if (val == "kova") {
-            $("#parkCode").text("kova")
-        } else if (val == "lacl") {
-            $("#parkCode").text("lacl")
-        } else if (val == "wrst") {
-            $("#parkCode").text("wrst")
-        } else if (val == "grca") {
-            $("#parkCode").text("grca")
-        } else if (val == "pefo") {
-            $("#parkCode").text("pefo")
-        } else if (val == "sagu") {
-            $("#parkCode").text("sagu")
-        }else if (val == "chis") {
-            $("#parkCode").text("chis")
-        } else if (val == "deva") {
-            $("#parkCode").text("deva")
-        } else if (val == "jotr") {
-            $("#parkCode").text("jotr")
-        } else if (val == "lavo") {
-            $("#parkCode").text("lavo")
-        } else if (val == "pinn") {
-            $("#parkCode").text("pinn")
-        } else if (val == "redw") {
-            $("#parkCode").text("redw")
-        } else if (val == "seki") {
-            $("#parkCode").text("seki")
-        } else if (val == "yose") {
-            $("#parkCode").text("yose")
-        } else if (val == "hale") {
-            $("#parkCode").text("hale")
-        } else if (val == "havo") {
-            $("#parkCode").text("havo")
-        } else if (val == "glac") {
-            $("#parkCode").text("glac")
-        } else if (val == "yell") {
-            $("#parkCode").text("yell")
-        } else if (val == "grba") {
-            $("#parkCode").text("grba")
-        } else if (val == "cave") {
-            $("#parkCode").text("cave")
-        } else if (val == "whsa") {
-            $("#parkCode").text("whsa")
-        } else if (val == "arch") {
-            $("#parkCode").text("arch")
-        } else if (val == "brca") {
-            $("#parkCode").text("brca")
-        } else if (val == "cany") {
-            $("#parkCode").text("cany")
-        } else if (val == "care") {
-            $("#parkCode").text("care")
-        } else if (val == "zion") {
-            $("#parkCode").text("zion")
-        }
+        var parkCode = $(this).val(); 
+        $('#content-x').hide();
+        $('#content-error').hide();
+        $('#parkInfo').text('');
+        init(parkCode);	
     });
 
 
 });
 
-var parkAPI= "https://developer.nps.gov/api/v1/parks?";
-var apiParkKey= "KFp4bdWCgYMu7u8w5g1O3dmwGFoJEp9PQcpINgdf";
+function init(parkCode){ 
+    if(parkCode=='0' || parkCode==undefined){	
+        return;	
+ }
+
+
+ $('#parkInfo').text('FULL NAME OF PARK : '+parkCode);
+    
 var currentDate= new Date();
 var month= currentDate.getMonth()+ 1;
 var day = currentDate.getDate();
 var year = currentDate.getFullYear();
-var parkCode = document.querySelector('#parkCode').innerHTML;
+
 
 //API  to pull Park Information 
 function getParkAPI (parkCode){
