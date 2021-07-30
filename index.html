@@ -11,8 +11,11 @@
 </head>
 
 <body class="light-green lighten-5">
-   <header>    
-        <h1 class="white-text">National Park Trip Planner</h1>
+   <header>
+      <div id="headerH1" class="col s12 m6">
+         <h1 class="white-text">National Park Trip Planner</h1>
+      </div>    
+        
    </header>
    <main class="container">
       <div class="row">
@@ -60,11 +63,11 @@
 
          <div class="col s10 ">
             <div>
-               <h2 class="card-panel teal accent-2 blue-text text-darken-3" id="parkInfo" style="text-transform:uppercase">Full Name of Park</h2> 
+               <h2 class="card-panel yellow lighten-5 blue-text" id="parkInfo" style="text-transform:uppercase">Full Name of Park</h2> 
                <ul>
                   <li id="parkCode">glac</li>                             <br>  
-                  <li id="address">Address : </li>                        <br>
-                  <li id="phNo">Phone No : </li>                          <br>
+                  <li class="flow-text" id="address">Address : </li>                        <br>
+                  <li  id="phNo">Phone No : </li>                          <br>
                   <li id="discription">Discription : </li>                <br>
                   <li id="alerts">Current Alerts : </li>                  <br>
                   <li>Entrance Fees : </li>                               <br>
@@ -248,11 +251,12 @@
                </div> 
             </div>
             <div class="row">
-               <div class=" center-align blue lighten-5 "  >
-                  <p class="z-depth-5">( See below Wind Degree chart to estimate Diretion : ) </p>
+               <div class="card-panel deep-orange darken-1 z-depth-5">
+                  <p class="center-align white-text ">( See below Wind Degree chart to estimate Diretion : ) </p>
+                  
                </div>
 
-               <div class="img-div">
+               <div class="img-div responsive-img">
                   <img  class="wind-image" src="./assets/images/wind-Direction.JPG" alt="wind-direction estimation">
                </div>
             </div>
