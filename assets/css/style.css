@@ -22,22 +22,11 @@ background-color: yellow;
 
 .wind-image {
   padding: 100px 0px 0px 0px;
-  width: 400px;
-  height: 400px;
+  width: 300px;
+  height: 300px;
   
 }
 
-
-#parkInfo {
-  width: 1300px;
-  text-align: center;
-
-
-}
-.container {
-  width: 1300px;
-
-}
 
 #parkCode {
   display: none;
@@ -45,9 +34,6 @@ background-color: yellow;
 
 
 
-.col s1 {
-  width: 300px;
-}
 
 .color0 {
 background-color: rgb(103, 185, 103);
