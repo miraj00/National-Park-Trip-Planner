@@ -47,11 +47,13 @@ function init(parkCode){
 
     //----------------------------------------API  to pull Park Information -----------------------------------------------------------------
 
-    var apiUrl1 = "https://developer.nps.gov/api/v1/parks?parkCode=" + parkCode + "&api_key=KFp4bdWCgYMu7u8w5g1O3dmwGFoJEp9PQcpINgdf";
-    console.log(apiUrl1);
+    var parkAPI= "https://developer.nps.gov/api/v1/parks?parkCode=" 
+    + parkCode 
+    + "&api_key=KFp4bdWCgYMu7u8w5g1O3dmwGFoJEp9PQcpINgdf";
+  
 
-    fetch(apiUrl1).then(function (response1) {
-        response1.json().then(function (data1) {
+    fetch(parkAPI).then(function (response) {
+        response.json().then(function (data1) {
 
             document.getElementById("parkInfo").innerHTML = data1.data[0].fullName;
 
@@ -62,8 +64,6 @@ function init(parkCode){
             document.getElementById("allotherfees").innerHTML = " -        $ " + data1.data[0].entranceFees[0].cost + " for non-commercial vehicle (15 passenger capacity or less) and all occupants ";
             document.getElementById("motorcyclefees").innerHTML = " -        $ " + data1.data[0].entranceFees[1].cost + " for non-commercial motorcycle ";
             document.getElementById("pedfees").innerHTML = " -       $ " + data1.data[0].entranceFees[2].cost + " for  bicyclist, hiker, pedestrian ";
-
-
 
             document.getElementById("parkLink").innerHTML = data1.data[0].url;
 
