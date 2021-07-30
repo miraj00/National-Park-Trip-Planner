@@ -154,19 +154,24 @@ function myFunction(event) {
 
     //----------------------------------------API  to pull Park Information -----------------------------------------------------------------
     function getParkAPI (){
-    var parkAPI= "https://developer.nps.gov/api/v1/parks?parkCode=" 
+     fetch("https://developer.nps.gov/api/v1/parks?parkCode=" 
     + parkCode 
     + "&api_key="
     + "KFp4bdWCgYMu7u8w5g1O3dmwGFoJEp9PQcpINgdf")
     
     
 
-    fetch(parkAPI).then(function (response1) {
-        response1.json().then(function () {
-
-        }
+        then(function (response) {
+            return response.json();
+        })
+        .then(function (getParkInfo) {
+            getParkInfo(response);
+        })
+    }
 
     function getParkInfo(){
+        
+
             document.getElementById("parkInfo").innerHTML = data1.data[0].fullName;
 
             document.getElementById("address").innerHTML = "Address :  [ " + data1.data[0].addresses[0].line2 + " ] " + data1.data[0].addresses[0].line1 + ", " + data1.data[0].addresses[0].city + ", " + data1.data[0].addresses[0].stateCode + " - " + data1.data[0].addresses[0].postalCode;
@@ -604,7 +609,7 @@ function myFunction(event) {
 
                 })
             })
-        })
-    })
+        
+    
 
 
