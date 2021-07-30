@@ -22,8 +22,8 @@ background-color: yellow;
 
 .wind-image {
   padding: 100px 0px 0px 0px;
-  width: 300px;
-  height: 300px;
+  width: 100%;
+  height: auto;
   
 }
 
