@@ -39,73 +39,36 @@ $(document).ready(function () {
 function init(parkCode){ 
     if(parkCode=='0' || parkCode==undefined){	
         return;	
-
-        function getParkAPI (parkCode){
-            //fetch code to get Park codes
-            fetch("https://developer.nps.gov/api/v1/parks?parkCode=" 
-           + parkCode 
-           + "&api_key="
-           + "KFp4bdWCgYMu7u8w5g1O3dmwGFoJEp9PQcpINgdf")
-        
-            
-        then(function (response) {
-            return response.json();
-        })
-        .then(function (getParkInfo) {
-            getParkInfo(response);
-            console.log(getParkAPI);
-        
-        })
-        };
  }
 
 
  $('#parkInfo').text('FULL NAME OF PARK : '+parkCode);
-
-
-//API  to pull Park Information and to display on the page
-
-    //fetch code to get Park codes
-    fetch("https://developer.nps.gov/api/v1/parks?parkCode=" 
-   + parkCode 
-   + "&api_key="
-   + "KFp4bdWCgYMu7u8w5g1O3dmwGFoJEp9PQcpINgdf")
-
     
-then(function (response) {
-    return response.json();
-})
-.then(function (getParkInfo) {
-    getParkInfo(response);
-    console.log(getParkAPI);
 
-})
-    const element = document.getElementById("stateS");
-    const checkValue = element.options[element.selectedIndex].value;
-    console.log(checkValue);
-    const checkText = element.options[element.selectedIndex].text;
-    console.log(checkText);
+    //----------------------------------------API  to pull Park Information -----------------------------------------------------------------
 
-    // upon selecting national park name, it updates that park's info and weather 
+    var apiUrl1 = "https://developer.nps.gov/api/v1/parks?parkCode=" + parkCode + "&api_key=KFp4bdWCgYMu7u8w5g1O3dmwGFoJEp9PQcpINgdf";
+    console.log(apiUrl1);
 
-    document.getElementById("parkInfo").innerHTML = data1.data[0].fullName;
+    fetch(apiUrl1).then(function (response1) {
+        response1.json().then(function (data1) {
 
-    document.getElementById("address").innerHTML = "Address :  [ " + data1.data[0].addresses[0].line2 + " ] " + data1.data[0].addresses[0].line1 + ", " + data1.data[0].addresses[0].city + ", " + data1.data[0].addresses[0].stateCode + " - " + data1.data[0].addresses[0].postalCode;
-    document.getElementById("phNo").innerHTML = "Phone No :  " + data1.data[0].contacts.phoneNumbers[0].phoneNumber;
-    document.getElementById("discription").innerHTML = "Description : " + data1.data[0].description;
-    // document.getElementById("alerts").innerHTML = "Current Temp :  " + t0fixed + " *F" ; 
-    document.getElementById("allotherfees").innerHTML = " -        $ " + data1.data[0].entranceFees[0].cost + " for non-commercial vehicle (15 passenger capacity or less) and all occupants ";
-    document.getElementById("motorcyclefees").innerHTML = " -        $ " + data1.data[0].entranceFees[1].cost + " for non-commercial motorcycle ";
-    document.getElementById("pedfees").innerHTML = " -       $ " + data1.data[0].entranceFees[2].cost + " for  bicyclist, hiker, pedestrian ";
-    document.getElementById("parkLink").innerHTML = data1.data[0].url;
+            document.getElementById("parkInfo").innerHTML = data1.data[0].fullName;
+
+            document.getElementById("address").innerHTML = "Address :  [ " + data1.data[0].addresses[0].line2 + " ] " + data1.data[0].addresses[0].line1 + ", " + data1.data[0].addresses[0].city + ", " + data1.data[0].addresses[0].stateCode + " - " + data1.data[0].addresses[0].postalCode;
+            document.getElementById("phNo").innerHTML = "Phone No :  " + data1.data[0].contacts.phoneNumbers[0].phoneNumber;
+            document.getElementById("discription").innerHTML = "Description : " + data1.data[0].description;
+            // document.getElementById("alerts").innerHTML = "Current Temp :  " + t0fixed + " *F" ; 
+            document.getElementById("allotherfees").innerHTML = " -        $ " + data1.data[0].entranceFees[0].cost + " for non-commercial vehicle (15 passenger capacity or less) and all occupants ";
+            document.getElementById("motorcyclefees").innerHTML = " -        $ " + data1.data[0].entranceFees[1].cost + " for non-commercial motorcycle ";
+            document.getElementById("pedfees").innerHTML = " -       $ " + data1.data[0].entranceFees[2].cost + " for  bicyclist, hiker, pedestrian ";
+
+
+
+            document.getElementById("parkLink").innerHTML = data1.data[0].url;
+
+        })
+    })
 }
 
-
-// //API to pull 
-// var currentDate= new Date();
-// var month= currentDate.getMonth()+ 1;
-// var day = currentDate.getDate();
-// var year = currentDate.getFullYear();
-
-//    // storing selected state in local storage  ------------------------------------
-//    //localStorage.setItem("state", checkText);
+    
