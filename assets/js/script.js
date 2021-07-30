@@ -130,10 +130,13 @@ var California = [{Channel Islands National Park, chis}, {Death Valley National 
 // var Alaska = ["Denali National Park","Gates of the Arctic National Park", "Glacier Bay National Park", "Katmai National Park", "Kenai Fjords National Park", "Kobuk Valley National Park", "Lake Clark National Park", "Wrangell St Elias National Park"];
 // var California = ["Channel Islands National Park", "Death Valley National Park", "Joshua Tree National Park", "Lassen Volcanic National Park", "Pinnacles National Park", "Redwood National Park", "Sequoia and Kings Canyon National Park", "Yosemite National Park"];  
 
+//Global Variables
+var parkCode = document.querySelector('#parkCode').innerHTML;
+//console.log(parkCode);
+
+
 function myFunction(event) {
     event.preventDefault();
-
-
 
     const element = document.getElementById("stateS");
 
@@ -142,26 +145,28 @@ function myFunction(event) {
     const checkText = element.options[element.selectedIndex].text;
     console.log(checkText);
 
-    // storing selected state in local storage  ------------------------------------
-    localStorage.setItem("state", checkText);
-
-
+}
 
     // upon selecting national park name, it updates that park's info and weather 
 
-    var parkCode = document.querySelector('#parkCode').innerHTML;
-    console.log(parkCode);
+   //var parkCode = document.querySelector('#parkCode').innerHTML;
+    //console.log(parkCode);
 
     //----------------------------------------API  to pull Park Information -----------------------------------------------------------------
     function getParkAPI (){
-    var apiUrl1 = "https://developer.nps.gov/api/v1/parks?parkCode=" + parkCode + "&api_key=KFp4bdWCgYMu7u8w5g1O3dmwGFoJEp9PQcpINgdf";
-    console.log(apiUrl1);
+    var parkAPI= "https://developer.nps.gov/api/v1/parks?parkCode=" 
+    + parkCode 
+    + "&api_key="
+    + "KFp4bdWCgYMu7u8w5g1O3dmwGFoJEp9PQcpINgdf")
+    
+    
 
-    fetch(apiUrl1).then(function (response1) {
-        response1.json().then(function (data1) {
+    fetch(parkAPI).then(function (response1) {
+        response1.json().then(function () {
 
         }
 
+    function getParkInfo(){
             document.getElementById("parkInfo").innerHTML = data1.data[0].fullName;
 
             document.getElementById("address").innerHTML = "Address :  [ " + data1.data[0].addresses[0].line2 + " ] " + data1.data[0].addresses[0].line1 + ", " + data1.data[0].addresses[0].city + ", " + data1.data[0].addresses[0].stateCode + " - " + data1.data[0].addresses[0].postalCode;
@@ -177,7 +182,7 @@ function myFunction(event) {
             document.getElementById("parkLink").innerHTML = data1.data[0].url;
 
 
-        
+    }
 
             //-----------------:: -------------  API  to pull weather info for every 3 hours for hikers / campers ----------------::-------------------
 
