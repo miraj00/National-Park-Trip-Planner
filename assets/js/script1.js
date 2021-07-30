@@ -97,29 +97,55 @@ $(document).ready(function () {
 var parkAPI= "https://developer.nps.gov/api/v1/parks?";
 var apiParkKey= "KFp4bdWCgYMu7u8w5g1O3dmwGFoJEp9PQcpINgdf";
 var currentDate= new Date();
-var month= currentDate.getMonth() + 1;
+var month= currentDate.getMonth()+ 1;
 var day = currentDate.getDate();
 var year = currentDate.getFullYear();
+var parkCode = document.querySelector('#parkCode').innerHTML;
 
 //API  to pull Park Information 
-function getParkAPI (){
+function getParkAPI (parkCode){
+    //fetch code to get Park codes
     fetch("https://developer.nps.gov/api/v1/parks?parkCode=" 
    + parkCode 
    + "&api_key="
    + "KFp4bdWCgYMu7u8w5g1O3dmwGFoJEp9PQcpINgdf")
-}
+
     
 then(function (response) {
     return response.json();
 })
 .then(function (getParkInfo) {
     getParkInfo(response);
+    console.log(getParkAPI);
+
 })
+};
+
+function getParkInfo(event, data1){
+    event.preventDefault();
+    const element = document.getElementById("stateS");
+    const checkValue = element.options[element.selectedIndex].value;
+    console.log(checkValue);
+    const checkText = element.options[element.selectedIndex].text;
+    console.log(checkText);
+
+    // upon selecting national park name, it updates that park's info and weather 
+
+    document.getElementById("parkInfo").innerHTML = data1.data[0].fullName;
+
+    document.getElementById("address").innerHTML = "Address :  [ " + data1.data[0].addresses[0].line2 + " ] " + data1.data[0].addresses[0].line1 + ", " + data1.data[0].addresses[0].city + ", " + data1.data[0].addresses[0].stateCode + " - " + data1.data[0].addresses[0].postalCode;
+    document.getElementById("phNo").innerHTML = "Phone No :  " + data1.data[0].contacts.phoneNumbers[0].phoneNumber;
+    document.getElementById("discription").innerHTML = "Description : " + data1.data[0].description;
+    // document.getElementById("alerts").innerHTML = "Current Temp :  " + t0fixed + " *F" ; 
+    document.getElementById("allotherfees").innerHTML = " -        $ " + data1.data[0].entranceFees[0].cost + " for non-commercial vehicle (15 passenger capacity or less) and all occupants ";
+    document.getElementById("motorcyclefees").innerHTML = " -        $ " + data1.data[0].entranceFees[1].cost + " for non-commercial motorcycle ";
+    document.getElementById("pedfees").innerHTML = " -       $ " + data1.data[0].entranceFees[2].cost + " for  bicyclist, hiker, pedestrian ";
+    document.getElementById("parkLink").innerHTML = data1.data[0].url;
+
 }
-
-
 
 
 //API to pull 
 
-
+   // storing selected state in local storage  ------------------------------------
+   //localStorage.setItem("state", checkText);
