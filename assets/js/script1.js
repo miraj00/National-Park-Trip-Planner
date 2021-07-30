@@ -93,3 +93,33 @@ $(document).ready(function () {
 
 
 });
+
+var parkAPI= "https://developer.nps.gov/api/v1/parks?";
+var apiParkKey= "KFp4bdWCgYMu7u8w5g1O3dmwGFoJEp9PQcpINgdf";
+var currentDate= new Date();
+var month= currentDate.getMonth() + 1;
+var day = currentDate.getDate();
+var year = currentDate.getFullYear();
+
+//API  to pull Park Information 
+function getParkAPI (){
+    fetch("https://developer.nps.gov/api/v1/parks?parkCode=" 
+   + parkCode 
+   + "&api_key="
+   + "KFp4bdWCgYMu7u8w5g1O3dmwGFoJEp9PQcpINgdf")
+}
+    
+then(function (response) {
+    return response.json();
+})
+.then(function (getParkInfo) {
+    getParkInfo(response);
+})
+}
+
+
+
+
+//API to pull 
+
+
