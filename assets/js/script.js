@@ -21,11 +21,9 @@ var Alaska = [{park : "Denali National Park", code: "dena"}, {park: "Gates of th
 var California = [{Channel Islands National Park, chis}, {Death Valley National Park, deva}, {Joshua Tree National Park, jotr}, 
              {Lassen Volcanic National Park, lavo}, {Pinnacles National Park, pinn}, {Redwood National Park, redw}, 
              {Sequoia and Kings Canyon National Park, seki}, {Yosemite National Park, yose}];             
-
 */
 
-
- var Nevada = [{ name: "Death Valley National Park", code: "deva" }, { name: "Great Basin National Park", code: "grba"}];
+var Nevada = [{ name: "Death Valley National Park", code: "deva" }, { name: "Great Basin National Park", code: "grba"}];
 var Montana = [{ name: "Glacier National Park", code: "glac"}, {name: "Yellowstone National Park", code: "yell"}];
 var Hawaii = [{ name: "Haleakala National Park", code: "hale"}, { name: "Hawai’i Volcanoes National Park", code: "havo"}];
 var New_Mexico = [{ name: "Carlsbad Caverns National Park", code: "cave"}, { name: "White Sands National Park", code: "whsa"}];
@@ -35,6 +33,10 @@ var Alaska = [{name:"Denali National Park", code: "dena"}, {name:"Gates of the A
 var California = [{name: "Channel Islands National Park", code: "chis"}, {name: "Death Valley National Park", code:"deva"}, {name:"Joshua Tree National Park", code:"jotr"}, { name: "Lassen Volcanic National Park", code: "lavo"}, {name: "Pinnacles National Park", code:"pinn"}, {name: "Redwood National Park", code:"redw"}, {name: "Sequoia and Kings Canyon National Park", code: "seki"}, { name: "Yosemite National Park", code: "yose" }];  
 
 var optionsList = document.querySelector("#mySelection");
+var parkIdCounter = 0;
+
+const element = document.getElementById("stateS");
+
 
 
 function myFunction(event) {
@@ -56,13 +58,13 @@ if ( checkValue === "NEVADA") {
     for (let i = 0; i < 2; i++) {
     var parklistEl = document.createElement("li");
     parklistEl.className = "parksList";
+    parklistEl.setAttribute("park-id", parkIdCounter);
+    parkIdCounter++;
     parklistEl.innerHTML = Nevada[i].name;
     optionsList.appendChild(parklistEl);
 
-    var y = Nevada[i].code;
 
-     parksList.addEventListener('click', renderInfo);
-    
+
     }
 }
 if ( checkValue === "HAWAII") { 
@@ -70,6 +72,8 @@ if ( checkValue === "HAWAII") {
         for (let i = 0; i < 2; i++) {
         var parklistEl = document.createElement("li");
         parklistEl.className = "parksList";
+        parklistEl.setAttribute("park-id", parkIdCounter);
+        parkIdCounter++;
         parklistEl.innerHTML = Hawaii[i].name;
         optionsList.appendChild(parklistEl);
         }
@@ -79,6 +83,8 @@ if ( checkValue === "NEW-MEXICO") {
     for (let i = 0; i < 2; i++) {
     var parklistEl = document.createElement("li");
     parklistEl.className = "parksList";
+    parklistEl.setAttribute("park-id", parkIdCounter);
+    parkIdCounter++;
     parklistEl.innerHTML = New_Mexico[i].name;
     optionsList.appendChild(parklistEl);
     }
@@ -88,6 +94,8 @@ if ( checkValue === "MONTANA") {
     for (let i = 0; i < 2; i++) {
     var parklistEl = document.createElement("li");
     parklistEl.className = "parksList";
+    parklistEl.setAttribute("park-id", parkIdCounter);
+    parkIdCounter++;
     parklistEl.innerHTML = Montana[i].name;
     optionsList.appendChild(parklistEl);
     }
@@ -97,6 +105,8 @@ if ( checkValue === "ARIZONA") {
     for (let i = 0; i < 3; i++) {
     var parklistEl = document.createElement("li");
     parklistEl.className = "parksList";
+    parklistEl.setAttribute("park-id", parkIdCounter);
+    parkIdCounter++;
     parklistEl.innerHTML = Arizona[i].name;
     optionsList.appendChild(parklistEl);
     }
@@ -106,6 +116,8 @@ if ( checkValue === "UTAH") {
     for (let i = 0; i < 5; i++) {
     var parklistEl = document.createElement("li");
     parklistEl.className = "parksList";
+    parklistEl.setAttribute("park-id", parkIdCounter);
+    parkIdCounter++;
     parklistEl.innerHTML = Utah[i].name;
     optionsList.appendChild(parklistEl);
     }
@@ -116,6 +128,8 @@ if ( checkValue === "ALASKA") {
     for (let i = 0; i < 8; i++) {
     var parklistEl = document.createElement("li");
     parklistEl.className = "parksList";
+    parklistEl.setAttribute("park-id", parkIdCounter);
+    parkIdCounter++;
     parklistEl.innerHTML = Alaska[i].name;
     optionsList.appendChild(parklistEl);
     }
@@ -126,28 +140,48 @@ if ( checkValue === "CALIFORNIA") {
     for (let i = 0; i < 8; i++) {
     var parklistEl = document.createElement("li");
     parklistEl.className = "parksList";
+    parklistEl.setAttribute("park-id", parkIdCounter);
+    parkIdCounter++;
     parklistEl.innerHTML = California[i].name;
     optionsList.appendChild(parklistEl);
     }
-}
+  }
 
 }
 
-function renderInfo() {
-
-    
-    // var inputVal0 = event.target.getAttribute("city-id");
-    // console.log(inputVal0);
-
-    // var inputVal = event.target.innerText;
-    // console.log(inputVal);
 
 
 
-// upon selecting national park name, it updates that park's info and weather 
+var button = document.getElementById("mySelection");
+button.onclick = function(event){
+ 
+    var text2 = event.target.innerHTML;
+    console.log(text2);
 
-//var y = document.querySelector('#parkCode').innerHTML;
-// console.log(y);
+      var parkID = event.target.park-id;
+      console.log(parkID);
+
+
+// -----------------------------------------------------------------------------------------------------------
+
+var Nevada = [{ "Death Valley National Park", "deva" }, { "Great Basin National Park", "grba"}];
+
+for ( i=0; i <= Nevada.lengh; i++) {   
+
+ if ( text2 = Nevada[i].name )  {
+     var y = Nevada[i].code ;
+     renderFunction(y);
+     }
+
+    }
+
+//if (  text2 = "Death Valley National Park" )  {
+//        var y = "deva" ;
+//        renderFunction(y);
+
+//--------------------------------------------------------------------------------------------------------------    
+ 
+function renderFunction(y) {
 
 //----------------------------------------API  to pull Park Information -----------------------------------------------------------------
 
@@ -588,15 +622,6 @@ document.getElementById("windDegree15").innerHTML = "Wind Direction :  " + data2
 
 }
 
+}
 
 
-
-
-// var Nevada = [ "Death Valley National Park", "Great Basin National Park" ];
-// var Montana = [ "Glacier National Park", "Yellowstone National Park"];
-// var Hawaii = [ "Haleakala National Park", "Hawai’i Volcanoes National Park"];
-// var New_Mexico = ["Carlsbad Caverns National Park", "White Sands National Park"];
-// var Arizona = [ "Grand Canyon National Park", "Petrified Forest National Park, pefo", "Saguaro National Park, sagu"];
-// var Utah = [ "Arches National Park", "Bryce Canyon National Park", "Canyonlands National Park", "Capitol Reef National Park", "Zion National Park"];
-// var Alaska = ["Denali National Park","Gates of the Arctic National Park", "Glacier Bay National Park", "Katmai National Park", "Kenai Fjords National Park", "Kobuk Valley National Park", "Lake Clark National Park", "Wrangell St Elias National Park"];
-// var California = ["Channel Islands National Park", "Death Valley National Park", "Joshua Tree National Park", "Lassen Volcanic National Park", "Pinnacles National Park", "Redwood National Park", "Sequoia and Kings Canyon National Park", "Yosemite National Park"];  
