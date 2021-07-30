@@ -26,6 +26,9 @@ background-color: yellow;
   height: 400px;
   
 }
+ul {
+  width: 1300px;
+}
 
 #parkInfo {
   width: 1300px;

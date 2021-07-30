@@ -214,7 +214,7 @@ console.log(y);
  document.getElementById("temp0").innerHTML = "Temp :  " + t0fixed + " *F" ;
 
  document.getElementById("wind0").innerHTML = "Wind :  " + data2.list[0].wind.speed + " MPH";
- document.getElementById("windDegree0").innerHTML = "Wind Direction :  " + data2.list[0].wind.deg + " degree ";
+ document.getElementById("windDegree0").innerHTML = "Wind Direction :  " + data2.list[0].wind.deg + " * ";
 
 
 // --------------------------------- At 6 hours ---------------------------------------------------------------------
@@ -240,7 +240,7 @@ let t1fixed = t1.toFixed(2)
 document.getElementById("temp1").innerHTML = "Temp :  " + t1fixed + " *F" ;
 
 document.getElementById("wind1").innerHTML = "Wind :  " + data2.list[1].wind.speed + " MPH";
-document.getElementById("windDegree1").innerHTML = "Wind Direction :  " + data2.list[1].wind.deg + " degree ";
+document.getElementById("windDegree1").innerHTML = "Wind Direction :  " + data2.list[1].wind.deg + " * ";
 
 // --------------------------------- At 9 hours ---------------------------------------------------------------------
 
@@ -265,7 +265,7 @@ let t2fixed = t2.toFixed(2)
 document.getElementById("temp2").innerHTML = "Temp :  " + t2fixed + " *F" ;
 
 document.getElementById("wind2").innerHTML = "Wind :  " + data2.list[2].wind.speed + " MPH";
-document.getElementById("windDegree2").innerHTML = "Wind Direction :  " + data2.list[2].wind.deg + " degree ";
+document.getElementById("windDegree2").innerHTML = "Wind Direction :  " + data2.list[2].wind.deg + " * ";
 
 // --------------------------------- At 12 hours ---------------------------------------------------------------------
 
@@ -290,7 +290,7 @@ let t3fixed = t3.toFixed(2)
 document.getElementById("temp3").innerHTML = "Temp :  " + t3fixed + " *F" ;
 
 document.getElementById("wind3").innerHTML = "Wind :  " + data2.list[3].wind.speed + " MPH";
-document.getElementById("windDegree3").innerHTML = "Wind Direction :  " + data2.list[3].wind.deg + " degree ";
+document.getElementById("windDegree3").innerHTML = "Wind Direction :  " + data2.list[3].wind.deg + " * ";
 
 // --------------------------------- At 15 hours ---------------------------------------------------------------------
 
@@ -315,7 +315,7 @@ let t4fixed = t4.toFixed(2)
 document.getElementById("temp4").innerHTML = "Temp :  " + t4fixed + " *F" ;
 
 document.getElementById("wind4").innerHTML = "Wind :  " + data2.list[4].wind.speed + " MPH";
-document.getElementById("windDegree4").innerHTML = "Wind Direction :  " + data2.list[4].wind.deg + " degree ";
+document.getElementById("windDegree4").innerHTML = "Wind Direction :  " + data2.list[4].wind.deg + " * ";
 
 // --------------------------------- At 18 hours ---------------------------------------------------------------------
 
@@ -340,7 +340,7 @@ let t5fixed = t5.toFixed(2)
 document.getElementById("temp5").innerHTML = "Temp :  " + t5fixed + " *F" ;
 
 document.getElementById("wind5").innerHTML = "Wind :  " + data2.list[5].wind.speed + " MPH";
-document.getElementById("windDegree5").innerHTML = "Wind Direction :  " + data2.list[5].wind.deg + " degree ";
+document.getElementById("windDegree5").innerHTML = "Wind Direction :  " + data2.list[5].wind.deg + " * ";
 
 // --------------------------------- At 18 hours ---------------------------------------------------------------------
 
@@ -365,7 +365,7 @@ let t6fixed = t6.toFixed(2)
 document.getElementById("temp6").innerHTML = "Temp :  " + t6fixed + " *F" ;
 
 document.getElementById("wind6").innerHTML = "Wind :  " + data2.list[6].wind.speed + " MPH";
-document.getElementById("windDegree6").innerHTML = "Wind Direction :  " + data2.list[6].wind.deg + " degree ";
+document.getElementById("windDegree6").innerHTML = "Wind Direction :  " + data2.list[6].wind.deg + " * ";
 
 // --------------------------------- At 24 hours ---------------------------------------------------------------------
 
@@ -390,7 +390,7 @@ let t7fixed = t7.toFixed(2)
 document.getElementById("temp7").innerHTML = "Temp :  " + t7fixed + " *F" ;
 
 document.getElementById("wind7").innerHTML = "Wind :  " + data2.list[7].wind.speed + " MPH";
-document.getElementById("windDegree7").innerHTML = "Wind Direction :  " + data2.list[7].wind.deg + " degree ";
+document.getElementById("windDegree7").innerHTML = "Wind Direction :  " + data2.list[7].wind.deg + " * ";
 
 
 // --------------------------------- At 27 hours ---------------------------------------------------------------------
@@ -416,7 +416,7 @@ let t8fixed = t8.toFixed(2)
 document.getElementById("temp8").innerHTML = "Temp :  " + t8fixed + " *F" ;
 
 document.getElementById("wind8").innerHTML = "Wind :  " + data2.list[8].wind.speed + " MPH";
-document.getElementById("windDegree8").innerHTML = "Wind Direction :  " + data2.list[8].wind.deg + " degree ";
+document.getElementById("windDegree8").innerHTML = "Wind Direction :  " + data2.list[8].wind.deg + " * ";
 
 // --------------------------------- At 30 hours ---------------------------------------------------------------------
 
@@ -441,7 +441,7 @@ let t9fixed = t9.toFixed(2)
 document.getElementById("temp9").innerHTML = "Temp :  " + t9fixed + " *F" ;
 
 document.getElementById("wind9").innerHTML = "Wind :  " + data2.list[9].wind.speed + " MPH";
-document.getElementById("windDegree9").innerHTML = "Wind Direction :  " + data2.list[9].wind.deg + " degree ";
+document.getElementById("windDegree9").innerHTML = "Wind Direction :  " + data2.list[9].wind.deg + " * ";
 
 // --------------------------------- At 33 hours ---------------------------------------------------------------------
 
@@ -466,7 +466,7 @@ let t10fixed = t10.toFixed(2)
 document.getElementById("temp10").innerHTML = "Temp :  " + t10fixed + " *F" ;
 
 document.getElementById("wind10").innerHTML = "Wind :  " + data2.list[10].wind.speed + " MPH";
-document.getElementById("windDegree10").innerHTML = "Wind Direction :  " + data2.list[10].wind.deg + " degree ";
+document.getElementById("windDegree10").innerHTML = "Wind Direction :  " + data2.list[10].wind.deg + " * ";
 
 // --------------------------------- At 36 hours ---------------------------------------------------------------------
 
@@ -491,7 +491,7 @@ let t11fixed = t11.toFixed(2)
 document.getElementById("temp11").innerHTML = "Temp :  " + t11fixed + " *F" ;
 
 document.getElementById("wind11").innerHTML = "Wind :  " + data2.list[11].wind.speed + " MPH";
-document.getElementById("windDegree11").innerHTML = "Wind Direction :  " + data2.list[11].wind.deg + " degree ";
+document.getElementById("windDegree11").innerHTML = "Wind Direction :  " + data2.list[11].wind.deg + " * ";
 
 // --------------------------------- At 39 hours ---------------------------------------------------------------------
 
@@ -516,7 +516,7 @@ let t12fixed = t12.toFixed(2)
 document.getElementById("temp12").innerHTML = "Temp :  " + t12fixed + " *F" ;
 
 document.getElementById("wind12").innerHTML = "Wind :  " + data2.list[12].wind.speed + " MPH";
-document.getElementById("windDegree12").innerHTML = "Wind Direction :  " + data2.list[12].wind.deg + " degree ";
+document.getElementById("windDegree12").innerHTML = "Wind Direction :  " + data2.list[12].wind.deg + " * ";
 
 // --------------------------------- At 42 hours ---------------------------------------------------------------------
 
@@ -541,7 +541,7 @@ let t13fixed = t13.toFixed(2)
 document.getElementById("temp13").innerHTML = "Temp :  " + t13fixed + " *F" ;
 
 document.getElementById("wind13").innerHTML = "Wind :  " + data2.list[13].wind.speed + " MPH";
-document.getElementById("windDegree13").innerHTML = "Wind Direction :  " + data2.list[13].wind.deg + " degree ";
+document.getElementById("windDegree13").innerHTML = "Wind Direction :  " + data2.list[13].wind.deg + " * ";
 
 // --------------------------------- At 45 hours ---------------------------------------------------------------------
 
@@ -566,7 +566,7 @@ let t14fixed = t14.toFixed(2)
 document.getElementById("temp14").innerHTML = "Temp :  " + t14fixed + " *F" ;
 
 document.getElementById("wind14").innerHTML = "Wind :  " + data2.list[14].wind.speed + " MPH";
-document.getElementById("windDegree14").innerHTML = "Wind Direction :  " + data2.list[14].wind.deg + " degree ";
+document.getElementById("windDegree14").innerHTML = "Wind Direction :  " + data2.list[14].wind.deg + " * ";
 
 // --------------------------------- At 48 hours ---------------------------------------------------------------------
 
@@ -591,7 +591,7 @@ let t15fixed = t15.toFixed(2)
 document.getElementById("temp15").innerHTML = "Temp :  " + t15fixed + " *F" ;
 
 document.getElementById("wind15").innerHTML = "Wind :  " + data2.list[15].wind.speed + " MPH";
-document.getElementById("windDegree15").innerHTML = "Wind Direction :  " + data2.list[15].wind.deg + " degree ";
+document.getElementById("windDegree15").innerHTML = "Wind Direction :  " + data2.list[15].wind.deg + " * ";
 
               })
           })
