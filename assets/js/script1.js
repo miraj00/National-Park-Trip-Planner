@@ -71,7 +71,7 @@ function init(parkCode){
     })
 }
 //Second API for Weather API
-function weatherAPI(){
+function weatherAPI(zip){
     fetch("https://api.openweathermap.org/data/2.5/forecast?zip=" 
     + zip 
     + ",us&appid=9d0a91c9414180869a1b366b5eca06bd"
@@ -81,7 +81,7 @@ function weatherAPI(){
         return response.json();
     })
     .then(function(data2){
-        displayWeatherInfo(response);
+        getWeatherForecast(response);
 
         })
     };
@@ -90,15 +90,18 @@ function weatherAPI(){
  var year = currentDate.getFullYear();
  var month = currentDate.getMonth();
 
- function displayWeatherInfo(weatherData){
+ function getWeatherForecast(data1){
+    forecastContainerEl.textContent="";
+    for(i=0;i<48; i=+2){
+        
+    }
+
+     
      console.log(weatherData);
 
  }
 
-
-
-
-
+var forecastContainerEl = document.querySelector("#hourForecast");
 
 // //         // --------------------------------- At 3 hours ---------------------------------------------------------------------
 
