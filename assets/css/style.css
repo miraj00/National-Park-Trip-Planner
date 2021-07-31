@@ -16,6 +16,11 @@ header {
   
 }
 
+.carousel {
+  image-resolution: 100px;
+
+}
+
 #headerH1 {
   padding: 10px;
 }
