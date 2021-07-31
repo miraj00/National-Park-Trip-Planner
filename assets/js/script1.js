@@ -98,6 +98,8 @@ function weatherAPI(zip){
     for(i=0;i<=15; i++){
         //48 hours weather forecast for every 3 hours= 15 iterations
         var hourdiv = document.createElement("div");
+        // var imageText = $("#iconText").text(weatherData.list[i].weather[0].description) ;
+       
         $(hourdiv).addClass("col s12 m8 l2");
         //This is to add weather icon description
         $("#iconText").text(weatherData.list[i].weather[0].description);
@@ -108,6 +110,8 @@ function weatherAPI(zip){
 
         $(hourdiv).append("<p id='time'></p>");
         $(hourdiv).append("<p id='icon'>Time:</p>");
+        // This is for weather icon description
+        $("#iconText").text(weatherData.list[i].weather[0].description);
         $(hourdiv).append("<p id='iconText'></p>");
         
 
@@ -126,6 +130,7 @@ function weatherAPI(zip){
 // // //         document.getElementById("temp0").innerHTML = "Temp :  " + t0fixed + " *F";
 
 
+        
     }
 
      
