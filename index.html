@@ -1,226 +1,240 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" href="./assets/css/style.css" />
-    <title>NATIONAL PARK TRIP PLANNER</title>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+   <link rel="stylesheet" href="./assets/css/style.css" />
+   <title>NATIONAL PARK TRIP PLANNER</title>
 </head>
-
-<body>
-    <header>    
-        <h1>National Park Trip Planner</h1>
-    </header>
-    <main class="container">
-        <div class="row">
-            <div class="col s4 pull-s2">
-                <form class="row">
-                     <select id="stateS" name="states" class="dropdown-content" >
-                         <option value="0">Choose A State</option>
-                          <option value="ak">Alaska</option>
-                          <option value="az">Arizona</option>
-                          <option value="cal">California</option>
-                          <option value="hi">Hawaii</option>
-                          <option value="mt">Montana</option>
-                          <option value="nv">Nevada</option>
-                          <option value="nm">New Mexico</option>
-                          <option value="ut">Utah</option>
-                     </select>
-                     <select id="mySelect">
-                        <option value="">Select Park</option>
-                     </select>
-                     <button class="dropbtn btn" style="display: none;"> Submit </button>    
-                </form>
+<body class="light-green lighten-5">
+   <header>
+      <div id="headerH1" class="col s12 m6">
+         <h1 class="white-text">National Park Trip Planner</h1>
+      </div>
+   </header>
+   <main class="container">
+      <div class="row">
+         <div class="col s2 pull-l2">
+            <form class="row">
+               <select id="stateS" name="states" class="dropdown-content">
+                  <option value="0">Choose A State</option>
+                  <option value="ak">Alaska</option>
+                  <option value="az">Arizona</option>
+                  <option value="cal">California</option>
+                  <option value="hi">Hawaii</option>
+                  <option value="mt">Montana</option>
+                  <option value="nv">Nevada</option>
+                  <option value="nm">New Mexico</option>
+                  <option value="ut">Utah</option>
+               </select>
+               <select id="mySelect">
+                  <option value="">Select Park</option>
+               </select>
+               <button class="dropbtn btn" style="display: none;"> Submit </button>
+            </form>
+         </div>
+         <div class="col s10 ">
+            <div>
+               <h2 class="card-panel yellow lighten-5 blue-text" id="parkInfo" style="text-transform:uppercase">Full
+                  Name of Park</h2>
+               <ul>
+                  <li id="parkCode">glac</li> <br>
+                  <li class="flow-text" id="address">Address : </li> <br>
+                  <li id="phNo">Phone No : </li> <br>
+                  <li id="discription">Discription : </li> <br>
+                  <li id="alerts">Current Alerts : </li> <br>
+                  <li>Entrance Fees : </li> <br>
+                  <li id="allotherfees">All Other Fees : </li>
+                  <li id="motorcyclefees">Motorcycle Fees : </li>
+                  <li id="pedfees">Pedestrian Fees : </li> <br> <br>
+                  <li id="parkPics">Pics of National Park : </li>
+                  <li id="parkLink"> For More information Please go to </li>
+               </ul>
             </div>
-        </div>
+            <!-- forecast for next 48 hours every 3 hours -->
+            <div class="row">
+               <div class="col s12 m8 l2 " id="hourForecast">
+                  <h2 class="forecast"><span id="iconText"></span></h2>
 
-        
-        <div class="col">
- 
-         <h2 class="titleName" id="parkInfo" style="text-transform:uppercase">Full Name of Park : </h2> 
-         <ul class="parkBox">
-           <li id="parkCode"></li>                             <br>  
-           <li id="address">Address : </li>                        <br>
-           <li id="phNo">Phone No : </li>                          <br>
-           <li id="discription">Discription : </li>                <br>
-           <!--<li id="alerts">Current Alerts : </li>                  <br>-->
-           <li>Entrance Fees : </li>                               <br>
-           <li id="allotherfees">All Other Fees : </li>
-           <li id="motorcyclefees">Motorcycle Fees : </li> 
-           <li id="pedfees">Pedestrian Fees : </li>                <br> <br>
-          
-           <li id="parkPics">Pics of National Park : </li>
- 
- 
-           <li id="parkLink"> For More information Please go to </li>
- 
-         </ul>
- 
- <!------------------------------------------------------------------------------------------------------>
- </div> 
- 
-     <div>
-      <div class>
-         <h2 class="forecast"><span id="hourForecast"></span></h2>
- 
-         <ul class="color0"> 
-             <li id="time0">at 3 hrs</li>
-             <li id="icon0"></li>
-             <li id="iconText0"></li>
-             <li id="temp0"></li>
-             <li id="wind0"></li>
-             <li id="windDegree0"></li>
-          </ul>
- 
-          <ul class="color1"> 
-             <li id="time1"> at 6 hrs</li>
-             <li id="icon1"></li>
-             <li id="iconText1"></li>
-             <li id="temp1"></li>
-             <li id="wind1"></li>
-             <li id="windDegree1"></li>
-          </ul>
- 
-          <ul class="color2"> 
-             <li id="time2">at 9 hrs</li>
-             <li id="icon2"></li>
-             <li id="iconText2"></li>
-             <li id="temp2"></li>
-             <li id="wind2"></li>
-             <li id="windDegree2"></li>
-          </ul>
- 
-          <ul class="color3"> 
-             <li id="time3">at 12 hrs</li>
-             <li id="icon3"></li>
-             <li id="iconText3"></li>
-             <li id="temp3"></li>
-             <li id="wind3"></li>
-             <li id="windDegree3"></li>
-          </ul>
- 
-          <ul class="color4"> 
-             <li id="time4">at 15 hrs</li>
-             <li id="icon4"></li>
-             <li id="iconText4"></li>
-             <li id="temp4"></li>
-             <li id="wind4"></li>
-             <li id="windDegree4"></li>
-          </ul>
- 
-          <ul class="color5"> 
-             <li id="time5"> at 18 hrs</li>
-             <li id="icon5"></li>
-             <li id="iconText5"></li>
-             <li id="temp5"></li>
-             <li id="wind5"></li>
-             <li id="windDegree5"></li>
-          </ul>
- 
-          <ul class="color6"> 
-             <li id="time6">at 21 hrs</li>
-             <li id="icon6"></li>
-             <li id="iconText6"></li>
-             <li id="temp6"></li>
-             <li id="wind6"></li>
-             <li id="windDegree6"></li>
-          </ul>
- 
-          <ul class="color7"> 
-             <li id="time7">at 24 hrs</li>
-             <li id="icon7"></li>
-             <li id="iconText7"></li>
-             <li id="temp7"></li>
-             <li id="wind7"></li>
-             <li id="windDegree7"></li>
-          </ul>
- 
-          <ul class="color8"> 
-             <li id="time8">at 27 hrs</li>
-             <li id="icon8"></li>
-             <li id="iconText8"></li>
-             <li id="temp8"></li>
-             <li id="wind8"></li>
-             <li id="windDegree8"></li>
-          </ul>
- 
-          <ul class="color9"> 
-             <li id="time9"> at 30 hrs</li>
-             <li id="icon9"></li>
-             <li id="iconText9"></li>
-             <li id="temp9"></li>
-             <li id="wind9"></li>
-             <li id="windDegree9"></li>
-          </ul>
- 
-          <ul class="color10"> 
-             <li id="time10">at 33 hrs</li>
-             <li id="icon10"></li>
-             <li id="iconText10"></li>
-             <li id="temp10"></li>
-             <li id="wind10"></li>
-             <li id="windDegree10"></li>
-          </ul>
- 
-          <ul class="color11"> 
-             <li id="time11">at 36 hrs</li>
-             <li id="icon11"></li>
-             <li id="iconText11"></li>
-             <li id="temp11"></li>
-             <li id="wind11"></li>
-             <li id="windDegree11"></li>
-          </ul>
- 
-          <ul class="color12"> 
-             <li id="time12">at 39 hrs</li>
-             <li id="icon12"></li>
-             <li id="iconText12"></li>
-             <li id="temp12"></li>
-             <li id="wind12"></li>
-             <li id="windDegree12"></li>
-          </ul>
- 
-          <ul class="color13"> 
-             <li id="time13"> at 42 hrs</li>
-             <li id="icon13"></li>
-             <li id="iconText13"></li>
-             <li id="temp13"></li>
-             <li id="wind13"></li>
-             <li id="windDegree13"></li>
-          </ul>
- 
-          <ul class="color14"> 
-             <li id="time14">at 45 hrs</li>
-             <li id="icon14"></li>
-             <li id="iconText14"></li>
-             <li id="temp14"></li>
-             <li id="wind14"></li>
-             <li id="windDegree14"></li>
-          </ul>
- 
-          <ul class="color15"> 
-             <li id="time15">at 48 hrs</li>
-             <li id="icon15"></li>
-             <li id="iconText15"></li>
-             <li id="temp15"></li>
-             <li id="wind15"></li>
-             <li id="windDegree15"></li>
-          </ul>
-         <div>( See below Wind Degree chart to estimate Diretion : ) </div>
-         <img src="./assets/images/wind-Direction.JPG" alt="wind-direction estimation">
- 
-     </div>
- 
-    </main>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script src="./assets/js/script1.js"></script>
+
+                  <ul class="light-blue lighten-5">
+                     <li id="time0">at 3 hrs</li>
+                     <li id="icon0"></li>
+                     <li id="iconText0"></li>
+                     <li id="temp0"></li>
+                     <li id="wind0"></li>
+                     <li id="windDegree0"></li>
+                  </ul>
+               </div>
+               <div class="col s12 m8 l2">
+                  <ul class="light-blue lighten-5">
+                     <li id="time1"> at 6 hrs</li>
+                     <li id="icon1"></li>
+                     <li id="iconText1"></li>
+                     <li id="temp1"></li>
+                     <li id="wind1"></li>
+                     <li id="windDegree1"></li>
+                  </ul>
+               </div>
+               <div class="col s12 m8 l2">
+                  <ul class="light-blue lighten-5">
+                     <li id="time2">at 9 hrs</li>
+                     <li id="icon2"></li>
+                     <li id="iconText2"></li>
+                     <li id="temp2"></li>
+                     <li id="wind2"></li>
+                     <li id="windDegree2"></li>
+                  </ul>
+               </div>
+               <div class="col s12 m8 l2">
+                  <ul class="orange lighten-5">
+                     <li id="time3">at 12 hrs</li>
+                     <li id="icon3"></li>
+                     <li id="iconText3"></li>
+                     <li id="temp3"></li>
+                     <li id="wind3"></li>
+                     <li id="windDegree3"></li>
+                  </ul>
+               </div>
+               <div class="col s12 m8 l2">
+                  <ul class="orange lighten-5">
+                     <li id="time4">at 15 hrs</li>
+                     <li id="icon4"></li>
+                     <li id="iconText4"></li>
+                     <li id="temp4"></li>
+                     <li id="wind4"></li>
+                     <li id="windDegree4"></li>
+                  </ul>
+               </div>
+               <div class="col s12 m8 l2">
+                  <ul class="orange lighten-5">
+                     <li id="time5"> at 18 hrs</li>
+                     <li id="icon5"></li>
+                     <li id="iconText5"></li>
+                     <li id="temp5"></li>
+                     <li id="wind5"></li>
+                     <li id="windDegree5"></li>
+                  </ul>
+               </div>
+               <div class="col s12 m8 l2">
+                  <ul class="indigo lighten-5">
+                     <li id="time6">at 21 hrs</li>
+                     <li id="icon6"></li>
+                     <li id="iconText6"></li>
+                     <li id="temp6"></li>
+                     <li id="wind6"></li>
+                     <li id="windDegree6"></li>
+                  </ul>
+               </div>
+               <div class="col s12 m8 l2">
+                  <ul class="indigo lighten-5">
+                     <li id="time7">at 24 hrs</li>
+                     <li id="icon7"></li>
+                     <li id="iconText7"></li>
+                     <li id="temp7"></li>
+                     <li id="wind7"></li>
+                     <li id="windDegree7"></li>
+                  </ul>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col s12 m8 l2">
+                  <ul class="light-blue lighten-5">
+                     <li id="time8">at 27 hrs</li>
+                     <li id="icon8"></li>
+                     <li id="iconText8"></li>
+                     <li id="temp8"></li>
+                     <li id="wind8"></li>
+                     <li id="windDegree8"></li>
+                  </ul>
+               </div>
+               <div class="col s12 m8 l2">
+                  <ul class="light-blue lighten-5">
+                     <li id="time9"> at 30 hrs</li>
+                     <li id="icon9"></li>
+                     <li id="iconText9"></li>
+                     <li id="temp9"></li>
+                     <li id="wind9"></li>
+                     <li id="windDegree9"></li>
+                  </ul>
+               </div>
+               <div class="col s12 m8 l2">
+                  <ul class="light-blue lighten-5">
+                     <li id="time10">at 33 hrs</li>
+                     <li id="icon10"></li>
+                     <li id="iconText10"></li>
+                     <li id="temp10"></li>
+                     <li id="wind10"></li>
+                     <li id="windDegree10"></li>
+                  </ul>
+               </div>
+               <div class="col s12 m8 l2">
+                  <ul class="orange lighten-5">
+                     <li id="time11">at 36 hrs</li>
+                     <li id="icon11"></li>
+                     <li id="iconText11"></li>
+                     <li id="temp11"></li>
+                     <li id="wind11"></li>
+                     <li id="windDegree11"></li>
+                  </ul>
+               </div>
+               <div class="col s12 m8 l2">
+                  <ul class="orange lighten-5">
+                     <li id="time12">at 39 hrs</li>
+                     <li id="icon12"></li>
+                     <li id="iconText12"></li>
+                     <li id="temp12"></li>
+                     <li id="wind12"></li>
+                     <li id="windDegree12"></li>
+                  </ul>
+               </div>
+               <div class="col s12 m8 l2">
+                  <ul class="orange lighten-5">
+                     <li id="time13"> at 42 hrs</li>
+                     <li id="icon13"></li>
+                     <li id="iconText13"></li>
+                     <li id="temp13"></li>
+                     <li id="wind13"></li>
+                     <li id="windDegree13"></li>
+                  </ul>
+               </div>
+               <div class="col s12 m8 l2">
+                  <ul class="indigo lighten-5">
+                     <li id="time14">at 45 hrs</li>
+                     <li id="icon14"></li>
+                     <li id="iconText14"></li>
+                     <li id="temp14"></li>
+                     <li id="wind14"></li>
+                     <li id="windDegree14"></li>
+                  </ul>
+               </div>
+               <div class="col s12 m8 l2">
+                  <ul class="indigo lighten-5">
+                     <li id="time15">at 48 hrs</li>
+                     <li id="icon15"></li>
+                     <li id="iconText15"></li>
+                     <li id="temp15"></li>
+                     <li id="wind15"></li>
+                     <li id="windDegree15"></li>
+                  </ul>
+               </div>
+            </div>
+            <div class="row">
+               <div class="card-panel deep-orange darken-1 z-depth-5">
+                  <p class="center-align white-text ">( See below Wind Degree chart to estimate Diretion : ) </p>
+               </div>
+               <div class="img-div responsive-img">
+                  <img class="wind-image" src="./assets/images/wind-Direction.JPG" alt="wind-direction estimation">
+               </div>
+            </div>
+         </div>
+      </div>
+   </main>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+   <script src="./assets/js/script1.js"></script>
 </body>
-
-
-
 </html>
