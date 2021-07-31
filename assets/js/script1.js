@@ -103,6 +103,7 @@ function weatherAPI(zip){
         $(hourdiv).addClass("col s12 m8 l2");
         $(hourdiv).append("<p id='time'></p>");
         $(hourdiv).append("<p id='icon'>Time:</p>");
+        // This is for weather icon description
         $("#iconText").text(weatherData.list[i].weather[0].description);
         $(hourdiv).append("<p id='iconText'></p>");
         $(hourdiv).append("<p id='temp'></p>");
