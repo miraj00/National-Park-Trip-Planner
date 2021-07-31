@@ -2,45 +2,27 @@ $(document).ready(function () {
     $('select').formSelect();
  });
 
-/*
-// Code List for National Parks :
-
-//var Nevada = [ {Death Valley National Park, deva}, {Great Basin National Park, grba}];
-  var Montana = [ {Glacier National Park, glac}, {Yellowstone National Park, yell}];
-  var Hawaii = [ {Haleakala National Park, hale}, {Hawai’i Volcanoes National Park, havo}];
-  var New_Mexico = [ {Carlsbad Caverns National Park, cave}, {White Sands National Park, whsa}];
-  var Arizona = [ {Grand Canyon National Park, grca}, {Petrified Forest National Park, pefo}, {Saguaro National Park, sagu}];
-  var Utah = [ {Arches National Park, arch}, {Bryce Canyon National Park, brca}, {Canyonlands National Park, cany}, {Capitol Reef National Park, care},
-             {Zion National Park, zion}];   
-
-var Alaska = [{park : "Denali National Park", code: "dena"}, {park: "Gates of the Arctic National Park", code: "gaar"}, 
-              {park: "Glacier Bay National Park", code: "glba"}, {park: "Katmai National Park", code: "katm"}, 
-            {park: "Kenai Fjords National Park", code: "kefj"}, {park: "Kobuk Valley National Park", code: "kova"}, 
-            {park: "Lake Clark National Park", code: "lacl"}, {park: "Wrangell St Elias National Park", code: "wrst"} ];
-
-var California = [{Channel Islands National Park, chis}, {Death Valley National Park, deva}, {Joshua Tree National Park, jotr}, 
-             {Lassen Volcanic National Park, lavo}, {Pinnacles National Park, pinn}, {Redwood National Park, redw}, 
-             {Sequoia and Kings Canyon National Park, seki}, {Yosemite National Park, yose}];             
-*/
-
-var Nevada = [{ name: "Death Valley National Park", code: "deva" }, { name: "Great Basin National Park", code: "grba"}];
-var Montana = [{ name: "Glacier National Park", code: "glac"}, {name: "Yellowstone National Park", code: "yell"}];
-var Hawaii = [{ name: "Haleakala National Park", code: "hale"}, { name: "Hawai’i Volcanoes National Park", code: "havo"}];
-var New_Mexico = [{ name: "Carlsbad Caverns National Park", code: "cave"}, { name: "White Sands National Park", code: "whsa"}];
-var Arizona = [{ name:"Grand Canyon National Park", code: "grca"}, { name:"Petrified Forest National Park", code: "pefo"}, { name: "Saguaro National Park", code:"sagu"}];
-var Utah = [{name: "Arches National Park", code: "arch"}, { name:"Bryce Canyon National Park", code: "brca"}, { name: "Canyonlands National Park", code: "cany"}, { name: "Capitol Reef National Park", code: "care"}, { name: "Zion National Park", code:"zion"}];
-var Alaska = [{name:"Denali National Park", code: "dena"}, {name:"Gates of the Arctic National Park", code:"gaar"}, {name: "Glacier Bay National Park", code: "glba"}, { name: "Katmai National Park", code: "katm"}, { name: "Kenai Fjords National Park", code: "kefj"}, {name: "Kobuk Valley National Park", code: "kova"}, { name: "Lake Clark National Park", code: "lacl"}, { name: "Wrangell St Elias National Park", code: "wrst"}];
-var California = [{name: "Channel Islands National Park", code: "chis"}, {name: "Death Valley National Park", code:"deva"}, {name:"Joshua Tree National Park", code:"jotr"}, { name: "Lassen Volcanic National Park", code: "lavo"}, {name: "Pinnacles National Park", code:"pinn"}, {name: "Redwood National Park", code:"redw"}, {name: "Sequoia and Kings Canyon National Park", code: "seki"}, { name: "Yosemite National Park", code: "yose" }];  
+ 
+ $(document).ready(function(){
+    $('.carousel').carousel();
+  });
+      
 
 var optionsList = document.querySelector("#mySelection");
-var parkIdCounter = 0;
 
-const element = document.getElementById("stateS");
-
-
+var Nevada = [ "Death Valley National Park", "Great Basin National Park" ];
+var Montana = [ "Glacier National Park", "Yellowstone National Park"];
+var Hawaii = [ "Haleakala National Park", "Hawai’i Volcanoes National Park"];
+var New_Mexico = ["Carlsbad Caverns National Park", "White Sands National Park"];
+var Arizona = [ "Grand Canyon National Park", "Petrified Forest National Park, pefo", "Saguaro National Park, sagu"];
+var Utah = [ "Arches National Park", "Bryce Canyon National Park", "Canyonlands National Park", "Capitol Reef National Park", "Zion National Park"];
+var Alaska = ["Denali National Park","Gates of the Arctic National Park", "Glacier Bay National Park", "Katmai National Park", "Kenai Fjords National Park", "Kobuk Valley National Park", "Lake Clark National Park", "Wrangell St Elias National Park"];
+var California = ["Channel Islands National Park", "Death Valley National Park", "Joshua Tree National Park", "Lassen Volcanic National Park", "Pinnacles National Park", "Redwood National Park", "Sequoia and Kings Canyon National Park", "Yosemite National Park"];  
 
 function myFunction(event) {
       event.preventDefault();
+
+      
 
       const element = document.getElementById("stateS");
 
@@ -56,69 +38,66 @@ function myFunction(event) {
 if ( checkValue === "NEVADA") { 
 
     for (let i = 0; i < 2; i++) {
+    
+    var Nevada = [ "Death Valley National Park", "Great Basin National Park" ];    
     var parklistEl = document.createElement("li");
     parklistEl.className = "parksList";
-    parklistEl.setAttribute("park-id", parkIdCounter);
-    parkIdCounter++;
-    parklistEl.innerHTML = Nevada[i].name;
+    parklistEl.innerHTML = Nevada[i];
     optionsList.appendChild(parklistEl);
-
-
-
     }
 }
 if ( checkValue === "HAWAII") { 
 
         for (let i = 0; i < 2; i++) {
+        
+        var Hawaii = [ "Haleakala National Park", "Hawai’i Volcanoes National Park"];  
         var parklistEl = document.createElement("li");
         parklistEl.className = "parksList";
-        parklistEl.setAttribute("park-id", parkIdCounter);
-        parkIdCounter++;
-        parklistEl.innerHTML = Hawaii[i].name;
+        parklistEl.innerHTML = Hawaii[i];
         optionsList.appendChild(parklistEl);
         }
 }
 if ( checkValue === "NEW-MEXICO") { 
 
     for (let i = 0; i < 2; i++) {
+    
+    var New_Mexico = ["Carlsbad Caverns National Park", "White Sands National Park"];
     var parklistEl = document.createElement("li");
     parklistEl.className = "parksList";
-    parklistEl.setAttribute("park-id", parkIdCounter);
-    parkIdCounter++;
-    parklistEl.innerHTML = New_Mexico[i].name;
+    parklistEl.innerHTML = New_Mexico[i];
     optionsList.appendChild(parklistEl);
     }
 }
 if ( checkValue === "MONTANA") { 
 
     for (let i = 0; i < 2; i++) {
+    
+    var Montana = [ "Glacier National Park", "Yellowstone National Park"];  
     var parklistEl = document.createElement("li");
     parklistEl.className = "parksList";
-    parklistEl.setAttribute("park-id", parkIdCounter);
-    parkIdCounter++;
-    parklistEl.innerHTML = Montana[i].name;
+    parklistEl.innerHTML = Montana[i];
     optionsList.appendChild(parklistEl);
     }
 }
 if ( checkValue === "ARIZONA") { 
 
     for (let i = 0; i < 3; i++) {
+
+    var Arizona = [ "Grand Canyon National Park", "Petrified Forest National Park, pefo", "Saguaro National Park, sagu"];
     var parklistEl = document.createElement("li");
     parklistEl.className = "parksList";
-    parklistEl.setAttribute("park-id", parkIdCounter);
-    parkIdCounter++;
-    parklistEl.innerHTML = Arizona[i].name;
+    parklistEl.innerHTML = Arizona[i];
     optionsList.appendChild(parklistEl);
     }
 }
 if ( checkValue === "UTAH") { 
 
     for (let i = 0; i < 5; i++) {
+
+    var Utah = [ "Arches National Park", "Bryce Canyon National Park", "Canyonlands National Park", "Capitol Reef National Park", "Zion National Park"];
     var parklistEl = document.createElement("li");
     parklistEl.className = "parksList";
-    parklistEl.setAttribute("park-id", parkIdCounter);
-    parkIdCounter++;
-    parklistEl.innerHTML = Utah[i].name;
+    parklistEl.innerHTML = Utah[i];
     optionsList.appendChild(parklistEl);
     }
 }
@@ -126,11 +105,11 @@ if ( checkValue === "UTAH") {
 if ( checkValue === "ALASKA") { 
 
     for (let i = 0; i < 8; i++) {
+
+    var Alaska = ["Denali National Park","Gates of the Arctic National Park", "Glacier Bay National Park", "Katmai National Park", "Kenai Fjords National Park", "Kobuk Valley National Park", "Lake Clark National Park", "Wrangell St Elias National Park"];
     var parklistEl = document.createElement("li");
     parklistEl.className = "parksList";
-    parklistEl.setAttribute("park-id", parkIdCounter);
-    parkIdCounter++;
-    parklistEl.innerHTML = Alaska[i].name;
+    parklistEl.innerHTML = Alaska[i];
     optionsList.appendChild(parklistEl);
     }
 }
@@ -138,50 +117,22 @@ if ( checkValue === "ALASKA") {
 if ( checkValue === "CALIFORNIA") { 
 
     for (let i = 0; i < 8; i++) {
+    
+    var California = ["Channel Islands National Park", "Death Valley National Park", "Joshua Tree National Park", "Lassen Volcanic National Park", "Pinnacles National Park", "Redwood National Park", "Sequoia and Kings Canyon National Park", "Yosemite National Park"];  
     var parklistEl = document.createElement("li");
     parklistEl.className = "parksList";
-    parklistEl.setAttribute("park-id", parkIdCounter);
-    parkIdCounter++;
-    parklistEl.innerHTML = California[i].name;
+    parklistEl.innerHTML = California[i];
     optionsList.appendChild(parklistEl);
     }
-  }
-
 }
 
 
 
 
-var button = document.getElementById("mySelection");
-button.onclick = function(event){
- 
-    var text2 = event.target.innerHTML;
-    console.log(text2);
+// upon selecting national park name, it updates that park's info and weather 
 
-      var parkID = event.target.park-id;
-      console.log(parkID);
-
-
-// -----------------------------------------------------------------------------------------------------------
-
-var Nevada = [{ "Death Valley National Park", "deva" }, { "Great Basin National Park", "grba"}];
-
-for ( i=0; i <= Nevada.lengh; i++) {   
-
- if ( text2 = Nevada[i].name )  {
-     var y = Nevada[i].code ;
-     renderFunction(y);
-     }
-
-    }
-
-//if (  text2 = "Death Valley National Park" )  {
-//        var y = "deva" ;
-//        renderFunction(y);
-
-//--------------------------------------------------------------------------------------------------------------    
- 
-function renderFunction(y) {
+var y = document.querySelector('#parkCode').innerHTML;
+console.log(y);
 
 //----------------------------------------API  to pull Park Information -----------------------------------------------------------------
 
@@ -205,6 +156,9 @@ function renderFunction(y) {
 
      document.getElementById("parkLink").innerHTML = data1.data[0].url ;
 
+
+ 
+
 //-----------------:: -------------  API  to pull weather info for every 3 hours for hikers / campers ----------------::-------------------
 
  var zip = data1.data[0].addresses[0].postalCode
@@ -216,6 +170,7 @@ function renderFunction(y) {
 
  response2.json().then(function(data2) {
  console.log(data2);
+
 
 // --------------------------------- At 3 hours ---------------------------------------------------------------------
 
@@ -233,13 +188,15 @@ function renderFunction(y) {
 
  document.getElementById("iconText0").innerHTML = data2.list[0].weather[0].description ; 
 
+
  var v0 = (data2.list[0].main.temp) * 9/5;
  var t0 = v0 - 459.67;
  let t0fixed = t0.toFixed(2) 
  document.getElementById("temp0").innerHTML = "Temp :  " + t0fixed + " *F" ;
 
  document.getElementById("wind0").innerHTML = "Wind :  " + data2.list[0].wind.speed + " MPH";
- document.getElementById("windDegree0").innerHTML = "Wind Direction :  " + data2.list[0].wind.deg + " degree ";
+ document.getElementById("windDegree0").innerHTML = "Wind Direction :  " + data2.list[0].wind.deg + " * ";
+
 
 // --------------------------------- At 6 hours ---------------------------------------------------------------------
 
@@ -264,7 +221,7 @@ let t1fixed = t1.toFixed(2)
 document.getElementById("temp1").innerHTML = "Temp :  " + t1fixed + " *F" ;
 
 document.getElementById("wind1").innerHTML = "Wind :  " + data2.list[1].wind.speed + " MPH";
-document.getElementById("windDegree1").innerHTML = "Wind Direction :  " + data2.list[1].wind.deg + " degree ";
+document.getElementById("windDegree1").innerHTML = "Wind Direction :  " + data2.list[1].wind.deg + " * ";
 
 // --------------------------------- At 9 hours ---------------------------------------------------------------------
 
@@ -289,7 +246,7 @@ let t2fixed = t2.toFixed(2)
 document.getElementById("temp2").innerHTML = "Temp :  " + t2fixed + " *F" ;
 
 document.getElementById("wind2").innerHTML = "Wind :  " + data2.list[2].wind.speed + " MPH";
-document.getElementById("windDegree2").innerHTML = "Wind Direction :  " + data2.list[2].wind.deg + " degree ";
+document.getElementById("windDegree2").innerHTML = "Wind Direction :  " + data2.list[2].wind.deg + " * ";
 
 // --------------------------------- At 12 hours ---------------------------------------------------------------------
 
@@ -314,7 +271,7 @@ let t3fixed = t3.toFixed(2)
 document.getElementById("temp3").innerHTML = "Temp :  " + t3fixed + " *F" ;
 
 document.getElementById("wind3").innerHTML = "Wind :  " + data2.list[3].wind.speed + " MPH";
-document.getElementById("windDegree3").innerHTML = "Wind Direction :  " + data2.list[3].wind.deg + " degree ";
+document.getElementById("windDegree3").innerHTML = "Wind Direction :  " + data2.list[3].wind.deg + " * ";
 
 // --------------------------------- At 15 hours ---------------------------------------------------------------------
 
@@ -339,7 +296,7 @@ let t4fixed = t4.toFixed(2)
 document.getElementById("temp4").innerHTML = "Temp :  " + t4fixed + " *F" ;
 
 document.getElementById("wind4").innerHTML = "Wind :  " + data2.list[4].wind.speed + " MPH";
-document.getElementById("windDegree4").innerHTML = "Wind Direction :  " + data2.list[4].wind.deg + " degree ";
+document.getElementById("windDegree4").innerHTML = "Wind Direction :  " + data2.list[4].wind.deg + " * ";
 
 // --------------------------------- At 18 hours ---------------------------------------------------------------------
 
@@ -364,7 +321,7 @@ let t5fixed = t5.toFixed(2)
 document.getElementById("temp5").innerHTML = "Temp :  " + t5fixed + " *F" ;
 
 document.getElementById("wind5").innerHTML = "Wind :  " + data2.list[5].wind.speed + " MPH";
-document.getElementById("windDegree5").innerHTML = "Wind Direction :  " + data2.list[5].wind.deg + " degree ";
+document.getElementById("windDegree5").innerHTML = "Wind Direction :  " + data2.list[5].wind.deg + " * ";
 
 // --------------------------------- At 18 hours ---------------------------------------------------------------------
 
@@ -382,13 +339,14 @@ iconTime6El.appendChild(jpgImg6);
 
 document.getElementById("iconText6").innerHTML = data2.list[6].weather[0].description ; 
 
+
 var v6 = (data2.list[6].main.temp) * 9/5;
 var t6 = v6 - 459.67;
 let t6fixed = t6.toFixed(2) 
 document.getElementById("temp6").innerHTML = "Temp :  " + t6fixed + " *F" ;
 
 document.getElementById("wind6").innerHTML = "Wind :  " + data2.list[6].wind.speed + " MPH";
-document.getElementById("windDegree6").innerHTML = "Wind Direction :  " + data2.list[6].wind.deg + " degree ";
+document.getElementById("windDegree6").innerHTML = "Wind Direction :  " + data2.list[6].wind.deg + " * ";
 
 // --------------------------------- At 24 hours ---------------------------------------------------------------------
 
@@ -413,7 +371,8 @@ let t7fixed = t7.toFixed(2)
 document.getElementById("temp7").innerHTML = "Temp :  " + t7fixed + " *F" ;
 
 document.getElementById("wind7").innerHTML = "Wind :  " + data2.list[7].wind.speed + " MPH";
-document.getElementById("windDegree7").innerHTML = "Wind Direction :  " + data2.list[7].wind.deg + " degree ";
+document.getElementById("windDegree7").innerHTML = "Wind Direction :  " + data2.list[7].wind.deg + " * ";
+
 
 // --------------------------------- At 27 hours ---------------------------------------------------------------------
 
@@ -438,7 +397,7 @@ let t8fixed = t8.toFixed(2)
 document.getElementById("temp8").innerHTML = "Temp :  " + t8fixed + " *F" ;
 
 document.getElementById("wind8").innerHTML = "Wind :  " + data2.list[8].wind.speed + " MPH";
-document.getElementById("windDegree8").innerHTML = "Wind Direction :  " + data2.list[8].wind.deg + " degree ";
+document.getElementById("windDegree8").innerHTML = "Wind Direction :  " + data2.list[8].wind.deg + " * ";
 
 // --------------------------------- At 30 hours ---------------------------------------------------------------------
 
@@ -463,7 +422,7 @@ let t9fixed = t9.toFixed(2)
 document.getElementById("temp9").innerHTML = "Temp :  " + t9fixed + " *F" ;
 
 document.getElementById("wind9").innerHTML = "Wind :  " + data2.list[9].wind.speed + " MPH";
-document.getElementById("windDegree9").innerHTML = "Wind Direction :  " + data2.list[9].wind.deg + " degree ";
+document.getElementById("windDegree9").innerHTML = "Wind Direction :  " + data2.list[9].wind.deg + " * ";
 
 // --------------------------------- At 33 hours ---------------------------------------------------------------------
 
@@ -488,7 +447,7 @@ let t10fixed = t10.toFixed(2)
 document.getElementById("temp10").innerHTML = "Temp :  " + t10fixed + " *F" ;
 
 document.getElementById("wind10").innerHTML = "Wind :  " + data2.list[10].wind.speed + " MPH";
-document.getElementById("windDegree10").innerHTML = "Wind Direction :  " + data2.list[10].wind.deg + " degree ";
+document.getElementById("windDegree10").innerHTML = "Wind Direction :  " + data2.list[10].wind.deg + " * ";
 
 // --------------------------------- At 36 hours ---------------------------------------------------------------------
 
@@ -513,7 +472,7 @@ let t11fixed = t11.toFixed(2)
 document.getElementById("temp11").innerHTML = "Temp :  " + t11fixed + " *F" ;
 
 document.getElementById("wind11").innerHTML = "Wind :  " + data2.list[11].wind.speed + " MPH";
-document.getElementById("windDegree11").innerHTML = "Wind Direction :  " + data2.list[11].wind.deg + " degree ";
+document.getElementById("windDegree11").innerHTML = "Wind Direction :  " + data2.list[11].wind.deg + " * ";
 
 // --------------------------------- At 39 hours ---------------------------------------------------------------------
 
@@ -538,7 +497,7 @@ let t12fixed = t12.toFixed(2)
 document.getElementById("temp12").innerHTML = "Temp :  " + t12fixed + " *F" ;
 
 document.getElementById("wind12").innerHTML = "Wind :  " + data2.list[12].wind.speed + " MPH";
-document.getElementById("windDegree12").innerHTML = "Wind Direction :  " + data2.list[12].wind.deg + " degree ";
+document.getElementById("windDegree12").innerHTML = "Wind Direction :  " + data2.list[12].wind.deg + " * ";
 
 // --------------------------------- At 42 hours ---------------------------------------------------------------------
 
@@ -563,7 +522,7 @@ let t13fixed = t13.toFixed(2)
 document.getElementById("temp13").innerHTML = "Temp :  " + t13fixed + " *F" ;
 
 document.getElementById("wind13").innerHTML = "Wind :  " + data2.list[13].wind.speed + " MPH";
-document.getElementById("windDegree13").innerHTML = "Wind Direction :  " + data2.list[13].wind.deg + " degree ";
+document.getElementById("windDegree13").innerHTML = "Wind Direction :  " + data2.list[13].wind.deg + " * ";
 
 // --------------------------------- At 45 hours ---------------------------------------------------------------------
 
@@ -588,7 +547,7 @@ let t14fixed = t14.toFixed(2)
 document.getElementById("temp14").innerHTML = "Temp :  " + t14fixed + " *F" ;
 
 document.getElementById("wind14").innerHTML = "Wind :  " + data2.list[14].wind.speed + " MPH";
-document.getElementById("windDegree14").innerHTML = "Wind Direction :  " + data2.list[14].wind.deg + " degree ";
+document.getElementById("windDegree14").innerHTML = "Wind Direction :  " + data2.list[14].wind.deg + " * ";
 
 // --------------------------------- At 48 hours ---------------------------------------------------------------------
 
@@ -613,7 +572,7 @@ let t15fixed = t15.toFixed(2)
 document.getElementById("temp15").innerHTML = "Temp :  " + t15fixed + " *F" ;
 
 document.getElementById("wind15").innerHTML = "Wind :  " + data2.list[15].wind.speed + " MPH";
-document.getElementById("windDegree15").innerHTML = "Wind Direction :  " + data2.list[15].wind.deg + " degree ";
+document.getElementById("windDegree15").innerHTML = "Wind Direction :  " + data2.list[15].wind.deg + " * ";
 
               })
           })
@@ -621,7 +580,4 @@ document.getElementById("windDegree15").innerHTML = "Wind Direction :  " + data2
 })
 
 }
-
-}
-
 
