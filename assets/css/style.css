@@ -1,23 +1,26 @@
 header {
-        padding: 100px;
+        padding: 0px;
         background-size: initial;
         background-position: center;
         background-attachment: initial;
         
-        background-image: url("../images/Header-Pic.jpeg");
+   /*     background-image: url("../images/Header-Pic.jpeg"); */
         position:sticky;
         top: 0;
       
         z-index: 9999;
-        height: 70px;
+        height: 20px;
         width: 100%;
         text-align: right;
         font-size: 20px;
         color:rgb(253, 253, 253);
       }
     
-    #centerText  {
-    
+      .white-text {
+        padding-right: 20px;
+      }
+
+    #centerText  {    
       padding-top: 80px;
     }
     
@@ -30,23 +33,20 @@ header {
     }
     .flex-container {
       display: flex;
-      justify-content: center;
-      
+      justify-content: center;    
       width: 100%;
-      
-      
-    }
+     }
     
     .flex-container > li {
-      background-color: #f1f1f1;
+  /*    background-color: #f1f1f1; */
       justify-content: center;
       width: 3000px;
-      
       font-size: 5px;
-    }
+      }
     
-    .carousel {
-      height: 500px;
+    #Carousel {
+      height: 700px;
+      margin-top: 300px;
     }
     
     div.col.s3, div.col.s9 {
@@ -72,6 +72,7 @@ header {
     }
     .container {
       width: 1300px;
+      padding-top: 30px;
     
     }
     .row {
@@ -105,3 +106,4 @@ header {
     
       padding: 20px 0 20px 100px;
     }
+

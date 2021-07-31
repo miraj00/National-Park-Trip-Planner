@@ -3,10 +3,27 @@ $(document).ready(function () {
  });
 
  
- $(document).ready(function(){
-    $('.carousel').carousel();
+ $('.carousel.carousel-slider').carousel({
+    fullWidth: true
+  
   });
       
+
+  $.backstretch("./assets/images/pic2.JPEG");
+
+/*
+  function capture() {
+  html2canvas(document.body, {
+    onrendered: function(canvas)
+    {
+    var img = canvas.toDataURL();
+    $("#result-image").attr('src', img).show();
+    }
+    });
+  }
+
+*/
+
 
 var optionsList = document.querySelector("#mySelection");
 
@@ -154,7 +171,7 @@ console.log(y);
 
 
 
-     document.getElementById("parkLink").innerHTML = data1.data[0].url ;
+  //   document.getElementById("parkLink").innerHTML = data1.data[0].url ;
 
 
  

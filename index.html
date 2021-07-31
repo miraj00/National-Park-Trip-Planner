@@ -6,13 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  
     <link rel="stylesheet" href="./assets/css/style.css" />
     <title>NATIONAL PARK TRIP PLANNER</title>
 </head>
 
-<body class="light-green lighten-5">
+<body >
    <header>    
-        <h1 class="white-text">National Park Trip Planner</h1>
+        <h3 class="white-text">National Park Trip Planner</h3>
+  <!--      <button class="dropbtn btn waves-effect waves-light btn" onclick="capture()">Click to Take ScreenShot</button>  -->
    </header>
    <br>
    
@@ -36,8 +38,10 @@
                <button class="dropbtn btn waves-effect waves-light btn" onclick="myFunction(event)">Submit</button>
                  
                <div id="mySelection"></div>
+                  
 
-                <div class="carousel">
+               <br>  <br>   <br>  <br> 
+                <div class="carousel carousel-slider" id="Carousal">
                   <a class="carousel-item" href="#one!"><img src="./assets/images/pic1.JPEG"></a>
                   <a class="carousel-item" href="#two!"><img src="./assets/images/pic2.JPEG"></a>
                   <a class="carousel-item" href="#three!"><img src="./assets/images/pic3.JPEG"></a>
@@ -45,6 +49,10 @@
                   <a class="carousel-item" href="#five!"><img src="./assets/images/pic5.JPEG"></a>
                 </div>
        
+
+
+
+
             </form>
          </div>
 
@@ -57,16 +65,16 @@
                   <li id="address">Address : </li>                        <br>
                   <li id="phNo">Phone No : </li>                          <br>
                   <li id="discription">Discription : </li>                <br>
-                  <li id="alerts">Current Alerts : </li>                  <br>
-                  <li>Entrance Fees : </li>                               <br>
+            <!--  <li id="alerts">Current Alerts : </li>                  <br>
+                  <li>Entrance Fees : </li>                               <br>  -->
                   <li id="allotherfees">All Other Fees : </li>
                   <li id="motorcyclefees">Motorcycle Fees : </li> 
                   <li id="pedfees">Pedestrian Fees : </li>                <br> <br>
                      
-                  <li id="parkPics">Pics of National Park : </li>
+                  
             
             
-                  <li id="parkLink"> For More information Please go to </li>
+               <!--  <li id="parkLink"> For More information Please go to </li>  -->
             
                </ul>
             </div>
@@ -272,36 +280,15 @@
 </div>
 
 
-    
-
-
-
-
-
-<!--
-
-   <video class="vids1" controls="controls" width="600" height="450" name="Lake Tahoe">
-    <source src="./assets/movie/lake-tahoe.mov">
-    </video>
-    
-    <video class="vids2" controls="controls" width="600" height="450" name="Runnig Deers">
-    <source src="./assets/movie/running-deers.mov">
-    </video>  <br>
-   
-    <video class="vids3" controls="controls" width="600" height="450" name="Lake Tahoe">
-      <source src="./assets/movie/big-stone.MOV">
-    </video>
-   
-    <video class="vids4" controls="controls" width="600" height="450" name="Runnig Deers">
-    <source src="https://www.youtube.com/watch?v=0mqZLC2URAs">
-    </video>
-
-
-   <div class="myVideos">
--->      
+         
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.1.18/jquery.backstretch.min.js" integrity="sha512-bXc1hnpHIf7iKIkKlTX4x0A0zwTiD/FjGTy7rxUERPZIkHgznXrN/2qipZuKp/M3MIcVIdjF4siFugoIc2fL0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  
     <script src="./assets/js/script.js"></script>
    </div> 
 
