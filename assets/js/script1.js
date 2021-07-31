@@ -62,7 +62,7 @@ function init(parkCode){
             //document.getElementById("discription").innerHTML = "Description : " + data1.data[0].description;
             // document.getElementById("alerts").innerHTML = "Current Temp :  " + t0fixed + " *F" ; 
             document.getElementById("allotherfees").innerHTML = " -        $ " + data1.data[0].entranceFees[0].cost + " for non-commercial vehicle (15 passenger capacity or less) and all occupants ";
-            document.getElementById("motorcyclefees").innerHTML = " -        $ " + data1.data[0].entranceFees[1].cost + " for non-commercial motorcycle ";
+            //document.getElementById("motorcyclefees").innerHTML = " -        $ " + data1.data[0].entranceFees[1].cost + " for non-commercial motorcycle ";
             document.getElementById("pedfees").innerHTML = " -       $ " + data1.data[0].entranceFees[2].cost + " for  bicyclist, hiker, pedestrian ";
 
             document.getElementById("parkLink").innerHTML = data1.data[0].url;
@@ -99,23 +99,33 @@ function weatherAPI(zip){
         //48 hours weather forecast for every 3 hours= 15 iterations
         var hourdiv = document.createElement("div");
         $(hourdiv).addClass("col s12 m8 l2");
+        //This is to add weather icon description
+        $("#iconText").text(weatherData.list[i].weather[0].description);
+        $(hourdiv).append("<p id='iconText'></p>");
+        //Temp
+        $("#temp").text("Temperature: " + weatherData.list[i].main.temp + "F");
+        $(hourdiv).append("<p id='temp'></p>");
+
         $(hourdiv).append("<p id='time'></p>");
         $(hourdiv).append("<p id='icon'>Time:</p>");
         $(hourdiv).append("<p id='iconText'></p>");
-        $(hourdiv).append("<p id='temp'></p>");
+        
+
+
         $(hourdiv).append("<p id='windDegree'>Wind: </p>");
+        $(forecastContainerEl).append(hourdiv);
          //create element for icon
         var icon=document.createElement("img");
         $(icon).attr("src", "https://openweathermap.org/img/w/" + weatherData.list[i].weather[0].icon + ".png");
         $(hourdiv).append(icon);
-        
 
 
-    $(forecastContainerEl).append(hourdiv);
+                        //Need to do Temp
+
+// // //         let t0fixed = t0.toFixed(2)
+// // //         document.getElementById("temp0").innerHTML = "Temp :  " + t0fixed + " *F";
 
 
-
-        
     }
 
      
@@ -124,6 +134,8 @@ function weatherAPI(zip){
  }
 
 var forecastContainerEl = document.querySelector("#hourForecast");
+
+
 
 // // //         // --------------------------------- At 3 hours ---------------------------------------------------------------------
                     //time div
@@ -140,6 +152,7 @@ var forecastContainerEl = document.querySelector("#hourForecast");
 // // //         var t0 = v0 - 459.67;
 // // //         let t0fixed = t0.toFixed(2)
 // // //         document.getElementById("temp0").innerHTML = "Temp :  " + t0fixed + " *F";
+
 
                     //values
 // // //         document.getElementById("wind0").innerHTML = "Wind :  " + data2.list[0].wind.speed + " MPH";
