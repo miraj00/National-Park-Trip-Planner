@@ -23,7 +23,12 @@ header {
     #centerText  {    
       padding-top: 80px;
     }
-    
+
+    .textAbove {
+      font-size: 15 px;
+      font-weight: bold;
+
+    }
     
     .wind-image {
       padding: 100px 0px 0px 0px;
@@ -107,3 +112,28 @@ header {
       padding: 20px 0 20px 100px;
     }
 
+    .textLink  {
+      font-weight: bold;
+      font-size: 30px;
+      text-align: center;
+      background-color: gray;
+    }
+    .black-text  {
+      font-weight: bold;
+      font-size: 25px;
+      text-align: center;
+       }
+    
+    .grey-text {
+       font-weight: bold;
+       font-size: 20px;
+       
+       text-shadow: black;
+       
+    }
+
+    .developers-text {
+      font-weight: bold;
+      font-size: 25px;
+      color: black;
+    }
