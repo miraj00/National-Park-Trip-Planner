@@ -98,9 +98,12 @@ function weatherAPI(zip){
     for(i=0;i<=15; i++){
         //48 hours weather forecast for every 3 hours= 15 iterations
         var hourdiv = document.createElement("div");
+        // var imageText = $("#iconText").text(weatherData.list[i].weather[0].description) ;
+       
         $(hourdiv).addClass("col s12 m8 l2");
         $(hourdiv).append("<p id='time'></p>");
         $(hourdiv).append("<p id='icon'>Time:</p>");
+        $("#iconText").text(weatherData.list[i].weather[0].description);
         $(hourdiv).append("<p id='iconText'></p>");
         $(hourdiv).append("<p id='temp'></p>");
         $(hourdiv).append("<p id='windDegree'>Wind: </p>");
@@ -112,7 +115,6 @@ function weatherAPI(zip){
 
 
     $(forecastContainerEl).append(hourdiv);
-
 
 
         
