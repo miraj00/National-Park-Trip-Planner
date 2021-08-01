@@ -1,87 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-   <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-   <link rel="stylesheet" href="./assets/css/style.css" />
-   <title>NATIONAL PARK TRIP PLANNER</title>
-</head>
-<body class="light-green lighten-5">
-   <header>
-      <div id="headerH1" class="col s12 m6">
-         <h1 class="white-text">National Park Trip Planner</h1>
-      </div>
-   </header>
-   <main class="container">
-      <div class="row">
-         <div class="col s2 pull-l2">
-            <form class="row">
-               <select id="stateS" name="states" class="dropdown-content">
-                  <option value="0">Choose A State</option>
-                  <option value="ak">Alaska</option>
-                  <option value="az">Arizona</option>
-                  <option value="cal">California</option>
-                  <option value="hi">Hawaii</option>
-                  <option value="mt">Montana</option>
-                  <option value="nv">Nevada</option>
-                  <option value="nm">New Mexico</option>
-                  <option value="ut">Utah</option>
-               </select>
-               <select id="mySelect">
-                  <option value="">Select Park</option>
-               </select>
-               <br><br><br>
-               <div class="textAbove">Few Images of the Parks (Scroll left or right )</div> <br>
-               <div class="carousel carousel-slider" id="Carousal">
-                   <a class="carousel-item" href="#one!"><img src="./assets/images/pic1.JPEG"></a>
-                   <a class="carousel-item" href="#two!"><img src="./assets/images/pic2.JPEG"></a>
-                   <a class="carousel-item" href="#three!"><img src="./assets/images/pic3.JPEG"></a>
-                   <a class="carousel-item" href="#four!"><img src="./assets/images/pic4.JPEG"></a>
-                   <a class="carousel-item" href="#five!"><img src="./assets/images/pic5.JPEG"></a>
-               </div>
-            </form>
-         </div>
-         <div class="col s10 ">
-            <div>
-               <h2 class="card-panel green lighten-4 blue-text" id="parkInfo" style="text-transform:uppercase">Full
-                  Name of Park</h2>
-               <ul>
-                  <li class="flow-text" id="address">Address : </li> <br>
-                  <li id="phNo">Phone No : </li> <br>
-                  <li id="description">Description : </li> <br>
-                  <li id="alerts">Current Alerts : </li> <br>
-                  <li>Entrance Fees : </li> <br>
-                  <li id="allotherfees">All Other Fees : </li>
-                  <li id="motorcyclefees">Motorcycle Fees : </li>
-                  <li id="pedfees">Pedestrian Fees : </li> <br> <br>
-               </ul>
-            </div>
-         </div>
-      </div>
-            <!-- forecast for next 48 hours every 3 hours -->
-            <div class="row" id="centralize">
-              <!--- <div id="centerText" class="col s1 m1 l12 blue lighten-4"> Weather Period : 0 to 24 Hours from Now ( at
-                    3 hours increment)</div>-->
-               <div id="hourForecast">
-                  <h2 class="forecast"><span id="iconText"></span></h2>
-            </div>
-            <div class="row">
-               <div class="card-panel deep-orange darken-1 z-depth-5">
-                  <p class="center-align white-text ">( See below Wind Degree chart to estimate Diretion : ) </p>
-               </div>
-               <div class="img-div responsive-img">
-                  <img class="wind-image" src="./assets/images/wind-Direction.JPG" alt="wind-direction estimation">
-               </div>
-            </div>
 
-   </main>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-   <script src="./assets/js/script1.js"></script>
-</body>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>NATIONAL PARK TRIP PLANNER</title>
+</head>
 
 <body>
     <header>
@@ -397,7 +324,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.1.18/jquery.backstretch.min.js"></script>
-    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/script1.js"></script>
     </div>
 
 </body>

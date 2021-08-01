@@ -32,9 +32,14 @@ $(document).ready(function () {
         $('#parkInfo').text('');
         init(parkCode);	
     });
+    $('.carousel.carousel-slider').carousel({
+        fullWidth: true
+    });
 
 
 });
+$.backstretch("./assets/images/pic2.JPEG");
+
 
 function init(parkCode){ 
     if(parkCode=='0' || parkCode==undefined){	
