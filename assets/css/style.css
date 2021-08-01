@@ -1,21 +1,100 @@
+body {
+  display: flexbox;
+}
+
 header {
-    background: rgb(105, 107, 211);
-    position:sticky;
-    top: 0;
-  
-    z-index: 9999;
-    height: 70px;
-    
-    text-align: center;
-    font-size: 25px;
-    color:rgb(253, 253, 253);
-  }
+  background-image: url("../images/pic2.JPEG");   
+  height: 100px;
+    width: 100%; 
+  position: sticky;
+  top: 0;
+  z-index: 9999;
 
-  .titleName {
-background-color: yellow;
-  }
+  display: flex;
+ 
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-position: 80%;
+} 
 
-  #parkCode {
+
+
+.white-text {
+  padding-right: 20px;
+  text-align: right;
+  font-size: 60px;
+  align-content: flex-end;
+}
+
+div.white-text { 
+  align-content:right;
+  position: absolute;
+  bottom: 0px;
+  right: 35px;
+}
+
+.wind-image {
+  padding: 100px 0px 0px 0px;
+  width: 400px;
+  height: 400px;
+
+}
+
+.flex-container {
+  display: flex;
+  justify-content: center;    
+  width: 100%;
+}
+
+.flex-container > li {
+  justify-content: center;
+  width: 3000px;
+  font-size: 5px;
+}
+
+#Carousel {
+  height: 700px;
+  margin-top: 300px;
+}
+
+div.col.s3, div.col.s9 {
+  border: 1px solid black; 
+  height: 550px;
+}
+
+div.col.s1 {
+  width: 500px;
+  height: 250px;
+  border: 1px solid black;
+  text-align: center;
+}
+
+.row .col.s1 {
+  width: 11%;
+  text-align: center;
+}
+
+#parkInfo {
+  width: 100%;
+  text-align: center;
+  font-style: italic;
+}
+.container {
+  width: 1300px;
+  padding-top: 10px;
+}
+
+.row {
+  align-items: stretch;
+}
+
+
+#centralize {
+  align-items: center;
+}
+
+#parkCode {
   display: none;
 }
 
@@ -55,4 +134,56 @@ border-bottom: 2px solid black;
 /*added style for button from html*/
 #iconStyle{
         text-transform:uppercase;
+}
+
+.videoHeader {
+  text-align: center;
+  font-size: 40px;
+  background: rgb(125, 159, 221); 
+}
+
+.vids1 .vids2 .vids3 .vids4 {
+  margin-left: 50px;
+  align-content: center;
+}
+
+#videoRow1, #videoRow2  {
+  padding: 20px 0 20px 100px;
+}
+
+.textLink  {
+  font-weight: bold;
+  font-size: 30px;
+  text-align: center;
+  background-color: gray;
+}
+
+#centerText  {    
+  padding-top: 80px;
+}
+
+.textAbove {
+  font-size: 15 px;
+  font-weight: bold;
+  text-align: center;
+
+}
+.black-text  {
+  font-weight: bold;
+  font-size: 25px;
+  text-align: center;
+}
+
+.grey-text {
+  font-weight: bold;
+  font-size: 20px;
+  text-shadow: 0px 1px black;
+}
+
+.developers-text {
+  font-weight: bold;
+  font-size: 25px;
+  color: black;
+  background-color: white;
+  text-align: center;
 }

@@ -31,7 +31,10 @@ $(document).ready(function () {
         $('#parkInfo').text('');
         init(parkCode);	
     });
-
+    $('.carousel.carousel-slider').carousel({
+        fullWidth: true
+      
+      });
 
 });
 
@@ -87,7 +90,7 @@ function init(parkCode){
 
                     var iconTime0El = document.querySelector('#icon0');
                     var jpgImg0 = document.createElement('img');
-                    var iconUrl0 = "https://openweathermap.org/img/w/" + data2.list[0].weather[0].icon + ".png";
+                     var iconUrl0 = "https://openweathermap.org/img/w/" + data2.list[0].weather[0].icon + ".png";
                     jpgImg0.setAttribute('src', iconUrl0);
                     iconTime0El.innerHTML = '';
                     iconTime0El.appendChild(jpgImg0);
