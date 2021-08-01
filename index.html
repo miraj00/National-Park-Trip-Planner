@@ -11,39 +11,322 @@
 </head>
 
 <body>
-    <header>    
-        <h1>National Park Trip Planner</h1>
+    <header>
+        <div class="white-text">National Park Trip Planner</div>
     </header>
+    <br>
+
     <main class="container">
         <div class="row">
-            <div class="col s4 pull-s2">
+            <div class="col s3 m3 l3 grey lighten-4">
                 <form class="row">
-                    <select id="select1">
-                        <option value="0">State</option>
-                        <option value="NJ">NJ</option>
-                        <option value="AL">AL</option>
-                        <option value="WA">WA</option>
+
+                    <select id="stateS" name="states" class="dropdown-content">
+                        <option value="0">Choose A State</option>
+                        <option value="ak">Alaska</option>
+                        <option value="az">Arizona</option>
+                        <option value="cal">California</option>
+                        <option value="hi">Hawaii</option>
+                        <option value="mt">Montana</option>
+                        <option value="nv">Nevada</option>
+                        <option value="nm">New Mexico</option>
+                        <option value="ut">Utah</option>
                     </select>
-                    <select id="myselect">
-                        <option value="">Choose One</option>
+                    <select id="mySelect">
+                        <option value="">Select Park</option>
                     </select>
-                    <button class="btn waves-effect waves-light" type="submit" name="action">Submit
-                        <i class="material-icons right"></i>
-                      </button>
+                    <br> <br> <br>
+                    <div class="textAbove">Few Images of the Parks (Scroll left or right )</div> <br>
+                    <div class="carousel carousel-slider" id="Carousal">
+                        <a class="carousel-item" href="#one!"><img src="./assets/images/pic1.JPEG"></a>
+                        <a class="carousel-item" href="#two!"><img src="./assets/images/pic2.JPEG"></a>
+                        <a class="carousel-item" href="#three!"><img src="./assets/images/pic3.JPEG"></a>
+                        <a class="carousel-item" href="#four!"><img src="./assets/images/pic4.JPEG"></a>
+                        <a class="carousel-item" href="#five!"><img src="./assets/images/pic5.JPEG"></a>
+                    </div>
                 </form>
             </div>
+
+
+            <div class="col s2 m5 l9 grey lighten-4">
+                <div>
+                    <h2 class="card-panel green lighten-5 blue-text" id="parkInfo" style="text-transform:uppercase">Full
+                        Name of Park</h2>
+                    <ul>
+                        <li id="parkCode">glac</li> <br>
+                        <li id="address">Address : </li> <br>
+                        <li id="phNo">Phone No : </li> <br>
+                        <li id="discription">Description : </li> <br>
+                        <li id="alerts">Current Alerts : </li> <br>
+                        <li>Entrance Fees : </li> <br>
+                        <li id="allotherfees">All Other Fees : </li>
+                        <li id="motorcyclefees">Motorcycle Fees : </li>
+                        <li id="pedfees">Pedestrian Fees : </li> <br> <br>
+
+
+
+
+
+                        <!--  <li id="parkLink"> For More information Please go to </li>  -->
+
+                    </ul>
+                </div>
+            </div>
         </div>
+
+        <div">
+            <!-- forecast for next 48 hours every 3 hours -->
+            <div class="row" id="centralize">
+                <div id="centerText" class="col s1 m1 l12 blue lighten-4"> Weather Period : 0 to 24 Hours from Now ( at
+                    3 hours increment)</div>
+                <div class="col s1 m6 l1 grey lighten-4">
+                    <ul class="/blue lighten-3">
+                        <li id="time0">at 3 hrs</li>
+                        <li id="icon0" class="btn-floating btn-medium pulse"></li>
+                        <li id="iconText0" style="text-transform:uppercase"></li>
+                        <li id="temp0"></li>
+                        <li id="wind0"></li>
+                        <li id="windDegree0"></li>
+                    </ul>
+                </div>
+                <div class="col s1 m6 l1 grey lighten-4">
+                    <ul class="/deep-orange darken-1">
+                        <li id="time1"> at 6 hrs</li>
+                        <li id="icon1" class="btn-floating btn-medium pulse"></li>
+                        <li id="iconText1" style="text-transform:uppercase"></li>
+                        <li id="temp1"></li>
+                        <li id="wind1"></li>
+                        <li id="windDegree1"></li>
+                    </ul>
+                </div>
+                <div class="col s1 m6 l1 grey lighten-4">
+                    <ul class="/amber accent-1">
+                        <li id="time2">at 9 hrs</li>
+                        <li id="icon2" class="btn-floating btn-medium pulse"></li>
+                        <li id="iconText2" style="text-transform:uppercase"></li>
+                        <li id="temp2"></li>
+                        <li id="wind2"></li>
+                        <li id="windDegree2"></li>
+                    </ul>
+                </div>
+                <div class="col s1 m6 l1 grey lighten-4">
+                    <ul class="/blue lighten-3">
+                        <li id="time3">at 12 hrs</li>
+                        <li id="icon3" class="btn-floating btn-medium pulse"></li>
+                        <li id="iconText3" style="text-transform:uppercase"></li>
+                        <li id="temp3"></li>
+                        <li id="wind3"></li>
+                        <li id="windDegree3"></li>
+                    </ul>
+                </div>
+                <div class="col s1 m6 l1 grey lighten-4">
+                    <ul class="/blue lighten-3">
+                        <li id="time4">at 15 hrs</li>
+                        <li id="icon4" class="btn-floating btn-medium pulse"></li>
+                        <li id="iconText4" style="text-transform:uppercase"></li>
+                        <li id="temp4"></li>
+                        <li id="wind4"></li>
+                        <li id="windDegree4"></li>
+                    </ul>
+                </div>
+                <div class="col s1 m6 l1 grey lighten-4">
+                    <ul class="/orange accent-4">
+                        <li id="time5"> at 18 hrs</li>
+                        <li id="icon5" class="btn-floating btn-medium pulse"></li>
+                        <li id="iconText5" style="text-transform:uppercase"></li>
+                        <li id="temp5"></li>
+                        <li id="wind5"></li>
+                        <li id="windDegree5"></li>
+                    </ul>
+                </div>
+                <div class="col s1 m6 l1 grey lighten-4">
+                    <ul class="/amber accent-1">
+                        <li id="time6">at 21 hrs</li>
+                        <li id="icon6" class="btn-floating btn-medium pulse"></li>
+                        <li id="iconText6" style="text-transform:uppercase"></li>
+                        <li id="temp6"></li>
+                        <li id="wind6"></li>
+                        <li id="windDegree6"></li>
+                    </ul>
+                </div>
+                <div class="col s1 m6 l1 grey lighten-4">
+                    <ul class="/amber accent-1">
+                        <li id="time7">at 24 hrs</li>
+                        <li id="icon7" class="btn-floating btn-medium pulse"></li>
+                        <li id="iconText7" style="text-transform:uppercase"></li>
+                        <li id="temp7"></li>
+                        <li id="wind7"></li>
+                        <li id="windDegree7"></li>
+                    </ul>
+                </div>
+            </div>
+            </div>
+
+            <div">
+                <div class="row">
+                    <div id="centerText" class="col s1 m1 l12 blue lighten-4"> Weather Period : 25 to 48 Hours from Now
+                        ( at 3 hours increment) </div>
+
+                    <div class="col s1 m6 l12 grey lighten-4">
+                        <ul class="/blue lighten-3">
+                            <li id="time8">at 27 hrs</li>
+                            <li id="icon8" class="btn-floating btn-medium pulse"></li>
+                            <li id="iconText8" style="text-transform:uppercase"></li>
+                            <li id="temp8"></li>
+                            <li id="wind8"></li>
+                            <li id="windDegree8"></li>
+                        </ul>
+                    </div>
+                    <div class="col s1 m6 l12 grey lighten-4">
+                        <ul class="/amber accent-1">
+                            <li id="time9"> at 30 hrs</li>
+                            <li id="icon9" class="btn-floating btn-medium pulse"></li>
+                            <li id="iconText9" style="text-transform:uppercase"></li>
+                            <li id="temp9"></li>
+                            <li id="wind9"></li>
+                            <li id="windDegree9"></li>
+                        </ul>
+                    </div>
+                    <div class="col s1 m6 l12 grey lighten-4">
+                        <ul class="/amber accent-1">
+                            <li id="time10">at 33 hrs</li>
+                            <li id="icon10" class="btn-floating btn-medium pulse"></li>
+                            <li id="iconText10" style="text-transform:uppercase"></li>
+                            <li id="temp10"></li>
+                            <li id="wind10"></li>
+                            <li id="windDegree10"></li>
+                        </ul>
+                    </div>
+                    <div class="col s1 m6 l12 grey lighten-4">
+                        <ul class="/amber accent-1">
+                            <li id="time11">at 36 hrs</li>
+                            <li id="icon11" class="btn-floating btn-medium pulse"></li>
+                            <li id="iconText11" style="text-transform:uppercase"></li>
+                            <li id="temp11"></li>
+                            <li id="wind11"></li>
+                            <li id="windDegree11"></li>
+                        </ul>
+                    </div>
+                    <div class="col s1 m6 l12 grey lighten-4">
+                        <ul class="/blue lighten-3">
+                            <li id="time12">at 39 hrs</li>
+                            <li id="icon12" class="btn-floating btn-medium pulse"></li>
+                            <li id="iconText12"></li>
+                            <li id="temp12"></li>
+                            <li id="wind12"></li>
+                            <li id="windDegree12"></li>
+                        </ul>
+                    </div>
+                    <div class="col s1 m6 l12 grey lighten-4">
+                        <ul class="/amber accent-1">
+                            <li id="time13"> at 42 hrs</li>
+                            <li id="icon13" class="btn-floating btn-medium pulse"></li>
+                            <li id="iconText13" style="text-transform:uppercase"></li>
+                            <li id="temp13"></li>
+                            <li id="wind13"></li>
+                            <li id="windDegree13"></li>
+                        </ul>
+                    </div>
+                    <div class="col s1 m6 l12 grey lighten-4">
+                        <ul class="/deep-purple accent-1">
+                            <li id="time14">at 45 hrs</li>
+                            <li id="icon14" class="btn-floating btn-medium pulse"></li>
+                            <li id="iconText14" style="text-transform:uppercase"></li>
+                            <li id="temp14"></li>
+                            <li id="wind14"></li>
+                            <li id="windDegree14"></li>
+                        </ul>
+                    </div>
+                    <div class="col s1 m6 l12 grey lighten-4">
+                        <ul class="/blue darken-1">
+                            <li id="time15">at 48 hrs</li>
+                            <li id="icon15" class="btn-floating btn-medium pulse"></li>
+                            <li id="iconText15" style="text-transform:uppercase"></li>
+                            <li id="temp15"></li>
+                            <li id="wind15"></li>
+                            <li id="windDegree15"></li>
+                        </ul>
+                    </div>
+
+                </div>
+                </div>
+
+
+                <div class="videoHeader"> Some Video Clips Sponsored by Nomad From Outer World </div>
+
+
+                <div id='videoRow1'>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/0mqZLC2URAs" frameborder="0"
+                        allowfullscreen></iframe>
+
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/PwfBEgW87LU" frameborder="0"
+                        allowfullscreen></iframe>
+
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/Sp1JmzxnXWA" frameborder="0"
+                        allowfullscreen></iframe>
+                </div>
+
+                <div id='videoRow2'>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/qkblKgmLfvQ" frameborder="0"
+                        allowfullscreen></iframe>
+
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/5PsOtmMjTyA" frameborder="0"
+                        allowfullscreen></iframe>
+
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/ctaB4OqO3BY" frameborder="0"
+                        allowfullscreen></iframe>
+                </div>
+
+
     </main>
 
+    <footer class="footer transparent">
+        <div class="container">
+            <div class="row">
+                <div class="col s2 m3 l6">
+                    <h5 class="white black-text">For More Information on Parks and Activities</h5>
+                    <p class="textLink"><a class="grey-text text-lighten-4" href="https://www.nps.gov/index.htm"
+                            target="_blank">Please click here</p>
+                </div>
+                <div class="col s2 m3 l4 offset-l2">
+                    <h5 class="developers-text">Meet the Developers</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3"
+                                href="https://kamm8899.github.io/Professional-Portifolio/" target="_blank">Jessica
+                                Kamman</a></li>
+                        <li><a class="grey-text text-lighten-3" href="https://miraj00.github.io/" target="_blank">Miraj
+                                Patel</a></li>
+                        <li><a class="grey-text text-lighten-3" href="https://ronnieve23.github.io/"
+                                target="_blank">Ronnieve Romero</a></li>
+                        <li><a class="grey-text text-lighten-3" href="https://walterlaw19.github.io/first-portfolio/"
+                                target="_blank">Walter Gonzales</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col s2 m3 l6">© 2021 Copyright by Park Lovers !!</div>
+                    <div class="col s2 m3 l6 offset-l2"><a class="grey-text text-lighten-4 right"
+                            href="https://www.nps.gov/nature/index.htm" target="_blank">Help Protect the Nature !!</a>
+                    </div>
+                </div>
 
-   
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.1.18/jquery.backstretch.min.js"></script>
     <script src="./assets/js/script.js"></script>
+    </div>
+
 </body>
-
-
 
 </html>
