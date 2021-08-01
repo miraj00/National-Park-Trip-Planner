@@ -37,9 +37,13 @@ $(document).ready(function () {
 
 
 // added Carousel
-$(document).ready(function(){
-    $('.carousel').carousel();
-});
+$('.carousel.carousel-slider').carousel({
+    fullWidth: true
+  
+  });
+      
+
+  $.backstretch("./assets/images/pic2.JPEG");
 // ends Carousel
 
 
