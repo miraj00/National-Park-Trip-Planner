@@ -49,3 +49,10 @@ background-color: rgb(137, 231, 195);
 .color15 {
 border-bottom: 2px solid black;
         }
+#centerText{
+        padding: 80px;
+}
+/*added style for button from html*/
+#iconStyle{
+        text-transform:uppercase;
+}

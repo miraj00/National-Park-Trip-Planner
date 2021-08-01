@@ -65,7 +65,6 @@ function init(parkCode){
             //document.getElementById("motorcyclefees").innerHTML = " -        $ " + data1.data[0].entranceFees[1].cost + " for non-commercial motorcycle ";
             document.getElementById("pedfees").innerHTML = " -       $ " + data1.data[0].entranceFees[2].cost + " for  bicyclist, hiker, pedestrian ";
 
-            document.getElementById("parkLink").innerHTML = data1.data[0].url;
 
             var zip = data1.data[0].addresses[0].postalCode;
             //console.log("zip " + zip);
@@ -102,28 +101,37 @@ function weatherAPI(zip){
         var hourdiv = document.createElement("div");
         // var imageText = $("#iconText").text(weatherData.list[i].weather[0].description) ;
        
-        $(hourdiv).addClass("col s12 m8 l2");
+        $(hourdiv).addClass("col s12 m8 l2 grey lighten-4");
         //This is to add weather icon description
-        $("#iconText").text(weatherData.list[i].weather[0].description);
+        $("#iconText").addClass("iconStyle");
+        $("#iconText").html(weatherData.list[i].weather[0].description);
         $(hourdiv).append("<p id='iconText'></p>");
         //Temp
-        $("#temp").text("Temperature: " + weatherData.list[i].main.temp + "F");
+        $("#temp").html("Temperature: " + weatherData.list[i].main.temp + "F");
         $(hourdiv).append("<p id='temp'></p>");
 
-        $(hourdiv).append("<p id='time'></p>");
-
-        $(hourdiv).append("<p id='icon'>Time:</p>");
-        // This is for weather icon description
-        $("#iconText").text(weatherData.list[i].weather[0].description);
-        $("#iconText").text("Wind: " + weatherData.list[i].wind.speed );
-        $(hourdiv).append("<p id='windSpeed'></p>");
-        $("#iconText").text("Wind Direction: " + weatherData.list[i].wind.deg + " Degree");
-        $(hourdiv).append("<p id='windDeg'></p>");
-        $(forecastContainerEl).append(hourdiv);
-         //create element for icon
+        //Create icon class 
         var icon=document.createElement("img");
+        $("#icon").addClass("btn-floating btn-medium pulse");
+        $(hourdiv).append("<p id='icon'>Time:</p>");
         $(icon).attr("src", "https://openweathermap.org/img/w/" + weatherData.list[i].weather[0].icon + ".png");
-        $(hourdiv).append(icon);        
+        $(hourdiv).append(icon);    
+
+        //create time elements
+        $("#icon").addClass("btn-floating btn-medium pulse");
+        $(hourdiv).append("<p id='time'></p>");
+        
+        
+        //Creating content for WindSpeed
+        $("#windSpeed").html("Wind: " + weatherData.list[i].wind.speed );
+        $(hourdiv).append("<p id='windSpeed'></p>");
+        //Create content for windSpeed
+        $("#windDeg").html("Wind Direction: " + weatherData.list[i].wind.deg + " Degree");
+        $(hourdiv).append("<p id='windDeg'></p>");
+
+        $(forecastContainerEl).append(hourdiv);
+         //create element for icon 
+
     }
 
      

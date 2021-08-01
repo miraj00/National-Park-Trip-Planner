@@ -64,10 +64,6 @@ function init(parkCode){
 
 
 
-            document.getElementById("parkLink").innerHTML = data1.data[0].url;
-
-
-
 
           //  -----------------:: -------------  API  to pull weather info for every 3 hours for hikers / campers ----------------::-------------------
 
