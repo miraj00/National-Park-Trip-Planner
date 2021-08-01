@@ -26,21 +26,18 @@ $(document).ready(function () {
     });
     $("#mySelect").change(function () {
         var parkCode = $(this).val(); 
-        $('#content-x').hide();
-        $('#content-error').hide();
-        $('#parkInfo').text('');
         init(parkCode);	
     });
-
+    $('.carousel.carousel-slider').carousel({
+        fullWidth: true
+      
+      });
 
 });
 
 
-// added Carousel
-$('.carousel.carousel-slider').carousel({
-    fullWidth: true
-  
-  });
+
+
       
 
   $.backstretch("./assets/images/pic2.JPEG");
