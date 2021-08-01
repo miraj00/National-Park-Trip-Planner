@@ -75,7 +75,7 @@ function init(parkCode){
 
 
 
-            document.getElementById("parkLink").innerHTML = data1.data[0].url;
+            // document.getElementById("parkLink").innerHTML = data1.data[0].url;
 
 
 
