@@ -89,9 +89,11 @@ function weatherAPI(zip){
 
         })
     };
-//  var currentDate= new Date();
-//  var year = currentDate.getFullYear();
-//  var month = currentDate.getMonth();
+ var currentDate= new Date();
+ var year = currentDate.getFullYear();
+ var month = currentDate.getMonth();
+ var days = currentDate.getHours();
+
 
  function getWeatherForecast(weatherData){
     forecastContainerEl.textContent="";
@@ -109,12 +111,13 @@ function weatherAPI(zip){
         $(hourdiv).append("<p id='temp'></p>");
 
         $(hourdiv).append("<p id='time'></p>");
+
         $(hourdiv).append("<p id='icon'>Time:</p>");
         // This is for weather icon description
         $("#iconText").text(weatherData.list[i].weather[0].description);
         $("#iconText").text("Wind: " + weatherData.list[i].wind.speed );
         $(hourdiv).append("<p id='windSpeed'></p>");
-        $("#iconText").text("Wind Direction: " + data2.list[0].wind.deg + " Degree");
+        $("#iconText").text("Wind Direction: " + weatherData.list[i].wind.deg + " Degree");
         $(hourdiv).append("<p id='windDeg'></p>");
         $(forecastContainerEl).append(hourdiv);
          //create element for icon
@@ -127,6 +130,12 @@ function weatherAPI(zip){
      console.log(weatherData);
 
  }
+//  //add functions for hour
+// appendHours(date, hours){
+//     var new_date = new Date(days);
+//     new_date.setDate(new_date.getDate()+hours);
+
+// }
 
 var forecastContainerEl = document.querySelector("#hourForecast");
 
