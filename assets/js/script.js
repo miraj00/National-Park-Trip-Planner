@@ -35,6 +35,20 @@ $(document).ready(function () {
 
 });
 
+
+// added Carousel
+$('.carousel.carousel-slider').carousel({
+    fullWidth: true
+  
+  });
+      
+
+  $.backstretch("./assets/images/pic2.JPEG");
+// ends Carousel
+
+
+
+
 function init(parkCode){ 
     if(parkCode=='0' || parkCode==undefined){	
         return;	
@@ -91,7 +105,7 @@ function init(parkCode){
 
                     var iconTime0El = document.querySelector('#icon0');
                     var jpgImg0 = document.createElement('img');
-                    var iconUrl0 = "https://openweathermap.org/img/w/" + data2.list[0].weather[0].icon + ".png";
+                     var iconUrl0 = "https://openweathermap.org/img/w/" + data2.list[0].weather[0].icon + ".png";
                     jpgImg0.setAttribute('src', iconUrl0);
                     iconTime0El.innerHTML = '';
                     iconTime0El.appendChild(jpgImg0);
