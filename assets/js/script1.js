@@ -112,25 +112,15 @@ function weatherAPI(zip){
         $(hourdiv).append("<p id='icon'>Time:</p>");
         // This is for weather icon description
         $("#iconText").text(weatherData.list[i].weather[0].description);
-        $(hourdiv).append("<p id='iconText'></p>");
-        
-
-
-        $(hourdiv).append("<p id='windDegree'>Wind: </p>");
+        $("#iconText").text("Wind: " + weatherData.list[i].wind.speed );
+        $(hourdiv).append("<p id='windSpeed'></p>");
+        $("#iconText").text("Wind Direction: " + data2.list[0].wind.deg + " Degree");
+        $(hourdiv).append("<p id='windDeg'></p>");
         $(forecastContainerEl).append(hourdiv);
          //create element for icon
         var icon=document.createElement("img");
         $(icon).attr("src", "https://openweathermap.org/img/w/" + weatherData.list[i].weather[0].icon + ".png");
-        $(hourdiv).append(icon);
-
-
-                        //Need to do Temp
-
-// // //         let t0fixed = t0.toFixed(2)
-// // //         document.getElementById("temp0").innerHTML = "Temp :  " + t0fixed + " *F";
-
-
-        
+        $(hourdiv).append(icon);        
     }
 
      
@@ -148,18 +138,3 @@ var forecastContainerEl = document.querySelector("#hourForecast");
 // // //         const dateObject = new Date(milliseconds);
 // // //         const humanDateFormat = dateObject.toLocaleString("en-US", { timeZoneName: "short" })
 // // //         document.getElementById("time0").innerHTML = humanDateFormat;  //<---------------------adding date via innerHTML 
-
-                    //Text
-// // //         document.getElementById("iconText0").innerHTML = data2.list[0].weather[0].description;
-
-                //Need to do Temp
-// // //         var v0 = (data2.list[0].main.temp) * 9 / 5;
-// // //         var t0 = v0 - 459.67;
-// // //         let t0fixed = t0.toFixed(2)
-// // //         document.getElementById("temp0").innerHTML = "Temp :  " + t0fixed + " *F";
-
-
-                    //values
-// // //         document.getElementById("wind0").innerHTML = "Wind :  " + data2.list[0].wind.speed + " MPH";
-// // //         document.getElementById("windDegree0").innerHTML = "Wind Direction :  " + data2.list[0].wind.deg + " degree ";
-
