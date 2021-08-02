@@ -27,9 +27,9 @@ $(document).ready(function () {
     });
     $("#mySelect").change(function () {
         var parkCode = $(this).val(); 
-        $('#content-x').hide();
-        $('#content-error').hide();
-        $('#parkInfo').text('');
+        // $('#content-x').hide();
+        // $('#content-error').hide();
+        // $('#parkInfo').text('');
         init(parkCode);	
     });
     $('.carousel.carousel-slider').carousel({
@@ -39,7 +39,7 @@ $(document).ready(function () {
 
 });
 $.backstretch("./assets/images/pic2.JPEG");
-
+//end of Carousel
 
 function init(parkCode){ 
     if(parkCode=='0' || parkCode==undefined){	
@@ -64,10 +64,10 @@ function init(parkCode){
 
             document.getElementById("address").innerHTML = "Address :  [ " + data1.data[0].addresses[0].line2 + " ] " + data1.data[0].addresses[0].line1 + ", " + data1.data[0].addresses[0].city + ", " + data1.data[0].addresses[0].stateCode + " - " + data1.data[0].addresses[0].postalCode;
             document.getElementById("phNo").innerHTML = "Phone No :  " + data1.data[0].contacts.phoneNumbers[0].phoneNumber;
-            //document.getElementById("discription").innerHTML = "Description : " + data1.data[0].description;
+            document.getElementById("discription").innerHTML = "Description : " + data1.data[0].description;
             // document.getElementById("alerts").innerHTML = "Current Temp :  " + t0fixed + " *F" ; 
             document.getElementById("allotherfees").innerHTML = " -        $ " + data1.data[0].entranceFees[0].cost + " for non-commercial vehicle (15 passenger capacity or less) and all occupants ";
-            //document.getElementById("motorcyclefees").innerHTML = " -        $ " + data1.data[0].entranceFees[1].cost + " for non-commercial motorcycle ";
+            document.getElementById("motorcyclefees").innerHTML = " -        $ " + data1.data[0].entranceFees[1].cost + " for non-commercial motorcycle ";
             document.getElementById("pedfees").innerHTML = " -       $ " + data1.data[0].entranceFees[2].cost + " for  bicyclist, hiker, pedestrian ";
 
 
@@ -149,6 +149,7 @@ function weatherAPI(zip){
 //     new_date.setDate(new_date.getDate()+hours);
 
 // }
+init();
 
 var forecastContainerEl = document.querySelector("#hourForecast");
 
