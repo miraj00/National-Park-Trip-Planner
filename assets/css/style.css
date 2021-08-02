@@ -31,13 +31,7 @@ header {
     right: 20px;
   }
 
-    .wind-image {
-      padding: 100px 0px 0px 0px;
-      width: 400px;
-      height: 400px;
-      
-    }
-    .flex-container {
+     .flex-container {
       display: flex;
       justify-content: center;    
       width: 100%;
