@@ -9,20 +9,8 @@ $(document).ready(function () {
   });
       
 
-  $.backstretch("./assets/images/pic2.JPEG");
-
-/*
-  function capture() {
-  html2canvas(document.body, {
-    onrendered: function(canvas)
-    {
-    var img = canvas.toDataURL();
-    $("#result-image").attr('src', img).show();
-    }
-    });
-  }
-
-*/
+ //  $.backstretch("./assets/images/pic2.JPEG");
+  $.backstretch(["./assets/images/pic2.JPEG","./assets/images/pic3.JPEG","./assets/images/pic4.JPEG","./assets/images/pic5.JPEG"], {duration: 5000, fade: 2000});
 
 
 var optionsList = document.querySelector("#mySelection");

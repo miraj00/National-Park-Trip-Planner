@@ -1,27 +1,36 @@
 header {
- 
-        
-        background-image: url("./assets/images/pic2.JPEG"); 
-        position:sticky;
+       background-image: none;  
+        height: 100px;
+        width: 100%; 
+        position: sticky;
         top: 0;
-      
         z-index: 9999;
-        height: 20px;
-        width: 100%;
-        text-align: right;
-        font-size: 20px;
-        color:rgb(253, 253, 253);
 
 
-     
-        justify-content: space-between;
-     
-        background-size: cover;
-        background-position: center;
-        background-attachment: fixed;
-        background-position: 80%;
-      
-      } 
+      display: flex;
+
+       
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      background-position: 80%;
+    } 
+
+    .white-text {
+    padding-right: 0px;
+    text-align: right;
+    font-size: 25px;
+    align-content: flex-end;
+    color: white;
+  }
+
+  div.white-text { 
+    align-content:right;
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+  }
+
     .wind-image {
       padding: 100px 0px 0px 0px;
       width: 400px;
@@ -35,7 +44,7 @@ header {
      }
     
     .flex-container > li {
-  /*    background-color: #f1f1f1; */
+  
       justify-content: center;
       width: 3000px;
       font-size: 5px;
@@ -69,7 +78,7 @@ header {
     }
     .container {
       width: 1300px;
-      padding-top: 30px;
+      padding-top: 10px;
     
     }
     .row {
@@ -111,9 +120,7 @@ header {
       background-color: gray;
     }
 
-  .white-text {
-      padding-right: 20px;
-    }
+
 
   #centerText  {    
     padding-top: 80px;
