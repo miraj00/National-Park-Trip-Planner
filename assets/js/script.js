@@ -35,22 +35,13 @@ $(document).ready(function () {
 
 });
 
-
-
-
-      
-
   $.backstretch("./assets/images/pic2.JPEG");
 // ends Carousel
-
-
-
 
 function init(parkCode){ 
     if(parkCode=='0' || parkCode==undefined){	
         return;	
  }
-
 
  $('#parkInfo').text('FULL NAME OF PARK : '+parkCode);
     
@@ -72,12 +63,6 @@ function init(parkCode){
             document.getElementById("allotherfees").innerHTML = " -        $ " + data1.data[0].entranceFees[0].cost + " for non-commercial vehicle (15 passenger capacity or less) and all occupants ";
             document.getElementById("motorcyclefees").innerHTML = " -        $ " + data1.data[0].entranceFees[1].cost + " for non-commercial motorcycle ";
             document.getElementById("pedfees").innerHTML = " -       $ " + data1.data[0].entranceFees[2].cost + " for  bicyclist, hiker, pedestrian ";
-
-
-
-            // document.getElementById("parkLink").innerHTML = data1.data[0].url;
-
-
 
 
             //-----------------:: -------------  API  to pull weather info for every 3 hours for hikers / campers ----------------::-------------------
@@ -502,3 +487,25 @@ function init(parkCode){
 
 }
 
+// Modal
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+var modal = document.getElementById("myModal");
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+    modal.style.display = "block";
+  }
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}

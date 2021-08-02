@@ -18,8 +18,6 @@ header {
   background-position: 80%;
 } 
 
-
-
 .white-text {
   padding-right: 20px;
   text-align: right;
@@ -34,12 +32,6 @@ div.white-text {
   right: 35px;
 }
 
-.wind-image {
-  padding: 100px 0px 0px 0px;
-  width: 400px;
-  height: 400px;
-
-}
 
 .flex-container {
   display: flex;
@@ -153,4 +145,75 @@ div.col.s1 {
   color: black;
   background-color: white;
   text-align: center;
+}
+
+
+
+/* The Modal (background) _______________________________________________________________________ */
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1; 
+  padding-top: 100px; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgba(0,0,0,0.4);
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.6s;
+  animation-name: animatetop;
+  animation-duration: 0.6s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {top:-300px; opacity:0} 
+  to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+  color: rgb(8, 6, 6);
+  float: right;
+  font-size: 45px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header {
+  padding: 2px 16px;
+  background-color: #6397e9;
+  color: rgb(8, 7, 7);
+}
+
+.modal-body {padding: 2px 16px;}
+
+.modal-footer {
+  padding: 2px 16px;
+  background-color: #6397e9;
+  color: white;
 }

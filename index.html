@@ -47,7 +47,6 @@
                 </form>
             </div>
 
-
             <div class="col s2 m5 l9 grey lighten-4">
                 <div>
                     <h2 class="card-panel green lighten-5 blue-text" id="parkInfo" style="text-transform:uppercase">Full
@@ -63,10 +62,6 @@
                         <li id="motorcyclefees">Motorcycle Fees : </li>
                         <li id="pedfees">Pedestrian Fees : </li> <br> <br>
 
-
-
-
-
                         <!--  <li id="parkLink"> For More information Please go to </li>  -->
 
                     </ul>
@@ -78,7 +73,36 @@
             <!-- forecast for next 48 hours every 3 hours -->
             <div class="row" id="centralize">
                 <div id="centerText" class="col s1 m1 l12 blue lighten-4"> Weather Period : 0 to 24 Hours from Now ( at
-                    3 hours increment)</div>
+                    3 hours increment)  <br> <br>
+
+<!-- adding Modal to interprete Weather  --------------------------------------------------------------------------------->
+                    <button id="myBtn">Wind Direction Reference</button> </div>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+    <!-- Modal content -->
+       <div class="modal-content">
+             <div class="modal-header">
+                <span class="close">&times;</span>
+                      <h2>Weather Interpretation</h2>
+             </div>
+      <div class="modal-body">
+          
+             <a class="carousel-item" href="#one!" width="560" height="315"><img src="./assets/images/Wind-Direction.JPG"></a>
+             <p>Read the Wind Degree from Weather Report on Screen, then compare to the range shown in chart</p>
+             <p>The corresponding cardinal direction to the left is the direction wind is blowing from</p>
+             <p>This direction can be really useful when you are lost in forest or desert. </p>
+             <p>It may help decide which direction to move to safely reach out of the Park when you have no other medium for direction</p>
+      </div>
+      <div class="modal-footer">
+             <h3>Modal Footer</h3>
+      </div>
+    </div>
+ </div>
+  
+ <!--   End of Modal ------------------------------------------------------------------------------------------>
+
                 <div class="col s1 m6 l1 grey lighten-4">
                     <ul class="/blue lighten-3">
                         <li id="time0">at 3 hrs</li>
@@ -251,7 +275,7 @@
                 </div>
                 </div>
 
-
+</main>
                 <div class="videoHeader"> Some Video Clips Sponsored by Nomad From Outer World </div>
 
 
@@ -276,9 +300,7 @@
                     <iframe width="560" height="315" src="https://www.youtube.com/embed/ctaB4OqO3BY" frameborder="0"
                         allowfullscreen></iframe>
                 </div>
-
-
-    </main>
+  
 
     <footer class="footer transparent">
         <div class="container">
@@ -305,19 +327,12 @@
             </div>
         </div>
         <div class="footer-copyright">
-            <div class="container">
-                <div class="row">
-                    <div class="col s2 m3 l6">© 2021 Copyright by Park Lovers !!</div>
-                    <div class="col s2 m3 l6 offset-l2"><a class="grey-text text-lighten-4 right"
-                            href="https://www.nps.gov/nature/index.htm" target="_blank">Help Protect the Nature !!</a>
-                    </div>
-                </div>
-
-
+            <div class="container"> 
+               © 2021 Copyright by Park Lovers !!
+            <a class="grey-text text-lighten-4 right" href="https://www.nps.gov/nature/index.htm" target="_blank">Help Protect the Nature !!</a>
             </div>
-        </div>
+          </div>
     </footer>
-
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
