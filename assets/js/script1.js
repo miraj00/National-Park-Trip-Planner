@@ -64,7 +64,7 @@ function init(parkCode){
 
             document.getElementById("address").innerHTML = "Address :  [ " + data1.data[0].addresses[0].line2 + " ] " + data1.data[0].addresses[0].line1 + ", " + data1.data[0].addresses[0].city + ", " + data1.data[0].addresses[0].stateCode + " - " + data1.data[0].addresses[0].postalCode;
             document.getElementById("phNo").innerHTML = "Phone No :  " + data1.data[0].contacts.phoneNumbers[0].phoneNumber;
-            document.getElementById("discription").innerHTML = "Description : " + data1.data[0].description;
+            document.getElementById("description").innerHTML = "Description : " + data1.data[0].description;
             // document.getElementById("alerts").innerHTML = "Current Temp :  " + t0fixed + " *F" ; 
             document.getElementById("allotherfees").innerHTML = " -        $ " + data1.data[0].entranceFees[0].cost + " for non-commercial vehicle (15 passenger capacity or less) and all occupants ";
             document.getElementById("motorcyclefees").innerHTML = " -        $ " + data1.data[0].entranceFees[1].cost + " for non-commercial motorcycle ";
@@ -152,6 +152,8 @@ function weatherAPI(zip){
 init();
 
 var forecastContainerEl = document.querySelector("#hourForecast");
+//set local Storage
+var savedParks =JSON.parse(localStorage.getItem("Saved_History")) || [];
 
 
 
