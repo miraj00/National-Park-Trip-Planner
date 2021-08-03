@@ -25,9 +25,13 @@ $(document).ready(function () {
         }
         $('#mySelect').formSelect()
     });
-    
-    $("#mySelect").change(function () {
+//added event as parameter, and event.preventDefault
+    $("#mySelect").change(function (event) {
+        event.preventDefault();
         var parkCode = $(this).val(); 
+        //add local Storage
+        var savedParks =JSON.parse(localStorage.getItem("Saved_History")) || [];
+        
         init(parkCode);	
     });
     $('.carousel.carousel-slider').carousel({
@@ -99,7 +103,7 @@ function weatherAPI(zip){
         var hourdiv = $("<div></div>");
         hourdiv.addClass("col s1 m6 l1 grey lighten-4");
          //create time elements
-         hourdiv.append("<p id='time'>" + dayjs.unix(weatherData.list[i].dt).format('DD.MM.YYYY hh:mm') +" </p>");
+         hourdiv.append("<p id='time'>" + dayjs.unix(weatherData.list[i].dt).format('DD.MM.YYYY hh:mm a') +" </p>");
 
           //Create icon class 
           var icon=$("<img/>");
@@ -107,7 +111,7 @@ function weatherAPI(zip){
           icon.attr("src", "https://openweathermap.org/img/w/" + weatherData.list[i].weather[0].icon + ".png");
           hourdiv.append(icon);   
         //This is to add weather icon description
-        hourdiv.append("<p id='iconText'>"+ weatherData.list[i].weather[0].description +"</p>").addClass("iconStyle");
+        hourdiv.append("<p id='iconText'>"+ weatherData.list[i].weather[0].description +"</p>");
 
         // //Temp
          hourdiv.append("<p id='temp'>Temperature: " + weatherData.list[i].main.temp + "F</p>");
