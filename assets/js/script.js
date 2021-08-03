@@ -487,7 +487,7 @@ function init(parkCode){
 
 }
 
-// Modal
+// Modal------------------------------------------------------------------------------------------------
 // Get the button that opens the modal
 var btn = document.getElementById("myBtn");
 var modal = document.getElementById("myModal");
