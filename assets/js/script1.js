@@ -97,7 +97,7 @@ function weatherAPI(zip){
 
     function getWeatherForecast(weatherData) {
 
-        forecastContainerEl.html("");
+        forecastContainerEl.empty();
     
         console.log(weatherData);
     
@@ -131,7 +131,6 @@ function weatherAPI(zip){
     
             icon.attr("src", "https://openweathermap.org/img/w/" + weatherData.list[i].weather[0].icon + ".png");
     
-            // divUl.append(icon);
     
             //This is to add weather icon description
     
