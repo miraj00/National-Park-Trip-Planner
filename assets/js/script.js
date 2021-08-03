@@ -30,8 +30,12 @@ $(document).ready(function () {
         event.preventDefault();
         var parkCode = $(this).val(); 
         //add local Storage
-        var savedParks =JSON.parse(localStorage.getItem("Saved_History")) || [];
-        
+        var savedPark =JSON.parse(localStorage.getItem("savedHistory")) || [];
+        savedPark.push(parkCode);
+        console.log(savedPark);
+        localStorage.setItem("savedHistory", JSON.stringify(savedPark));
+        var parkButton=$("button");
+    
         init(parkCode);	
     });
     $('.carousel.carousel-slider').carousel({
@@ -167,5 +171,6 @@ function weatherAPI(zip){
 init();
 
 var forecastContainerEl = $("#hourForecast");
-//set local Storage
-var savedParks =JSON.parse(localStorage.getItem("Saved_History")) || [];
+
+
+
