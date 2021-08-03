@@ -25,11 +25,9 @@ $(document).ready(function () {
         }
         $('#mySelect').formSelect()
     });
+    
     $("#mySelect").change(function () {
         var parkCode = $(this).val(); 
-        // $('#content-x').hide();
-        // $('#content-error').hide();
-        // $('#parkInfo').text('');
         init(parkCode);	
     });
     $('.carousel.carousel-slider').carousel({
@@ -65,7 +63,6 @@ function init(parkCode){
             document.getElementById("address").innerHTML = "Address :  [ " + data1.data[0].addresses[0].line2 + " ] " + data1.data[0].addresses[0].line1 + ", " + data1.data[0].addresses[0].city + ", " + data1.data[0].addresses[0].stateCode + " - " + data1.data[0].addresses[0].postalCode;
             document.getElementById("phNo").innerHTML = "Phone No :  " + data1.data[0].contacts.phoneNumbers[0].phoneNumber;
             document.getElementById("description").innerHTML = "Description : " + data1.data[0].description;
-            // document.getElementById("alerts").innerHTML = "Current Temp :  " + t0fixed + " *F" ; 
             document.getElementById("allotherfees").innerHTML = " -        $ " + data1.data[0].entranceFees[0].cost + " for non-commercial vehicle (15 passenger capacity or less) and all occupants ";
             document.getElementById("motorcyclefees").innerHTML = " -        $ " + data1.data[0].entranceFees[1].cost + " for non-commercial motorcycle ";
             document.getElementById("pedfees").innerHTML = " -       $ " + data1.data[0].entranceFees[2].cost + " for  bicyclist, hiker, pedestrian ";
@@ -82,7 +79,7 @@ function init(parkCode){
 function weatherAPI(zip){
     fetch("https://api.openweathermap.org/data/2.5/forecast?zip=" 
     + zip 
-    + ",us&appid=9d0a91c9414180869a1b366b5eca06bd"
+    + ",us&appid=eec3413a16d43f5e64f5215a7760f24b"
     + "&units=imperial")
 
     .then(function(response){
@@ -93,77 +90,42 @@ function weatherAPI(zip){
 
         })
     };
- var currentDate= new Date();
- var year = currentDate.getFullYear();
- var month = currentDate.getMonth();
- var days = currentDate.getHours();
-
 
  function getWeatherForecast(weatherData){
     forecastContainerEl.textContent="";
+    console.log(weatherData);
     for(i=0;i<=15; i++){
         //48 hours weather forecast for every 3 hours= 15 iterations
-        var hourdiv = document.createElement("div");
-        // var imageText = $("#iconText").text(weatherData.list[i].weather[0].description) ;
-       
-        $(hourdiv).addClass("col s12 m8 l2 grey lighten-4");
+        var hourdiv = $("<div></div>");
+        hourdiv.addClass("col s1 m6 l1 grey lighten-4");
+         //create time elements
+         hourdiv.append("<p id='time'>" + dayjs.unix(weatherData.list[i].dt).format('DD.MM.YYYY hh:mm') +" </p>");
+
+          //Create icon class 
+          var icon=$("<img/>");
+          icon.addClass("btn-floating btn-medium pulse");
+          icon.attr("src", "https://openweathermap.org/img/w/" + weatherData.list[i].weather[0].icon + ".png");
+          hourdiv.append(icon);   
         //This is to add weather icon description
-        $("#iconText").addClass("iconStyle");
-        var iconT=$("#iconText").html(weatherData.list[i].weather[0].description);
-        $(hourdiv).append("<p id='iconText'></p>");
-        $(hourdiv).append(iconT);
-        //Temp
-        var temp = $("#temp").html("Temperature: " + weatherData.list[i].main.temp + "F");
-        $(hourdiv).append("<p id='temp'></p>");
-        $(hourdiv).append(temp);
+        hourdiv.append("<p id='iconText'>"+ weatherData.list[i].weather[0].description +"</p>").addClass("iconStyle");
 
-        //Create icon class 
-        var icon=document.createElement("img");
-        $(icon).addClass("btn-floating btn-medium pulse");
-        $(hourdiv).append("<p id='icon'>Time:</p>");
-        $(icon).attr("src", "https://openweathermap.org/img/w/" + weatherData.list[i].weather[0].icon + ".png");
-        $(hourdiv).append(icon);    
+        // //Temp
+         hourdiv.append("<p id='temp'>Temperature: " + weatherData.list[i].main.temp + "F</p>");
+  
+        // //Creating content for WindSpeed
+        hourdiv.append("<p id='windSpeed'>"+ "Wind: " + weatherData.list[i].wind.speed + "</p>");
+        // //Create content for windSpeed
+        hourdiv.append("<p id='windDeg'>" + "Wind Direction: " + weatherData.list[i].wind.deg + " Degree" +"</p>");
 
-        //create time elements
-        $("#icon").addClass("btn-floating btn-medium pulse");
-        $(hourdiv).append("<p id='time'></p>");
+        forecastContainerEl.append(hourdiv);
         
-        
-        //Creating content for WindSpeed
-        var windSpeed=$("#windSpeed").html("Wind: " + weatherData.list[i].wind.speed );
-        $(hourdiv).append("<p id='windSpeed'></p>");
-        $(hourdiv).append(windSpeed);
-        //Create content for windSpeed
-        var windDeg=$("#windDeg").html("Wind Direction: " + weatherData.list[i].wind.deg + " Degree");
-        $(hourdiv).append("<p id='windDeg'></p>");
-        $(hourdiv).append(windDeg);
-
-        $(forecastContainerEl).append(hourdiv);
-         //create element for icon 
-
     }
 
-     
-     console.log(weatherData);
 
  }
-//  //add functions for hour
-// appendHours(date, hours){
-//     var new_date = new Date(days);
-//     new_date.setDate(new_date.getDate()+hours);
 
-// }
 init();
 
-var forecastContainerEl = document.querySelector("#hourForecast");
+var forecastContainerEl = $("#hourForecast");
 //set local Storage
 var savedParks =JSON.parse(localStorage.getItem("Saved_History")) || [];
-
-
-
-// // //         // --------------------------------- At 3 hours ---------------------------------------------------------------------
-                    //time div
-// // //        const milliseconds = data2.list[0].dt * 1000;             // <------------------converting Unix date into readable format        
-// // //         const dateObject = new Date(milliseconds);
-// // //         const humanDateFormat = dateObject.toLocaleString("en-US", { timeZoneName: "short" })
-// // //         document.getElementById("time0").innerHTML = humanDateFormat;  //<---------------------adding date via innerHTML 
