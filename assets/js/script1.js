@@ -95,38 +95,75 @@ function weatherAPI(zip){
         })
     };
 
- function getWeatherForecast(weatherData){
-    forecastContainerEl.textContent="";
-    console.log(weatherData);
-    for(i=0;i<=15; i++){
-        //48 hours weather forecast for every 3 hours= 15 iterations
-        var hourdiv = $("<div></div>");
-        hourdiv.addClass("col s1 m6 l1 grey lighten-4");
-         //create time elements
-         hourdiv.append("<p id='time'>" + dayjs.unix(weatherData.list[i].dt).format('DD.MM.YYYY hh:mm a') +" </p>");
+    function getWeatherForecast(weatherData) {
 
-          //Create icon class 
-          var icon=$("<img/>");
-          icon.addClass("btn-floating btn-medium pulse");
-          icon.attr("src", "https://openweathermap.org/img/w/" + weatherData.list[i].weather[0].icon + ".png");
-          hourdiv.append(icon);   
-        //This is to add weather icon description
-        hourdiv.append("<p id='iconText'>"+ weatherData.list[i].weather[0].description +"</p>");
-
-        // //Temp
-         hourdiv.append("<p id='temp'>Temperature: " + weatherData.list[i].main.temp + "F</p>");
-  
-        // //Creating content for WindSpeed
-        hourdiv.append("<p id='windSpeed'>"+ "Wind: " + weatherData.list[i].wind.speed + "</p>");
-        // //Create content for windSpeed
-        hourdiv.append("<p id='windDeg'>" + "Wind Direction: " + weatherData.list[i].wind.deg + " Degree" +"</p>");
-
-        forecastContainerEl.append(hourdiv);
-        
+        forecastContainerEl.html("");
+    
+        console.log(weatherData);
+    
+        for (i = 0; i <= 15; i++) {
+    
+            //48 hours weather forecast for every 3 hours= 15 iterations
+    
+            var hourdiv = $("<div></div>");
+    
+            var divUl = $("<ul></ul>");
+    
+            var iconLi = $("<li class='btn-floating btn-medium pulse'></li>");
+    
+            hourdiv.append(divUl);
+    
+            hourdiv.addClass("col s1 m6 l1 grey lighten-4");
+    
+            //create time elements
+    
+            divUl.append("<li id='time'>" + dayjs.unix(weatherData.list[i].dt).format('DD.MM.YYYY hh:mm a') + " </li>");
+    
+            divUl.append(iconLi);
+    
+            //Create icon class 
+    
+            var icon = $("<img/>");
+    
+            iconLi.append(icon);
+    
+            // icon.addClass("btn-floating btn-medium pulse");
+    
+            icon.attr("src", "https://openweathermap.org/img/w/" + weatherData.list[i].weather[0].icon + ".png");
+    
+            // divUl.append(icon);
+    
+            //This is to add weather icon description
+    
+            divUl.append("<li id='iconText'>" + weatherData.list[i].weather[0].description + "</li>");
+    
+    
+    
+            // //Temp
+    
+            divUl.append("<li id='temp'>Temperature: " + weatherData.list[i].main.temp + "F</li>");
+    
+    
+    
+            // //Creating content for WindSpeed
+    
+            divUl.append("<li id='windSpeed'>" + "Wind: " + weatherData.list[i].wind.speed + "</li>");
+    
+            // //Create content for windSpeed
+    
+            divUl.append("<li id='windDeg'>" + "Wind Direction: " + weatherData.list[i].wind.deg + " Degree" + "</li>");
+    
+    
+    
+            forecastContainerEl.append(hourdiv);
+    
+    
+    
+        }
+    
+    
+    
     }
-
-
- }
 
 init();
 
