@@ -54,9 +54,9 @@ displayParks();
         parkButton.html(savedParks[i].parkName);
         parkButton.appendTo(parkContainer);
        
-
     }
  }
+
  function addPark(parkCode){
     
     //added event as parameter, and event.preventDefault
