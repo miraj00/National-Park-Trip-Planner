@@ -1,13 +1,15 @@
+//Local Storage Setup
 var savedParks =JSON.parse(localStorage.getItem("savedHistory")) || [];
 var parkContainer =$("#parks");
+
+//Functions to be ready on page load
 $(document).ready(function () {
+    //inititiating Materialize Select
     $('select').formSelect();
-    
+    //Select States
     $("#stateS").change(function () {
         var val = $(this).val();
-        if (val == "ak") {
-            $("#mySelect").html("<option value='opt'>Select Park</option><option value='dena'>Denali National Park</option><option value='gaar'>Gates of the Arctic National Park</option><option value='glba'>Glacier Bay National Park</option><option value='katm'>Katmai National Park</option><option value='kefj'>Kenai Fjords National Park</option><option value='kova'>Kobuk Valley National Park</option><option value='lacl'>Lake Clark National Park</option><option value='wrst'>Wrangell St Elias National Park</option>");
-        } else if (val == "az") {
+        if (val == "az") {
             $("#mySelect").html("<option value='opt'>Select Park</option><option value='grca'>Grand Canyon</option><option value='pefo'>Petrified Forest National Park</option><option value='sagu'>Saguaro National Park</option>");
         } else if (val == "cal") {
             $("#mySelect").html("<option value='opt'>Select Park</option><option value='chis'>Channel Islands National Park</option><option value='deva'>Death Valley National Park</option><option value='jotr'>Joshua Tree National Park<option value='lavo'>Lassen Volcanic National Park</option><option value='pinn'>Pinnacles National Park</option><option value='redw'>Redwood National Park</option><option value='seki'>Sequoia and Kings Canyon National Park</option><option value='yose'>Yosemite National Park</option>");
@@ -27,23 +29,22 @@ $(document).ready(function () {
         $('#mySelect').formSelect()
     });
 
-
-//added event as parameter, and event.preventDefault
     $("#mySelect").change(function () {
-
         var parkCode = $(this).val(); 
         init(parkCode);	
         displayParks();
-        
     });
-
+// Materialize Carouse
       $('.carousel.carousel-slider').carousel({
         fullWidth: true
     });
+
+//Backstretch Plugin
+$.backstretch("./assets/images/pic2.JPEG");
+
 });
 
 displayParks();
-
 
  function displayParks(){
     parkContainer.empty();
@@ -57,10 +58,7 @@ displayParks();
     }
  }
 
- function addPark(parkCode){
-    
-    //added event as parameter, and event.preventDefault
-            
+ function addPark(parkCode){       
             //create object 
             var parkObject= {};
             parkObject.parkName= $("#parkInfo").text();
@@ -72,21 +70,10 @@ displayParks();
 
  }
 
-
-
-
-$.backstretch("./assets/images/pic2.JPEG");
-//end of Carousel
-
 function init(parkCode){ 
     if(parkCode=='0' || parkCode==undefined){	
         return;	
  }
-
-
-//  $('#parkInfo').text('FULL NAME OF PARK : '+parkCode);
-    
-
     //----------------------------------------API  to pull Park Information -----------------------------------------------------------------
 
     var parkAPI= "https://developer.nps.gov/api/v1/parks?parkCode=" 
@@ -164,40 +151,23 @@ function weatherAPI(zip){
             iconLi.append(icon);
     
             // icon.addClass("btn-floating btn-medium pulse");
-    
             icon.attr("src", "https://openweathermap.org/img/w/" + weatherData.list[i].weather[0].icon + ".png");
     
-    
             //This is to add weather icon description
-    
             divUl.append("<li id='iconText'>" + weatherData.list[i].weather[0].description + "</li>");
     
-    
-    
-            // //Temp
-    
+            //Temp
             divUl.append("<li id='temp'>Temperature: " + weatherData.list[i].main.temp + "&#176;F</li>");
     
-    
-    
-            // //Creating content for WindSpeed
-    
+             //Creating content for WindSpeed
             divUl.append("<li id='windSpeed'>" + "Wind: " + weatherData.list[i].wind.speed + " MPH</li>");
     
-            // //Create content for windSpeed
-    
-            divUl.append("<li id='windDeg'>" + "Wind Direction: " + weatherData.list[i].wind.deg + " Degree" + "</li>");
-    
-    
+            //Create content for windSpeed
+            divUl.append("<li id='windDeg'>" + "Wind Direction: " + weatherData.list[i].wind.deg + " Degrees" + "</li>");
     
             forecastContainerEl.append(hourdiv);
-    
-    
-    
+  
         }
-    
-    
-    
     }
 
 init();
