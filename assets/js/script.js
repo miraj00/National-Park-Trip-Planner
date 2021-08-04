@@ -25,19 +25,44 @@ $(document).ready(function () {
         }
         $('#mySelect').formSelect()
     });
+    var savedParks =JSON.parse(localStorage.getItem("savedHistory")) || [];
 //added event as parameter, and event.preventDefault
     $("#mySelect").change(function (event) {
         event.preventDefault();
         var parkCode = $(this).val(); 
-        //add local Storage
-        var savedPark =JSON.parse(localStorage.getItem("savedHistory")) || [];
-        savedPark.push(parkCode);
-        console.log(savedPark);
-        localStorage.setItem("savedHistory", JSON.stringify(savedPark));
-        var parkButton=$("button");
-    
+
+        //create object 
+        var parkObject= {};
+        parkObject.parkName= $("#parkInfo").text();
+        parkObject.parkCode= parkCode;
+        savedParks.push(parkObject);
+        // console.log(savedPark);
+        localStorage.setItem("savedHistory", JSON.stringify(savedParks));
+        
+
         init(parkCode);	
+        displayParks();
+
     });
+
+displayParks();
+
+ var parkContainer =$("#parks");
+
+ function displayParks(){
+     //add local Storage
+
+    for(var i=0; i<savedParks.length;i++){
+        var parkButton=$("<button></button>");
+        //set text for the button
+        parkButton.text(savedParks[i].parkName);
+        parkButton.appendTo(parkContainer);
+       
+
+    }
+ }
+
+
     $('.carousel.carousel-slider').carousel({
         fullWidth: true
     });
