@@ -182,7 +182,7 @@ function weatherAPI(zip){
     
             // //Creating content for WindSpeed
     
-            divUl.append("<li id='windSpeed'>" + "Wind: " + weatherData.list[i].wind.speed + "</li>");
+            divUl.append("<li id='windSpeed'>" + "Wind: " + weatherData.list[i].wind.speed + " MPH</li>");
     
             // //Create content for windSpeed
     
