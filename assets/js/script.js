@@ -1,4 +1,5 @@
-
+var savedParks =JSON.parse(localStorage.getItem("savedHistory")) || [];
+var parkContainer =$("#parks");
 $(document).ready(function () {
     $('select').formSelect();
     
@@ -25,50 +26,55 @@ $(document).ready(function () {
         }
         $('#mySelect').formSelect()
     });
-    var savedParks =JSON.parse(localStorage.getItem("savedHistory")) || [];
+
+
 //added event as parameter, and event.preventDefault
-    $("#mySelect").change(function (event) {
-        event.preventDefault();
+    $("#mySelect").change(function () {
+
         var parkCode = $(this).val(); 
-
-        //create object 
-        var parkObject= {};
-        parkObject.parkName= $("#parkInfo").text();
-        parkObject.parkCode= parkCode;
-        savedParks.push(parkObject);
-        // console.log(savedPark);
-        localStorage.setItem("savedHistory", JSON.stringify(savedParks));
-        
-
         init(parkCode);	
         displayParks();
-
+        
     });
+
+      $('.carousel.carousel-slider').carousel({
+        fullWidth: true
+    });
+});
 
 displayParks();
 
- var parkContainer =$("#parks");
 
  function displayParks(){
-     //add local Storage
+    parkContainer.empty();
 
     for(var i=0; i<savedParks.length;i++){
         var parkButton=$("<button></button>");
         //set text for the button
-        parkButton.text(savedParks[i].parkName);
+        parkButton.html(savedParks[i].parkName);
         parkButton.appendTo(parkContainer);
        
 
     }
  }
+ function addPark(parkCode){
+    
+    //added event as parameter, and event.preventDefault
+            
+            //create object 
+            var parkObject= {};
+            parkObject.parkName= $("#parkInfo").text();
+            console.log($("#parkInfo").text());
+            parkObject.parkCode= parkCode;
+            savedParks.push(parkObject);
+            // console.log(savedPark);
+            localStorage.setItem("savedHistory", JSON.stringify(savedParks));
+
+ }
 
 
-    $('.carousel.carousel-slider').carousel({
-        fullWidth: true
-    });
 
 
-});
 $.backstretch("./assets/images/pic2.JPEG");
 //end of Carousel
 
@@ -104,6 +110,7 @@ function init(parkCode){
             var zip = data1.data[0].addresses[0].postalCode;
             //console.log("zip " + zip);
             weatherAPI(zip);
+            addPark(parkCode);
 
         })
     })
