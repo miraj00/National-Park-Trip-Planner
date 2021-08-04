@@ -98,9 +98,42 @@ div.col.s1 {
   display: none;
 }
 
-.myVideos {
-  align-items: center;
-  width: 80%;
+.color0 {
+background-color: rgb(103, 185, 103);
+
+}
+.color2 {
+  background-color: rgb(226, 219, 123);
+  
+  }
+.color4 {
+    background-color: rgb(120, 171, 230);
+    
+    }
+.color6 {
+      background-color: rgb(191, 157, 223);
+        }
+.color8 {
+background-color: rgb(235, 135, 104);
+        }
+.color10 {
+background-color: rgb(103, 192, 162);
+        }
+.color12 {
+background-color: rgb(230, 214, 120);    
+       }
+.color14 {
+background-color: rgb(137, 231, 195);
+        }      
+.color15 {
+border-bottom: 2px solid black;
+        }
+#centerText{
+        padding: 80px;
+}
+/*added style for button from html*/
+#iconStyle{
+        text-transform:uppercase;
 }
 
 .videoHeader {
