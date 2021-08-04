@@ -176,7 +176,7 @@ function weatherAPI(zip){
     
             // //Temp
     
-            divUl.append("<li id='temp'>Temperature: " + weatherData.list[i].main.temp + "F</li>");
+            divUl.append("<li id='temp'>Temperature: " + weatherData.list[i].main.temp + "&#176;F</li>");
     
     
     
