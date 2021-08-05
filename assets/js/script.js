@@ -149,7 +149,7 @@ function weatherAPI(zip){
     
             hourdiv.append(divUl);
     
-            hourdiv.addClass("col s1 m6 l1 grey lighten-4");
+            hourdiv.addClass("col s1 m6 l12 grey lighten-4");
     
             //create time elements
     
@@ -186,7 +186,7 @@ function weatherAPI(zip){
     
             // //Create content for windSpeed
     
-            divUl.append("<li id='windDeg'>" + "Wind Direction: " + weatherData.list[i].wind.deg + " Degree" + "</li>");
+            divUl.append("<li id='windDeg'>" + "Wind Direction: " + weatherData.list[i].wind.deg + " Degrees" + "</li>");
     
     
     
