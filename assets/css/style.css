@@ -56,8 +56,12 @@ div.white-text {
   margin-top: 300px;
 }
 
-div.col.s3, div.col.s2 {
+div.col.s3  {
   border: 1px solid black; 
+  height: 550px;
+}
+
+div.col.s2 {
   height: 550px;
 }
 
@@ -225,15 +229,22 @@ div.col.s1 {
 
   .row .col.s2 {
     width: 55%;
+    border: none;
+    
    }
 
   .row .col.s1 {
     width: 16%;
+    
+    
   }  
 
   .container {
     width: 100%;
     padding-top: 10px;
+    
+    
+    
   }
 
   #weather-48 {
@@ -326,6 +337,7 @@ div.col.s1 {
   .row .col.s1 {
     width: 25%;
   }
+  
   #weather-48 {
     text-align: center;
     font-size: 25px;
