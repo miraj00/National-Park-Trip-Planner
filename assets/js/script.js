@@ -176,17 +176,17 @@ function weatherAPI(zip){
     
             // //Temp
     
-            divUl.append("<li id='temp'>Temperature: " + weatherData.list[i].main.temp + "F</li>");
+            divUl.append("<li id='temp'>Temperature: " + weatherData.list[i].main.temp + "&#176;F</li>");
     
     
     
             // //Creating content for WindSpeed
     
-            divUl.append("<li id='windSpeed'>" + "Wind: " + weatherData.list[i].wind.speed + "</li>");
+            divUl.append("<li id='windSpeed'>" + "Wind: " + weatherData.list[i].wind.speed + " MPH</li>");
     
             // //Create content for windSpeed
     
-            divUl.append("<li id='windDeg'>" + "Wind Direction: " + weatherData.list[i].wind.deg + " Degree" + "</li>");
+            divUl.append("<li id='windDeg'>" + "Wind Direction: " + weatherData.list[i].wind.deg + " Degrees" + "</li>");
     
     
     
