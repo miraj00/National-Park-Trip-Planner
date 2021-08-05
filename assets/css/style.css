@@ -220,8 +220,24 @@ div.col.s1 {
   header {
     height: 70px;
     width: 100%; 
-    font-size: 20px;
   }
+
+  div.white-text {
+    font-size: 40px;
+    align-content:center;
+    padding-right: 90px;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+  }
+
+  
+
+  
+
+ 
+
+  
 
   #parkInfo {
     width: 100%;
