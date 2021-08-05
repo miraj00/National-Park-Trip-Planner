@@ -89,6 +89,10 @@ div.col.s1 {
   font-style: italic;
 }
 
+.capitalize {
+  text-transform: capitalize;
+}
+
 .container {
   width: 1300px;
   padding-top: 10px;

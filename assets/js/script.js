@@ -170,7 +170,7 @@ function weatherAPI(zip){
     
             //This is to add weather icon description
     
-            divUl.append("<li id='iconText'>" + weatherData.list[i].weather[0].description + "</li>");
+            divUl.append("<li id='iconText' class='capitalize'>" + weatherData.list[i].weather[0].description + "</li>");
     
     
     
