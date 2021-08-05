@@ -59,14 +59,14 @@ div.white-text {
 }
 
 div.col.s3, div.col.s2 {
-  border: 1px solid black; 
+  /* border: 1px solid black;  */
   height: 550px;
 }
 
 div.col.s1 {
   width: 500px;
   height: 250px;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   text-align: center;
 }
 
@@ -133,7 +133,9 @@ border-bottom: 2px solid black;
 #centerText{
         padding: 80px;
 }
-/*added style for button from html*/
+
+
+
 #iconStyle{
         text-transform:uppercase;
 }
@@ -196,7 +198,4 @@ border-bottom: 2px solid black;
   font-size: 40px;
   background: rgb(125, 159, 221);
   padding: 20px;
-}
-
-
-
+} 

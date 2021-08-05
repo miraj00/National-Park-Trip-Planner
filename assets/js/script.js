@@ -149,7 +149,7 @@ function weatherAPI(zip){
     
             hourdiv.append(divUl);
     
-            hourdiv.addClass("col s1 m6 l8 grey lighten-4");
+            hourdiv.addClass("col s1 m6 l12 grey lighten-4");
     
             //create time elements
     
