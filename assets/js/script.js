@@ -60,6 +60,7 @@ displayParks();
         parkButton.appendTo(parkContainer);
        
     }
+    
  }
 
  function addPark(parkCode){       
