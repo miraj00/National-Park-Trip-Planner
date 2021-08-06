@@ -55,12 +55,13 @@ displayParks();
     for(var i=0; i<savedParks.length;i++){
         var parkButton=$("<button></button>");
         //set text for the button
+        parkButton.attr("id", "btnCode");
         parkButton.html(savedParks[i].parkName);
         parkButton.val(savedParks[i].parkCode);
         parkButton.appendTo(parkContainer);
        
     }
-    
+   
  }
 
  function addPark(parkCode){       
