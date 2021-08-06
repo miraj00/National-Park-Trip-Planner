@@ -1,3 +1,6 @@
+//Global Variable for Weather Info Container
+var forecastContainerEl = $("#hourForecast");
+
 //Local Storage Setup
 var savedParks =JSON.parse(localStorage.getItem("savedHistory")) || [];
 var parkContainer =$("#parks");
@@ -53,6 +56,7 @@ displayParks();
         var parkButton=$("<button></button>");
         //set text for the button
         parkButton.html(savedParks[i].parkName);
+        parkButton.val(savedParks[i].parkCode);
         parkButton.appendTo(parkContainer);
        
     }
@@ -167,16 +171,14 @@ function weatherAPI(zip){
     
             divUl.append("<li id='windDeg'>" + "Wind Direction: " + weatherData.list[i].wind.deg + " Degrees" + "</li>");
     
-    
-    
             forecastContainerEl.append(hourdiv);
   
         }
     }
 
-init();
 
-var forecastContainerEl = $("#hourForecast");
+
+
 
 
 
