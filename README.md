@@ -5,8 +5,6 @@
 
 ### NATIONAL PARK TRIP PLANNER
 
-## Testing
-
 
 ## Purpose
 National Park Trip Planner is an application that provides crucial information in regards to the most famous western National Parks for tourists and hikers. Using NPS and Open Weather API's, this application allows you to choose only national parks on the west coast so hikers can plan the journey ahead.  You can see the selected Park information such as the entrance fees, address and contact. Furthermore, you can organize your hiking trip accordingly as our repository also provides the weather on that park's location for the next 48 hours so you can be prepared for you next adventure.
@@ -19,7 +17,7 @@ National Park Trip Planner is an application that provides crucial information i
 * Materialize
 * Moment.js
 
-## Open API
+## API used
 
 * OpenWeather API
 * NPS API
