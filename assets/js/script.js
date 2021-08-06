@@ -2,8 +2,8 @@
 var forecastContainerEl = $("#hourForecast");
 
 //Local Storage Setup
-var savedParks =JSON.parse(localStorage.getItem("savedHistory")) || [];
-var parkContainer =$("#parks");
+var savedParks = JSON.parse(localStorage.getItem("savedHistory")) || [];
+var parkContainer = $("#parks");
 
 //Functions to be ready on page load
 $(document).ready(function () {
@@ -33,59 +33,62 @@ $(document).ready(function () {
     });
 
     $("#mySelect").change(function () {
-        var parkCode = $(this).val(); 
-        init(parkCode);	
+        var parkCode = $(this).val();
+        init(parkCode);
         displayParks();
     });
-// Materialize Carouse
-      $('.carousel.carousel-slider').carousel({
+    // Materialize Carouse
+    $('.carousel.carousel-slider').carousel({
         fullWidth: true
     });
 
-//Backstretch Plugin
-$.backstretch("./assets/images/pic2.JPEG");
+    //Backstretch Plugin
+    $.backstretch("./assets/images/pic2.JPEG");
 
+    
+
+    
 });
 
+//Functions for Localstorage 
 displayParks();
 
- function displayParks(){
+function displayParks() {
     parkContainer.empty();
 
-    for(var i=0; i<savedParks.length;i++){
-        var parkButton=$("<button></button>");
+    for (var i = 0; i < savedParks.length; i++) {
+        var parkButton = $("<button></button>");
+        var btnVal = $(parkButton).val(savedParks[i].parkCode);
         //set text for the button
         parkButton.attr("id", "btnCode");
         parkButton.html(savedParks[i].parkName);
-        parkButton.val(savedParks[i].parkCode);
         parkButton.appendTo(parkContainer);
-       
+        parkButton.attr("id", "btnCode");
     }
-   
- }
+}
+function addPark(parkCode) {
+    //create object 
+    var parkObject = {};
+    parkObject.parkName = $("#parkInfo").text();
+    console.log($("#parkInfo").text());
+    parkObject.parkCode = parkCode;
+    savedParks.push(parkObject);
+    // console.log(savedPark);
+    localStorage.setItem("savedHistory", JSON.stringify(savedParks));
 
- function addPark(parkCode){       
-            //create object 
-            var parkObject= {};
-            parkObject.parkName= $("#parkInfo").text();
-            console.log($("#parkInfo").text());
-            parkObject.parkCode= parkCode;
-            savedParks.push(parkObject);
-            // console.log(savedPark);
-            localStorage.setItem("savedHistory", JSON.stringify(savedParks));
+}
 
- }
 
-function init(parkCode){ 
-    if(parkCode=='0' || parkCode==undefined){	
-        return;	
- }
+function init(parkCode) {
+    if (parkCode == '0' || parkCode == undefined) {
+        return;
+    }
     //----------------------------------------API  to pull Park Information -----------------------------------------------------------------
 
-    var parkAPI= "https://developer.nps.gov/api/v1/parks?parkCode=" 
-    + parkCode 
-    + "&api_key=KFp4bdWCgYMu7u8w5g1O3dmwGFoJEp9PQcpINgdf";
-  
+    var parkAPI = "https://developer.nps.gov/api/v1/parks?parkCode="
+        + parkCode
+        + "&api_key=KFp4bdWCgYMu7u8w5g1O3dmwGFoJEp9PQcpINgdf";
+
 
     fetch(parkAPI).then(function (response) {
         response.json().then(function (data1) {
@@ -104,79 +107,79 @@ function init(parkCode){
             //console.log("zip " + zip);
             weatherAPI(zip);
             addPark(parkCode);
-
+            displayParks(parkCode);
         })
     })
 }
 //Second API for Weather API
-function weatherAPI(zip){
-    fetch("https://api.openweathermap.org/data/2.5/forecast?zip=" 
-    + zip 
-    + ",us&appid=eec3413a16d43f5e64f5215a7760f24b"
-    + "&units=imperial")
+function weatherAPI(zip) {
+    fetch("https://api.openweathermap.org/data/2.5/forecast?zip="
+        + zip
+        + ",us&appid=eec3413a16d43f5e64f5215a7760f24b"
+        + "&units=imperial")
 
-    .then(function(response){
-        return response.json();
-    })
-    .then(function(response){
-        getWeatherForecast(response);
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (response) {
+            getWeatherForecast(response);
 
         })
-    };
+};
 
-    function getWeatherForecast(weatherData) {
+function getWeatherForecast(weatherData) {
 
-        forecastContainerEl.empty();
-    
-        console.log(weatherData);
-    
-        for (i = 0; i <= 15; i++) {
-    
-            //48 hours weather forecast for every 3 hours= 15 iterations
-    
-            var hourdiv = $("<div></div>");
-    
-            var divUl = $("<ul></ul>");
-    
-            var iconLi = $("<li class='btn-floating btn-medium pulse'></li>");
-    
-            hourdiv.append(divUl);
-    
-            hourdiv.addClass("col s1 m6 l12 grey lighten-4");
-    
-            //create time elements
-    
-            divUl.append("<li id='time'>" + dayjs.unix(weatherData.list[i].dt).format('DD.MM.YYYY hh:mm a') + " </li>");
-    
-            divUl.append(iconLi);
-    
-            //Create icon class 
-    
-            var icon = $("<img/>");
-    
-            iconLi.append(icon);
-    
-            // icon.addClass("btn-floating btn-medium pulse");
-            icon.attr("src", "https://openweathermap.org/img/w/" + weatherData.list[i].weather[0].icon + ".png");
-    
-            //This is to add weather icon description
-    
-            divUl.append("<li id='iconText' class='capitalize'>" + weatherData.list[i].weather[0].description + "</li>");
-    
-            //Temp
-            divUl.append("<li id='temp'>Temperature: " + weatherData.list[i].main.temp + "&#176;F</li>");
-    
-             //Creating content for WindSpeed
-            divUl.append("<li id='windSpeed'>" + "Wind: " + weatherData.list[i].wind.speed + " MPH</li>");
-    
-            // //Create content for windSpeed
-    
-            divUl.append("<li id='windDeg'>" + "Wind Direction: " + weatherData.list[i].wind.deg + " Degrees" + "</li>");
-    
-            forecastContainerEl.append(hourdiv);
-  
-        }
+    forecastContainerEl.empty();
+
+    console.log(weatherData);
+
+    for (i = 0; i <= 15; i++) {
+
+        //48 hours weather forecast for every 3 hours= 15 iterations
+
+        var hourdiv = $("<div></div>");
+
+        var divUl = $("<ul></ul>");
+
+        var iconLi = $("<li class='btn-floating btn-medium pulse'></li>");
+
+        hourdiv.append(divUl);
+
+        hourdiv.addClass("col s1 m6 l12 grey lighten-4");
+
+        //create time elements
+
+        divUl.append("<li id='time'>" + dayjs.unix(weatherData.list[i].dt).format('DD.MM.YYYY hh:mm a') + " </li>");
+
+        divUl.append(iconLi);
+
+        //Create icon class 
+
+        var icon = $("<img/>");
+
+        iconLi.append(icon);
+
+        // icon.addClass("btn-floating btn-medium pulse");
+        icon.attr("src", "https://openweathermap.org/img/w/" + weatherData.list[i].weather[0].icon + ".png");
+
+        //This is to add weather icon description
+
+        divUl.append("<li id='iconText' class='capitalize'>" + weatherData.list[i].weather[0].description + "</li>");
+
+        //Temp
+        divUl.append("<li id='temp'>Temperature: " + weatherData.list[i].main.temp + "&#176;F</li>");
+
+        //Creating content for WindSpeed
+        divUl.append("<li id='windSpeed'>" + "Wind: " + weatherData.list[i].wind.speed + " MPH</li>");
+
+        // //Create content for windSpeed
+
+        divUl.append("<li id='windDeg'>" + "Wind Direction: " + weatherData.list[i].wind.deg + " Degrees" + "</li>");
+
+        forecastContainerEl.append(hourdiv);
+
     }
+}
 
 
 
