@@ -136,7 +136,7 @@ function weatherAPI(zip){
     
             hourdiv.append(divUl);
     
-            hourdiv.addClass("col s1 m6 l1 grey lighten-4");
+            hourdiv.addClass("col s1 m6 l12 grey lighten-4");
     
             //create time elements
     
@@ -154,7 +154,8 @@ function weatherAPI(zip){
             icon.attr("src", "https://openweathermap.org/img/w/" + weatherData.list[i].weather[0].icon + ".png");
     
             //This is to add weather icon description
-            divUl.append("<li id='iconText'>" + weatherData.list[i].weather[0].description + "</li>");
+    
+            divUl.append("<li id='iconText' class='capitalize'>" + weatherData.list[i].weather[0].description + "</li>");
     
             //Temp
             divUl.append("<li id='temp'>Temperature: " + weatherData.list[i].main.temp + "&#176;F</li>");
@@ -162,8 +163,11 @@ function weatherAPI(zip){
              //Creating content for WindSpeed
             divUl.append("<li id='windSpeed'>" + "Wind: " + weatherData.list[i].wind.speed + " MPH</li>");
     
-            //Create content for windSpeed
+            // //Create content for windSpeed
+    
             divUl.append("<li id='windDeg'>" + "Wind Direction: " + weatherData.list[i].wind.deg + " Degrees" + "</li>");
+    
+    
     
             forecastContainerEl.append(hourdiv);
   
