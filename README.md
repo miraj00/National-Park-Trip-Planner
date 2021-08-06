@@ -1,3 +1,8 @@
+![cat following computer mouse](Readme-images/giphy.gif)
+
+
+
+
 ### NATIONAL PARK TRIP PLANNER
 
 ## Testing
