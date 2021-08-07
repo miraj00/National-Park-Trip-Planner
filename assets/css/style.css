@@ -25,6 +25,9 @@ header {
   width: 100%;
 }
 
+.capitalize {
+  text-transform: capitalize;
+}
 .white-text {
   padding-right: 20px;
   text-align: right;
@@ -94,10 +97,6 @@ div.col.s1 {
   width: 100%;
   text-align: center;
   font-style: italic;
-}
-
-.capitalize {
-  text-transform: capitalize;
 }
 
 .container {
