@@ -54,19 +54,27 @@ $(document).ready(function () {
 displayParks();
 
 function displayParks() {
-    parkContainer.empty();
+    parkContainer.children().remove();
 
     for (var i = 0; i < savedParks.length; i++) {
         var parkButton = $("<button></button>");
-        var btnVal = $(parkButton).val(savedParks[i].parkCode);
+        $(parkButton).val(savedParks[i].parkCode);
         //set text for the button
-        parkButton.attr("id", "btnCode");
+        parkButton.attr("type", "button");
+        parkButton.addClass("btnCode");
         parkButton.html(savedParks[i].parkName);
         parkButton.appendTo(parkContainer);
-        parkButton.attr("id", "btnCode");
+        
     }
 }
+$(document).click(".btnCode",function(){
+    var btnVal = $(this).val();
+    console.log(btnVal);
+    init(btnVal);
+    
+})
 function addPark(parkCode) {
+    savedParks = JSON.parse(localStorage.getItem("savedHistory")) || [];
     //create object 
     var parkObject = {};
     parkObject.parkName = $("#parkInfo").text();
@@ -82,7 +90,9 @@ function addPark(parkCode) {
 function init(parkCode) {
     if (parkCode == '0' || parkCode == undefined) {
         return;
+
     }
+    // console.log(parkCode);
     //----------------------------------------API  to pull Park Information -----------------------------------------------------------------
 
     var parkAPI = "https://developer.nps.gov/api/v1/parks?parkCode="
