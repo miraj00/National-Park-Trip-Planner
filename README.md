@@ -15,7 +15,7 @@ National Park Trip Planner is an application that provides crucial information i
 * DOM Manipulation
 * JQuery
 * Materialize
-* Moment.js
+* Day.js
 
 ## API used
 

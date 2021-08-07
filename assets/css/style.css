@@ -20,6 +20,17 @@ header {
 #formContainer {
   max-height: 550px;
 }
+#searchHistory{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+}
+
+#parks {
+  height: 150px;
+  overflow: scroll;
+  background: none;
+  width: 100%;
+}
 .btnCode {
   margin-bottom: 2.5px;
   width: 100%;

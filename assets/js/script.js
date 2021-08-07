@@ -9,7 +9,7 @@ var parkContainer = $("#parks");
 $(document).ready(function () {
     //inititiating Materialize Select
     $('select').formSelect();
-    //Select States
+    //Dynamic/Dependent Dropdowns
     $("#stateS").change(function () {
         var val = $(this).val();
         if (val == "az") {
@@ -45,12 +45,9 @@ $(document).ready(function () {
     //Backstretch Plugin
     $.backstretch("./assets/images/pic2.JPEG");
 
-    
-
-    
 });
 
-//Functions for Localstorage 
+//Functions for Localstorage / Search History
 displayParks();
 
 function displayParks() {
@@ -68,6 +65,7 @@ function displayParks() {
     }
 
 }
+// Display Park And Weather Info When Click Search History Button
 $(document).on("click", ".btnCode",function(){
     var btnVal = $(this).val();
     console.log(btnVal);
@@ -90,15 +88,16 @@ function addPark(parkCode) {
         parkObject.parkName = $("#parkInfo").text();
         console.log($("#parkInfo").text());
         parkObject.parkCode = parkCode;
-        if(savedParks.length < 5){
+        if(savedParks.length < 25){
             savedParks.push(parkObject);
+        
         // console.log(savedPark);
         localStorage.setItem("savedHistory", JSON.stringify(savedParks));
         }
     }
 }
 
-
+// Function For Fetching Park Info
 function init(parkCode) {
     if (parkCode == '0' || parkCode == undefined) {
         return;
@@ -134,7 +133,7 @@ function init(parkCode) {
         })
     })
 }
-//Second API for Weather API
+//Function For Displaying Weather Info
 function weatherAPI(zip) {
     fetch("https://api.openweathermap.org/data/2.5/forecast?zip="
         + zip
