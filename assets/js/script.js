@@ -63,27 +63,35 @@ function displayParks() {
         parkButton.attr("type", "button");
         parkButton.addClass("btnCode");
         parkButton.html(savedParks[i].parkName);
-        parkButton.appendTo(parkContainer);
-        
+        parkButton.appendTo(parkContainer);  
     }
+
 }
-$(document).click(".btnCode",function(){
+$(document).on("click", ".btnCode",function(){
     var btnVal = $(this).val();
     console.log(btnVal);
     init(btnVal);
     
 })
 function addPark(parkCode) {
-    savedParks = JSON.parse(localStorage.getItem("savedHistory")) || [];
-    //create object 
-    var parkObject = {};
-    parkObject.parkName = $("#parkInfo").text();
-    console.log($("#parkInfo").text());
-    parkObject.parkCode = parkCode;
-    savedParks.push(parkObject);
-    // console.log(savedPark);
-    localStorage.setItem("savedHistory", JSON.stringify(savedParks));
-
+    var checkStore = true;
+      //check for parkName already in storage
+      for(var i=0; i<savedParks.length; i++){
+        if(savedParks[i].parkCode == parkCode){
+            checkStore = false;
+        }
+    }
+    if(checkStore){
+        savedParks = JSON.parse(localStorage.getItem("savedHistory")) || [];
+        //create object 
+        var parkObject = {};
+        parkObject.parkName = $("#parkInfo").text();
+        console.log($("#parkInfo").text());
+        parkObject.parkCode = parkCode;
+        savedParks.push(parkObject);
+        // console.log(savedPark);
+        localStorage.setItem("savedHistory", JSON.stringify(savedParks));
+    }
 }
 
 
@@ -102,9 +110,11 @@ function init(parkCode) {
 
     fetch(parkAPI).then(function (response) {
         response.json().then(function (data1) {
+            
 
             document.getElementById("parkInfo").innerHTML = data1.data[0].fullName;
-
+            addPark(parkCode);
+            displayParks();
             document.getElementById("address").innerHTML = "Address :  [ " + data1.data[0].addresses[0].line2 + " ] " + data1.data[0].addresses[0].line1 + ", " + data1.data[0].addresses[0].city + ", " + data1.data[0].addresses[0].stateCode + " - " + data1.data[0].addresses[0].postalCode;
             document.getElementById("phNo").innerHTML = "Phone No :  " + data1.data[0].contacts.phoneNumbers[0].phoneNumber;
             document.getElementById("description").innerHTML = "Description : " + data1.data[0].description;
@@ -114,10 +124,9 @@ function init(parkCode) {
 
 
             var zip = data1.data[0].addresses[0].postalCode;
+            zip=zip.substring(0,5);
             //console.log("zip " + zip);
             weatherAPI(zip);
-            addPark(parkCode);
-            displayParks(parkCode);
         })
     })
 }
