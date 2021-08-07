@@ -18,12 +18,10 @@
 
     <main class="container">
         <div class="row">
-            <div class="col s3 m3 l3 grey lighten-4">
+            <div class="col s2 m3 l3 grey lighten-4" id="formContainer">
                 <form class="row">
-
                     <select id="stateS" name="states" class="dropdown-content">
                         <option value="0">Choose A State</option>
-                        <option value="ak">Alaska</option>
                         <option value="az">Arizona</option>
                         <option value="cal">California</option>
                         <option value="hi">Hawaii</option>
@@ -46,86 +44,93 @@
                     </div>
                 </form>
             </div>
-
-
-            <div class="col s2 m5 l9 grey lighten-4">
-                <div>
-                    <h2 class="card-panel green lighten-5 blue-text" id="parkInfo" style="text-transform:uppercase">Full
-                        Name of Park</h2>
+            <div class="col s2 m5 l9 grey lighten-4">   
+                    <h2 class="card-panel green lighten-5 blue-text" id="parkInfo" style="text-transform:uppercase">
+                        Choose A Park!</h2>
                     <ul>
-                        <li class="flow-text" id="address">Address : </li> <br>
-                        <li id="phNo">Phone No : </li> <br>
-                        <li id="description">Description : </li> <br>
-                        <li>Entrance Fees : </li> <br>
-                        <li id="allotherfees">All Other Fees : </li>
-                        <li id="motorcyclefees">Motorcycle Fees : </li>
-                        <li id="pedfees">Pedestrian Fees : </li> <br> <br>
+                        <li class="flow-text" id="address"></li> <br>
+                        <li id="phNo"></li> <br>
+                        <li id="description"></li> <br>
+                        <li id="allotherfees"></li>
+                        <li id="motorcyclefees"></li>
+                        <li id="pedfees"></li> <br> <br>
+                    </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s10 m12 l12">
+                <div id="weather-48">Here is the Weather for the Next 48 Hours (at 3 Hour Intervals)</div>
+            </div>
+        </div>
+
+
+        <!-- forecast for next 48 hours every 3 hours -->
+        <div class="row">
+            
+            <div id="hourForecast"></div>
+
+        </div>
+    </main>
+    <!--videos-->
+
+
+    <div class="videoHeader"> Some Video Clips Sponsored by Nomad From Outer World </div>
+
+    <div id="videoRow1">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/0mqZLC2URAs" frameborder="0" allowfullscreen></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/PwfBEgW87LU" frameborder="0" allowfullscreen></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/Sp1JmzxnXWA" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <div id='videoRow2'>   
+
+    
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/qkblKgmLfvQ" frameborder="0"
+            allowfullscreen></iframe>
+    
+
+    
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/5PsOtmMjTyA" frameborder="0"
+            allowfullscreen></iframe>
+    
+
+    
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/ctaB4OqO3BY" frameborder="0"
+            allowfullscreen></iframe>
+    </div>
+
+    <footer class="footer transparent">
+        <div class="container">
+            <div class="row">
+                <div id="footer-information" class="col s4 m3 l6">
+                    <h5 class="white black-text">For More Information on Parks and Activities</h5>
+                    <p class="textLink"><a class="grey-text text-lighten-4" href="https://www.nps.gov/index.htm"
+                            target="_blank">Please click here</p>
+                </div>
+                <div id="footer-developer" class="col s4 m3 l4 offset-l2">
+                    <h5 class="developers-text">Meet the Developers</h5>
+                    <ul>
+                        <li><a class="grey grey-text text-lighten-4"
+                                href="https://kamm8899.github.io/Professional-Portifolio/" target="_blank">Jessica
+                                Kamman</a></li>
+                        <li><a class="grey grey-text text-lighten-4" href="https://miraj00.github.io/" target="_blank">Miraj
+                                Patel</a></li>
+                        <li><a class="grey grey-text text-lighten-4" href="https://ronnieve23.github.io/"
+                                target="_blank">Ronnieve Romero</a></li>
+                        <li><a class="grey grey-text text-lighten-4" href="https://walterlaw19.github.io/first-portfolio/"
+                                target="_blank">Walter Gonzales</a></li>
                     </ul>
                 </div>
             </div>
         </div>
-
-        <div">
-            <!-- forecast for next 48 hours every 3 hours -->
-            <div class="row">
-                <!--- <div id="centerText" class="col s1 m1 l12 blue lighten-4"> Weather Period : 0 to 24 Hours from Now ( at
-                      3 hours increment)</div>-->
-                 <div id="hourForecast">
-              </div>
-          
-            </div>
-        </main>
-            <!--videos-->
-            <div class="videoHeader"> Some Video Clips Sponsored by Nomad From Outer World </div>
-            <div id='videoRow1'>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/0mqZLC2URAs" frameborder="0"
-                    allowfullscreen></iframe>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/PwfBEgW87LU" frameborder="0"
-                    allowfullscreen></iframe>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/Sp1JmzxnXWA" frameborder="0"
-                    allowfullscreen></iframe>
-            </div>
-            <div id='videoRow2'>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/qkblKgmLfvQ" frameborder="0"
-                    allowfullscreen></iframe>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/5PsOtmMjTyA" frameborder="0"
-                    allowfullscreen></iframe>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/ctaB4OqO3BY" frameborder="0"
-                    allowfullscreen></iframe>
-            </div>
-<footer class="footer transparent">
-    <div class="container">
-        <div class="row">
-            <div class="col s2 m3 l6">
-                <h5 class="white black-text">For More Information on Parks and Activities</h5>
-                <p class="textLink"><a class="grey-text text-lighten-4" href="https://www.nps.gov/index.htm"
-                        target="_blank">Please click here</p>
-            </div>
-            <div class="col s2 m3 l4 offset-l2">
-                <h5 class="developers-text">Meet the Developers</h5>
-                <ul>
-                    <li><a class="grey-text text-lighten-3"
-                            href="https://kamm8899.github.io/Professional-Portifolio/" target="_blank">Jessica
-                            Kamman</a></li>
-                    <li><a class="grey-text text-lighten-3" href="https://miraj00.github.io/" target="_blank">Miraj
-                            Patel</a></li>
-                    <li><a class="grey-text text-lighten-3" href="https://ronnieve23.github.io/"
-                            target="_blank">Ronnieve Romero</a></li>
-                    <li><a class="grey-text text-lighten-3" href="https://walterlaw19.github.io/first-portfolio/"
-                            target="_blank">Walter Gonzales</a></li>
-                </ul>
+        <div class="footer-copyright">
+            <div class="container">
+                © 2021 Copyright by Park Lovers !!
+                <a class="grey-text text-lighten-4 right" href="https://www.nps.gov/nature/index.htm"
+                    target="_blank">Help Protect the Nature !!</a>
             </div>
         </div>
-    </div>
-    <div class="footer-copyright">
-        <div class="container"> 
-           © 2021 Copyright by Park Lovers !!
-        <a class="grey-text text-lighten-4 right" href="https://www.nps.gov/nature/index.htm" target="_blank">Help Protect the Nature !!</a>
-        </div>
-      </div>
     </footer>
-
-
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>

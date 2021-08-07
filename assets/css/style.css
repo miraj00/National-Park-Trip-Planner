@@ -5,7 +5,7 @@ body {
 header {
   background-image: url("../images/pic2.JPEG");   
   height: 100px;
-    width: 100%; 
+  width: 100%; 
   position: sticky;
   top: 0;
   z-index: 9999;
@@ -17,8 +17,13 @@ header {
   background-attachment: fixed;
   background-position: 80%;
 } 
-
-
+#formContainer {
+  max-height: 550px;
+}
+.btnCode {
+  margin-bottom: 2.5px;
+  width: 100%;
+}
 
 .white-text {
   padding-right: 20px;
@@ -41,6 +46,10 @@ div.white-text {
 
 }
 
+#footer-information, #footer-developer {
+  border: none;
+}
+
 .flex-container {
   display: flex;
   justify-content: center;    
@@ -58,10 +67,14 @@ div.white-text {
   margin-top: 300px;
 }
 
-div.col.s3, div.col.s9 {
+div.col.s3, div.col.s2  {
   border: 1px solid black; 
   height: 550px;
 }
+
+
+
+
 
 div.col.s1 {
   width: 500px;
@@ -71,8 +84,10 @@ div.col.s1 {
 }
 
 .row .col.s1 {
-  width: 11%;
+  width: 12%;
   text-align: center;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 #parkInfo {
@@ -80,6 +95,11 @@ div.col.s1 {
   text-align: center;
   font-style: italic;
 }
+
+.capitalize {
+  text-transform: capitalize;
+}
+
 .container {
   width: 1300px;
   padding-top: 10px;
@@ -88,7 +108,6 @@ div.col.s1 {
 .row {
   align-items: stretch;
 }
-
 
 #centralize {
   align-items: center;
@@ -99,7 +118,7 @@ div.col.s1 {
 }
 
 .color0 {
-background-color: rgb(103, 185, 103);
+  background-color: rgb(103, 185, 103);
 
 }
 .color2 {
@@ -107,33 +126,42 @@ background-color: rgb(103, 185, 103);
   
   }
 .color4 {
-    background-color: rgb(120, 171, 230);
+  background-color: rgb(120, 171, 230);
     
-    }
-.color6 {
-      background-color: rgb(191, 157, 223);
-        }
-.color8 {
-background-color: rgb(235, 135, 104);
-        }
-.color10 {
-background-color: rgb(103, 192, 162);
-        }
-.color12 {
-background-color: rgb(230, 214, 120);    
-       }
-.color14 {
-background-color: rgb(137, 231, 195);
-        }      
-.color15 {
-border-bottom: 2px solid black;
-        }
-#centerText{
-        padding: 80px;
 }
+
+.color6 {
+  background-color: rgb(191, 157, 223);
+}
+
+.color8 {
+  background-color: rgb(235, 135, 104);
+}
+
+.color10 {
+  background-color: rgb(103, 192, 162);
+}
+
+.color12 {
+  background-color: rgb(230, 214, 120);    
+}
+
+.color14 {
+  background-color: rgb(137, 231, 195);
+}
+
+.color15 {
+  border-bottom: 2px solid black;
+}
+
+#centerText{
+  padding: 80px;
+}
+
 /*added style for button from html*/
+
 #iconStyle{
-        text-transform:uppercase;
+  text-transform:uppercase;
 }
 
 .videoHeader {
@@ -163,11 +191,12 @@ border-bottom: 2px solid black;
 }
 
 .textAbove {
-  font-size: 15 px;
+  font-size: 15px;
   font-weight: bold;
   text-align: center;
 
 }
+
 .black-text  {
   font-weight: bold;
   font-size: 25px;
@@ -186,4 +215,181 @@ border-bottom: 2px solid black;
   color: black;
   background-color: white;
   text-align: center;
+}
+
+#weather-48 {
+  text-align: center;
+  font-size: 40px;
+  background: rgb(125, 159, 221);
+}
+
+
+
+/* mobile version 992px and 600px combining materialize */
+@media screen and (max-width: 992px){
+
+  header {
+    height: 70px;
+    width: 100%; 
+  }
+
+  .container {
+    width: 100%;
+    padding-top: 10px;
+  }
+
+  
+
+  /* main.container {
+    /* margin-left: 200px; */
+    /* padding-right: 0px; */
+  /* } */
+
+  div.white-text {
+    font-size: 40px;
+    align-content:center;
+    padding-right: 90px;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+  }
+
+  #parkInfo {
+    width: 100%;
+    text-align: center;
+    font-size: 25px;
+  }
+
+  .row .col.s2 {
+    width: 55%;
+    
+   }
+
+  .row .col.s1 {
+    width: 16%;    
+  }
+  
+  div.col.s1.m6.l12.grey.lighten-4 {
+    font-size: 13px;
+  }
+
+  
+    
+    
+    
+  
+
+  #weather-48 {
+    text-align: center;
+    font-size: 35px;
+    background: rgb(125, 159, 221);
+    
+  }
+}
+
+/* mobile version 600px and below combining materialize*/
+@media screen and (max-width: 600px){
+
+  header {
+    height: 40px;
+    width: 100%; 
+  }
+
+  main.container {
+    margin-left: 0px;
+    padding-right: 0px;
+  }
+
+  div.white-text {
+    font-size: 20px;
+    align-content:center;
+    padding-right: 90px;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+  }
+ 
+  .container {
+    width: auto;
+    padding-top: 0px;
+  }
+
+  div.col.s3 {
+    width: 360px;
+    height: 500px;
+  }
+
+  div.col.s2 {
+    width: 360px;
+  }
+
+  div.col.s1.m6.l12.grey.lighten-4 {
+    font-size: 12px;
+  }
+
+  div#videoRow1 {
+    width: auto;
+  }
+
+  iframe {
+    width: 100%;
+  }
+
+  #parkInfo {
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+  }
+
+  .row .col.s3 {
+    width: 100%;
+  }
+
+  .textAbove {
+    font-size: 15px;
+    font-weight: bold;
+    text-align:left;
+  }
+
+  .row .col.s2 {
+    width: 100%;
+  }
+
+  .card-panel {
+    padding: 4px;
+  }
+
+  .videoHeader {
+    font-size: 25px;
+     
+  }
+
+  #videoRow1, #videoRow2 {
+    padding: 20px 0 20px 0px;
+  }
+
+  #videoRow1 {
+    width: 700px;
+    height: 700px;  
+  }
+
+  .row .col.s4 {
+    width: 100%;
+  }
+
+  .html5-video-player {
+    position:relative;
+    width:100px;
+    height: 100px;
+  }
+
+  .row .col.s1 {
+    width: 25%;
+  }
+  
+  #weather-48 {
+    text-align: center;
+    font-size: 25px;
+    background: rgb(125, 159, 221);
+  }
 }
