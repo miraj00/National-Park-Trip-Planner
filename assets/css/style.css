@@ -17,6 +17,13 @@ header {
   background-attachment: fixed;
   background-position: 80%;
 } 
+#formContainer {
+  max-height: 550px;
+}
+.btnCode {
+  margin-bottom: 2.5px;
+  width: 100%;
+}
 
 .white-text {
   padding-right: 20px;
@@ -226,6 +233,18 @@ div.col.s1 {
     width: 100%; 
   }
 
+  .container {
+    width: 100%;
+    padding-top: 10px;
+  }
+
+  
+
+  /* main.container {
+    /* margin-left: 200px; */
+    /* padding-right: 0px; */
+  /* } */
+
   div.white-text {
     font-size: 40px;
     align-content:center;
@@ -247,18 +266,18 @@ div.col.s1 {
    }
 
   .row .col.s1 {
-    width: 16%;
-    
-    
-  }  
-
-  .container {
-    width: 100%;
-    padding-top: 10px;
-    
-    
-    
+    width: 16%;    
   }
+  
+  div.col.s1.m6.l12.grey.lighten-4 {
+    font-size: 13px;
+  }
+
+  
+    
+    
+    
+  
 
   #weather-48 {
     text-align: center;
@@ -274,6 +293,11 @@ div.col.s1 {
   header {
     height: 40px;
     width: 100%; 
+  }
+
+  main.container {
+    margin-left: 0px;
+    padding-right: 0px;
   }
 
   div.white-text {
@@ -297,6 +321,18 @@ div.col.s1 {
 
   div.col.s2 {
     width: 360px;
+  }
+
+  div.col.s1.m6.l12.grey.lighten-4 {
+    font-size: 12px;
+  }
+
+  div#videoRow1 {
+    width: auto;
+  }
+
+  iframe {
+    width: 100%;
   }
 
   #parkInfo {

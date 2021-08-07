@@ -86,18 +86,15 @@ function addPark(parkCode) {
         savedParks = JSON.parse(localStorage.getItem("savedHistory")) || [];
         //create object 
         var parkObject = {};
+        var searched =savedParks.indexOf(parkObject);
         parkObject.parkName = $("#parkInfo").text();
         console.log($("#parkInfo").text());
         parkObject.parkCode = parkCode;
-        if(savedParks.length< 5){
+        if(savedParks.length < 5){
             savedParks.push(parkObject);
         // console.log(savedPark);
         localStorage.setItem("savedHistory", JSON.stringify(savedParks));
         }
-        else{
-            savedParks.shift();
-        }
-
     }
 }
 
@@ -200,7 +197,7 @@ function getWeatherForecast(weatherData) {
 
         // //Create content for windSpeed
 
-        divUl.append("<li id='windDeg'>" + "Wind Direction: " + weatherData.list[i].wind.deg + " Degrees" + "</li>");
+        divUl.append("<li id='windDeg'>" + "Wind Direction: " + weatherData.list[i].wind.deg + "&#176;" + "</li>");
 
         forecastContainerEl.append(hourdiv);
 
