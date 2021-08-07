@@ -61,7 +61,8 @@ function displayParks() {
         $(parkButton).val(savedParks[i].parkCode);
         //set text for the button
         parkButton.attr("type", "button");
-        parkButton.addClass("btnCode");
+        parkButton.addClass("btnCode waves-effect waves-light btn");
+
         parkButton.html(savedParks[i].parkName);
         parkButton.appendTo(parkContainer);  
     }
@@ -88,9 +89,15 @@ function addPark(parkCode) {
         parkObject.parkName = $("#parkInfo").text();
         console.log($("#parkInfo").text());
         parkObject.parkCode = parkCode;
-        savedParks.push(parkObject);
+        if(savedParks.length< 5){
+            savedParks.push(parkObject);
         // console.log(savedPark);
         localStorage.setItem("savedHistory", JSON.stringify(savedParks));
+        }
+        else{
+            savedParks.shift();
+        }
+
     }
 }
 
