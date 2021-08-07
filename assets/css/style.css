@@ -17,6 +17,13 @@ header {
   background-attachment: fixed;
   background-position: 80%;
 } 
+#formContainer {
+  max-height: 550px;
+}
+.btnCode {
+  margin-bottom: 2.5px;
+  width: 100%;
+}
 
 .white-text {
   padding-right: 20px;
