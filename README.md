@@ -35,8 +35,8 @@ https://miraj00.github.io/National-Park-Trip-Planner/
 
 ## Mobile version
 
-![](Readme-images/screenshot5.PNG) "Mobile1"
-![](Readme-images/screenshot6.PNG) "Mobile2"
+![](Readme-images/mobile1.PNG) "Mobile1"
+![](Readme-images/mobile2.PNG) "Mobile2"
 
 ## Elevator Pitch
 
