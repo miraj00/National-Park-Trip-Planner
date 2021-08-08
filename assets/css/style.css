@@ -31,6 +31,7 @@ header {
   background: none;
   width: 100%;
 }
+
 .btnCode {
   margin-bottom: 2.5px;
   width: 100%;
@@ -39,6 +40,7 @@ header {
 .capitalize {
   text-transform: capitalize;
 }
+
 .white-text {
   padding-right: 20px;
   text-align: right;
@@ -57,7 +59,6 @@ div.white-text {
   padding: 100px 0px 0px 0px;
   width: 400px;
   height: 400px;
-
 }
 
 #footer-information, #footer-developer {
@@ -85,10 +86,6 @@ div.col.s3, div.col.s2  {
   border: 1px solid black; 
   height: 550px;
 }
-
-
-
-
 
 div.col.s1 {
   width: 500px;
@@ -129,15 +126,14 @@ div.col.s1 {
 
 .color0 {
   background-color: rgb(103, 185, 103);
-
 }
+
 .color2 {
   background-color: rgb(226, 219, 123);
-  
-  }
+}
+
 .color4 {
   background-color: rgb(120, 171, 230);
-    
 }
 
 .color6 {
@@ -164,13 +160,11 @@ div.col.s1 {
   border-bottom: 2px solid black;
 }
 
-#centerText{
+#centerText {
   padding: 80px;
 }
 
-/*added style for button from html*/
-
-#iconStyle{
+#iconStyle {
   text-transform:uppercase;
 }
 
@@ -185,18 +179,18 @@ div.col.s1 {
   align-content: center;
 }
 
-#videoRow1, #videoRow2  {
+#videoRow1, #videoRow2 {
   padding: 20px 0 20px 100px;
 }
 
-.textLink  {
+.textLink {
   font-weight: bold;
   font-size: 30px;
   text-align: center;
   background-color: gray;
 }
 
-#centerText  {    
+#centerText {    
   padding-top: 80px;
 }
 
@@ -204,7 +198,6 @@ div.col.s1 {
   font-size: 15px;
   font-weight: bold;
   text-align: center;
-
 }
 
 .black-text  {
@@ -234,7 +227,6 @@ div.col.s1 {
 }
 
 
-
 /* mobile version 992px and 600px combining materialize */
 @media screen and (max-width: 992px){
 
@@ -247,13 +239,6 @@ div.col.s1 {
     width: 100%;
     padding-top: 10px;
   }
-
-  
-
-  /* main.container {
-    /* margin-left: 200px; */
-    /* padding-right: 0px; */
-  /* } */
 
   div.white-text {
     font-size: 40px;
@@ -272,8 +257,7 @@ div.col.s1 {
 
   .row .col.s2 {
     width: 55%;
-    
-   }
+  }
 
   .row .col.s1 {
     width: 16%;    
@@ -283,17 +267,10 @@ div.col.s1 {
     font-size: 13px;
   }
 
-  
-    
-    
-    
-  
-
   #weather-48 {
     text-align: center;
     font-size: 35px;
     background: rgb(125, 159, 221);
-    
   }
 }
 
@@ -371,7 +348,6 @@ div.col.s1 {
 
   .videoHeader {
     font-size: 25px;
-     
   }
 
   #videoRow1, #videoRow2 {

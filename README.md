@@ -35,11 +35,19 @@ https://miraj00.github.io/National-Park-Trip-Planner/
 
 ## Mobile version
 
-![](Readme-images/screenshot5.PNG) "Screenshot4"
-![](Readme-images/screenshot6.PNG) "Screenshot4"
+![](Readme-images/screenshot5.PNG) "Mobile1"
+![](Readme-images/screenshot6.PNG) "Mobile2"
+
+## Elevator Pitch
+
+![](Readme-images/powerpoint1.PNG) "PowerPoint1"
+![](Readme-images/powerpoint2.PNG) "PowerPoint2"
+![](Readme-images/powerpoint3.PNG) "PowerPoint3"
+![](Readme-images/powerpoint4.PNG) "PowerPoint4"
 
 
 ## contribution
+
 ```
 Created by Jessica Kamman, Miraj Patel, Ronnieve Romero and Walter Gonzales
 ```
